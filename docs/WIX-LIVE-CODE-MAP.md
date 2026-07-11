@@ -37,8 +37,8 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/contact` | `src/pages/Contact.drtds.js` | Minimal/empty page Velo |
 | `/loan-products` | `src/pages/Loan Products.sz5ox.js` | Minimal/empty page Velo |
 | `/borrower-tools` | `src/pages/Borrower Tools.rp9wa.js` | `#amortizationHtml`; archived at `html-embeds/amortization-calculator/borrower-tools-amortization.html` |
-| `/realtor-tools` | `src/pages/Realtor Tools.weyoj.js` | `#quickToolsHtml`; archived at `html-embeds/realtor-tools/realtor-tools-quick-tools.html`; `#sellerNetSheetHtml` / `#sellerNetSheetSection`; archived at `html-embeds/seller-net-sheet/realtor-tools-seller-net-sheet.html` |
-| `/investor-tools` | `src/pages/Investor Tools.s5avu.js` | `#dscrHtml`, `#comparablesHtml`, `#fixFlipHtml` |
+| `/realtor-tools` | `src/pages/Realtor Tools.weyoj.js` | `#quickToolsHtml`; archived at `html-embeds/realtor-tools/realtor-tools-quick-tools.html`; `#sellerNetSheetHtml`; archived at `html-embeds/seller-net-sheet/realtor-tools-seller-net-sheet.html` |
+| `/investor-tools` | `src/pages/Investor Tools.s5avu.js` | `#dscrHtml`; archived at `html-embeds/dscr-calculator/investor-tools-dscr.html`; `#comparablesHtml`, `#fixFlipHtml` still pending manual archive |
 | `/investor-hub` | `src/pages/Investor Hub.ffjw6.js` | `#investorHubHtml` |
 | `/my-mortgage-dashboard` | `src/pages/My Mortgage Dashboard.azs78.js` | `#dashboardHtml` |
 | `/loan-details?loanId=...` | `src/pages/Loan Details.dt9pl.js` | `#mortgagePortalHtml` |
@@ -340,7 +340,7 @@ Page code:
 
 Current known HTML embeds:
 - `#quickToolsHtml`; archived at `html-embeds/realtor-tools/realtor-tools-quick-tools.html`
-- `#sellerNetSheetHtml` / user-provided label `#sellerNetSheetSection`; archived at `html-embeds/seller-net-sheet/realtor-tools-seller-net-sheet.html`
+- `#sellerNetSheetHtml`; archived at `html-embeds/seller-net-sheet/realtor-tools-seller-net-sheet.html`
 
 Earlier notes referenced native Wix seller-net-sheet elements on this page. The public scrape shows the live page also contains HTML embeds, so keep both possibilities in mind until the page Velo and seller net sheet source are fully archived.
 - `#netResult`
