@@ -1,0 +1,890 @@
+<!--
+Wix page: Investor Hub
+Wix component ID: #investorHubHtml
+Production status: Active
+Migrated from: User-provided Wix editor paste
+Initial archive date: 2026-07-11
+Public scrape match: No public scrape copy found in existing archive
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investor Hub Dashboard</title>
+<style>
+:root{
+  --navy:#0F2744;
+  --blue:#1E4E79;
+  --light-blue:#DDEAF7;
+  --soft:#f6f8fb;
+  --panel:#f8fbff;
+  --line:#ddeaf7;
+  --green:#2E8B57;
+  --gold:#E6A23C;
+  --red:#D9534F;
+  --muted:#52677f;
+  --shadow:0 12px 30px rgba(0,0,0,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px;background:var(--soft);font-family:Arial,sans-serif;color:var(--navy)}
+.hub{max-width:1240px;margin:auto;background:white;border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:32px}
+.hero-grid{display:grid;grid-template-columns:1.45fr .55fr;gap:24px;align-items:center}
+.kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:bold;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}
+.hero h1{margin:0;font-size:36px;line-height:1.08}
+.hero p{margin:12px 0 0;font-size:16px;line-height:1.48;opacity:.92;max-width:790px}
+.hero-cards{display:grid;gap:10px}
+.hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);border-radius:16px;padding:13px}
+.hero-card strong{display:block;font-size:14px}
+.hero-card span{display:block;font-size:12px;opacity:.84;margin-top:3px;line-height:1.35}
+.actionbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+button,.button-link{appearance:none;text-decoration:none;background:var(--blue);color:white;border:none;border-radius:12px;padding:13px 15px;font-size:14px;font-weight:bold;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+button:hover,.button-link:hover{background:var(--navy)}
+.hero button,.hero .button-link{background:white;color:var(--navy)}
+.hero button:hover,.hero .button-link:hover{background:#eef5fc}
+.secondary{background:white;color:var(--blue);border:2px solid var(--blue)}
+.secondary:hover{background:#eef5fc}
+.danger{background:var(--red)}
+.danger:hover{background:#a83c38}
+.ghost{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.32);color:white}
+.ghost:hover{background:rgba(255,255,255,.2)}
+.content{padding:24px}
+.member-alert{display:none;background:#fff7e6;border:1px solid #f2d39a;color:#6c4b00;border-radius:16px;padding:14px;margin-bottom:18px;font-weight:bold}
+.summary-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:18px}
+.summary-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;min-height:116px}
+.summary-label{font-size:12px;color:var(--muted);font-weight:bold;text-transform:uppercase;letter-spacing:.04em}
+.summary-value{font-size:30px;font-weight:bold;color:var(--navy);margin-top:8px}
+.summary-note{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.35}
+.workspace-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:18px}
+.panel h2,.panel h3{margin:0 0 14px;color:var(--blue)}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tool-card{background:white;border:1px solid var(--line);border-radius:16px;padding:16px}
+.tool-card h3{margin:0 0 8px;color:var(--blue)}
+.tool-card p{font-size:13px;color:var(--muted);line-height:1.4;margin:0 0 12px}
+.tool-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.pill{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 8px;font-size:12px;color:var(--muted);font-weight:bold}
+.pill.green{color:var(--green);border-color:rgba(46,139,87,.35);background:rgba(46,139,87,.08)}
+.pill.gold{color:#9b6a10;border-color:rgba(230,162,60,.35);background:rgba(230,162,60,.10)}
+.pill.red{color:var(--red);border-color:rgba(217,83,79,.35);background:rgba(217,83,79,.08)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.filters input,.filters select{padding:12px;border:1px solid #cbd8e6;border-radius:12px;font-size:14px;min-width:160px;color:var(--navy);background:white}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{background:white;color:var(--blue);border:1px solid var(--line);padding:10px 12px;border-radius:999px;font-weight:bold;cursor:pointer}
+.tab.active{background:var(--blue);color:white;border-color:var(--blue)}
+.list{display:grid;gap:12px}
+.empty{background:white;border:1px dashed #cbd8e6;border-radius:16px;padding:18px;color:var(--muted);font-size:14px;line-height:1.45}
+.item{background:white;border:1px solid var(--line);border-radius:16px;padding:16px}
+.item-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.item h4{margin:0;color:var(--blue);font-size:17px}
+.item-sub{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.35}
+.item-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.metric{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px}
+.metric span{display:block;font-size:11px;text-transform:uppercase;color:var(--muted);font-weight:bold}
+.metric strong{display:block;margin-top:4px;font-size:15px;color:var(--navy)}
+.item-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.item-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.item-actions button{padding:10px 12px;font-size:13px}
+.relationship-box{background:#fbfdff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:12px;font-size:13px}
+.relationship-box strong{color:var(--blue)}
+.status-dot{width:9px;height:9px;border-radius:50%;display:inline-block;background:var(--muted)}
+.status-dot.green{background:var(--green)}
+.status-dot.gold{background:var(--gold)}
+.status-dot.red{background:var(--red)}
+.notice{display:none;position:fixed;right:18px;bottom:18px;z-index:99999;background:var(--navy);color:white;border-radius:16px;padding:14px 16px;box-shadow:0 16px 44px rgba(0,0,0,.24);font-weight:bold;max-width:360px}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(15,39,68,.62);z-index:9999;padding:20px;align-items:center;justify-content:center}
+.modal{background:white;color:var(--navy);border-radius:22px;width:min(850px,100%);max-height:88vh;overflow:auto;box-shadow:0 18px 60px rgba(0,0,0,.28)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line)}
+.modal-head h3{margin:0;color:var(--blue)}
+.modal-body{padding:20px}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+.detail span{display:block;font-size:11px;color:var(--muted);font-weight:bold;text-transform:uppercase}
+.detail strong{display:block;margin-top:5px}
+.line-items{margin-top:12px}
+.line-row{display:grid;grid-template-columns:1fr 1.4fr .8fr .8fr .9fr;gap:8px;border-bottom:1px solid var(--line);padding:8px 0;font-size:13px}
+.line-row.head{font-weight:bold;color:var(--blue)}
+@media(max-width:1080px){
+  .summary-grid{grid-template-columns:repeat(3,1fr)}
+  .workspace-grid,.hero-grid{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  body{padding:12px}
+  .hero h1{font-size:29px}
+  .summary-grid,.quick-grid,.item-metrics,.detail-grid{grid-template-columns:1fr}
+  .item-top{display:block}
+  .filters input,.filters select,.actionbar button,.actionbar .button-link{width:100%}
+  .line-row{grid-template-columns:1fr}
+}
+
+/* DRG mobile optimization layer — desktop/default styles above remain unchanged */
+@media (max-width: 920px) {
+  body {
+    padding: 12px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .hub {
+    border-radius: 20px;
+  }
+
+  .hero {
+    padding: 26px 20px;
+  }
+
+  .hero::after {
+    width: 240px;
+    height: 240px;
+    right: -110px;
+    bottom: -120px;
+  }
+
+  .hero-grid,
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 18px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .item-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-backdrop {
+    padding: 12px;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: none;
+    margin: 12px 0;
+    border-radius: 18px;
+  }
+
+  .modal-head {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+    gap: 12px;
+  }
+
+  .line-items {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .line-row {
+    min-width: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 10px;
+  }
+
+  .hub {
+    border-radius: 18px;
+  }
+
+  .hero {
+    padding: 24px 16px;
+  }
+
+  .kicker {
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 9vw, 34px);
+    line-height: 1.05;
+  }
+
+  .hero p {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  .actionbar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .actionbar button,
+  .actionbar .button-link,
+  .tool-card .button-link,
+  .tool-card button {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .hero-card {
+    padding: 12px;
+  }
+
+  .content {
+    padding: 14px;
+  }
+
+  .member-alert {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .summary-card {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .summary-value {
+    font-size: 26px;
+  }
+
+  .panel {
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .panel h2 {
+    font-size: 1.28rem;
+  }
+
+  .tool-card,
+  .item {
+    padding: 14px;
+    border-radius: 15px;
+  }
+
+  .tool-meta,
+  .item-links,
+  .item-actions {
+    gap: 7px;
+  }
+
+  .item-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .item h4 {
+    font-size: 16px;
+  }
+
+  .item-metrics {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .item-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .item-actions button {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .pill {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  .notice {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .modal-head {
+    padding: 14px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .modal-head button {
+    width: 100% !important;
+  }
+
+  .modal-body {
+    padding: 14px;
+  }
+
+  .line-row {
+    min-width: 0;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 10px 0;
+  }
+
+  .line-row.head {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  body {
+    padding: 8px;
+  }
+
+  .hero {
+    padding: 22px 14px;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  button,
+  .button-link {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .summary-value {
+    font-size: 24px;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="hub">
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">Member Investor Hub</div>
+        <h1>Your Investor Workspace</h1>
+        <p>Track saved DSCR loan scenarios, comparable analyses, and fix-and-flip projects in one place. See which comp reports support specific rental loans or flip projects, review project-level metrics, and jump back into the right analyzer when it is time to update a deal.</p>
+        <div class="actionbar">
+          <button onclick="requestAllSaved()">Refresh Saved Items</button>
+          <a class="button-link" href="#dscr-calculator">Open DSCR Calculator</a>
+          <a class="button-link" href="#comparables-calculator">Open Comparables</a>
+          <a class="button-link" href="#fix-flip-analyzer">Open Fix & Flip Analyzer</a>
+        </div>
+      </div>
+      <div class="hero-cards">
+        <div class="hero-card"><strong>Saved Rental Loans</strong><span>Review DSCR, cash flow, LTV, and status across saved scenarios.</span></div>
+        <div class="hero-card"><strong>Comparable Support</strong><span>Connect valuation or rent analyses to DSCR scenarios or rehab projects.</span></div>
+        <div class="hero-card"><strong>Flip Pipeline</strong><span>Track ARV, profit, ROI, rehab budget, and line-item detail.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="member-alert" id="memberAlert">Please log in to view and save investor scenarios.</div>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="summary-label">DSCR Scenarios</div>
+        <div class="summary-value" id="dscrCount">0</div>
+        <div class="summary-note" id="avgDscrNote">Average DSCR: --</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-label">Comp Analyses</div>
+        <div class="summary-value" id="compCount">0</div>
+        <div class="summary-note" id="linkedCompNote">Linked: --</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-label">Fix & Flip Projects</div>
+        <div class="summary-value" id="flipCount">0</div>
+        <div class="summary-note" id="flipStatusNote">Active projects: --</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-label">Projected Flip Profit</div>
+        <div class="summary-value" id="totalProfit">$0</div>
+        <div class="summary-note">Across saved flip projects</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-label">Strongest Deal</div>
+        <div class="summary-value" id="strongestDeal">--</div>
+        <div class="summary-note" id="strongestDealNote">No saved items yet</div>
+      </div>
+    </div>
+
+    <div class="workspace-grid">
+      <div>
+        <div class="panel">
+          <h2>Quick Actions</h2>
+          <div class="quick-grid">
+            <div class="tool-card">
+              <h3>DSCR Calculator</h3>
+              <p>Save rental loan scenarios with DSCR, cash flow, monthly payment, and loan assumptions.</p>
+              <div class="tool-meta"><span class="pill" id="quickDscrCount">0 saved</span><span class="pill green">Rental loans</span></div>
+              <a class="button-link secondary" href="#dscr-calculator">Open Calculator</a>
+            </div>
+            <div class="tool-card">
+              <h3>Comparables</h3>
+              <p>Save comparable sales or rent analyses and link them to a DSCR scenario or flip project.</p>
+              <div class="tool-meta"><span class="pill" id="quickCompCount">0 saved</span><span class="pill gold">Valuation support</span></div>
+              <a class="button-link secondary" href="#comparables-calculator">Open Comparables</a>
+            </div>
+            <div class="tool-card">
+              <h3>Fix & Flip Analyzer</h3>
+              <p>Save rehab projects with ARV, ROI, projected profit, leverage, and budget line items.</p>
+              <div class="tool-meta"><span class="pill" id="quickFlipCount">0 saved</span><span class="pill green">Rehab pipeline</span></div>
+              <a class="button-link secondary" href="#fix-flip-analyzer">Open Analyzer</a>
+            </div>
+            <div class="tool-card">
+              <h3>Deal Review</h3>
+              <p>Use saved data to prepare cleaner investor conversations and identify missing deal pieces.</p>
+              <div class="tool-meta"><span class="pill" id="quickLinkedCount">0 linked comps</span><span class="pill">Workspace</span></div>
+              <button class="secondary" onclick="setTab('relationships')">View Links</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Relationship Map</h2>
+          <div id="relationshipList" class="list">
+            <div class="empty">Linked comparable analyses will appear here.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h2>Saved Investor Items</h2>
+          <div class="tabs">
+            <button class="tab active" id="tabAll" onclick="setTab('all')">All</button>
+            <button class="tab" id="tabDscr" onclick="setTab('dscr')">DSCR</button>
+            <button class="tab" id="tabComps" onclick="setTab('comps')">Comparables</button>
+            <button class="tab" id="tabFlips" onclick="setTab('flips')">Fix & Flip</button>
+            <button class="tab" id="tabRelationships" onclick="setTab('relationships')">Linked</button>
+          </div>
+
+          <div class="filters">
+            <input type="text" id="searchInput" placeholder="Search name, address, city, ZIP..." oninput="renderActiveList()">
+            <select id="statusFilter" onchange="renderActiveList()">
+              <option value="">All statuses</option>
+              <option value="Saved">Saved</option>
+              <option value="Researching">Researching</option>
+              <option value="Under Contract">Under Contract</option>
+              <option value="Funded">Funded</option>
+              <option value="In Rehab">In Rehab</option>
+              <option value="Listed">Listed</option>
+              <option value="Sold">Sold</option>
+              <option value="Passed">Passed</option>
+            </select>
+            <select id="linkFilter" onchange="renderActiveList()">
+              <option value="">All link types</option>
+              <option value="linked">Linked only</option>
+              <option value="unlinked">Unlinked only</option>
+              <option value="dscr">Linked to DSCR</option>
+              <option value="flip">Linked to Fix & Flip</option>
+            </select>
+          </div>
+
+          <div id="savedList" class="list">
+            <div class="empty">Saved investor items will appear here once loaded.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="detailModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="detailTitle">Saved Item</h3>
+      <button class="secondary" style="width:auto;margin:0" onclick="closeDetail()">Close</button>
+    </div>
+    <div class="modal-body" id="detailBody"></div>
+  </div>
+</div>
+
+<div class="notice" id="notice"></div>
+
+<script>
+let savedDscrScenarios = [];
+let savedComparableAnalyses = [];
+let savedFixFlipProjects = [];
+let activeTab = "all";
+
+function money(n){return "$"+Math.round(Number(n)||0).toLocaleString();}
+function num(n){return Number(n)||0;}
+function pct(n){return (Number(n)||0).toFixed(1)+"%";}
+function dateText(d){if(!d)return "--"; try{return new Date(d).toLocaleDateString();}catch(e){return "--";}}
+function escapeHtml(str){return String(str||"").replace(/[&<>"']/g,function(m){return({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"})[m];});}
+function lower(str){return String(str||"").toLowerCase();}
+function itemAddress(item){
+  const a=item.propertyAddress || item.subjectAddress;
+  if(typeof a==="string")return a;
+  if(a && a.formatted)return a.formatted;
+  return [item.city,item.state,item.zip].filter(Boolean).join(", ");
+}
+function titleOf(item,type){
+  if(type==="dscr")return item.scenarioName || "Saved DSCR Scenario";
+  if(type==="comp")return item.analysisName || "Saved Comparable Analysis";
+  if(type==="flip")return item.projectName || "Saved Fix & Flip Project";
+  return "Saved Item";
+}
+function statusOf(item,type){
+  if(type==="dscr")return item.scenarioStatus || "Saved";
+  if(type==="comp")return item.analysisStatus || "Saved";
+  if(type==="flip")return item.projectStatus || "Saved";
+  return "Saved";
+}
+function getDscrById(id){return savedDscrScenarios.find(function(i){return i._id===id;});}
+function getFlipById(id){return savedFixFlipProjects.find(function(i){return i._id===id;});}
+function isActiveFlip(project){
+  const s=lower(project.projectStatus);
+  return !["sold","passed"].includes(s);
+}
+
+function requestAllSaved(){
+  window.parent.postMessage({type:"INVESTOR_LOAD_SAVED"},"*");
+  showNotice("Refreshing saved investor items...");
+}
+
+function setTab(tab){
+  activeTab = tab;
+  document.querySelectorAll(".tab").forEach(function(btn){btn.classList.remove("active");});
+  const map={all:"tabAll",dscr:"tabDscr",comps:"tabComps",flips:"tabFlips",relationships:"tabRelationships"};
+  const el=document.getElementById(map[tab]);
+  if(el)el.classList.add("active");
+  renderActiveList();
+}
+
+function renderDashboard(){
+  const avgDscr = savedDscrScenarios.length
+    ? savedDscrScenarios.reduce(function(sum,i){return sum+num(i.dscr);},0)/savedDscrScenarios.length
+    : 0;
+
+  const linkedComps = savedComparableAnalyses.filter(function(i){return i.linkedDscrScenario || i.linkedFixFlipProject;});
+  const activeFlips = savedFixFlipProjects.filter(isActiveFlip);
+  const totalProfit = savedFixFlipProjects.reduce(function(sum,i){return sum+num(i.projectedProfit);},0);
+
+  document.getElementById("dscrCount").innerText=savedDscrScenarios.length;
+  document.getElementById("avgDscrNote").innerText="Average DSCR: "+(avgDscr ? avgDscr.toFixed(2) : "--");
+  document.getElementById("compCount").innerText=savedComparableAnalyses.length;
+  document.getElementById("linkedCompNote").innerText="Linked: "+linkedComps.length+" / "+savedComparableAnalyses.length;
+  document.getElementById("flipCount").innerText=savedFixFlipProjects.length;
+  document.getElementById("flipStatusNote").innerText="Active projects: "+activeFlips.length;
+  document.getElementById("totalProfit").innerText=money(totalProfit);
+
+  document.getElementById("quickDscrCount").innerText=savedDscrScenarios.length+" saved";
+  document.getElementById("quickCompCount").innerText=savedComparableAnalyses.length+" saved";
+  document.getElementById("quickFlipCount").innerText=savedFixFlipProjects.length+" saved";
+  document.getElementById("quickLinkedCount").innerText=linkedComps.length+" linked comps";
+
+  const strongestDscr = savedDscrScenarios.slice().sort(function(a,b){return num(b.dscr)-num(a.dscr);})[0];
+  const strongestFlip = savedFixFlipProjects.slice().sort(function(a,b){return num(b.projectedROI)-num(a.projectedROI);})[0];
+
+  if(strongestFlip && (!strongestDscr || num(strongestFlip.projectedROI) > num(strongestDscr.dscr)*40)){
+    document.getElementById("strongestDeal").innerText=pct(strongestFlip.projectedROI);
+    document.getElementById("strongestDealNote").innerText=strongestFlip.projectName || "Strongest flip ROI";
+  }else if(strongestDscr){
+    document.getElementById("strongestDeal").innerText=Number(strongestDscr.dscr || 0).toFixed(2);
+    document.getElementById("strongestDealNote").innerText=strongestDscr.scenarioName || "Strongest DSCR";
+  }else{
+    document.getElementById("strongestDeal").innerText="--";
+    document.getElementById("strongestDealNote").innerText="No saved items yet";
+  }
+
+  renderRelationships();
+  renderActiveList();
+}
+
+function passesFilters(record){
+  const q=lower(document.getElementById("searchInput").value);
+  const status=document.getElementById("statusFilter").value;
+  const link=document.getElementById("linkFilter").value;
+  const item=record.item;
+  const type=record.type;
+
+  const haystack=lower([
+    titleOf(item,type),
+    itemAddress(item),
+    item.city,
+    item.state,
+    item.zip,
+    item.propertyType,
+    statusOf(item,type)
+  ].join(" "));
+
+  if(q && !haystack.includes(q))return false;
+  if(status && statusOf(item,type)!==status)return false;
+
+  const linkedToDscr=Boolean(item.linkedDscrScenario);
+  const linkedToFlip=Boolean(item.linkedFixFlipProject);
+  const linked=linkedToDscr || linkedToFlip;
+
+  if(link==="linked" && !linked)return false;
+  if(link==="unlinked" && linked)return false;
+  if(link==="dscr" && !linkedToDscr)return false;
+  if(link==="flip" && !linkedToFlip)return false;
+
+  return true;
+}
+
+function getRecordsForActiveTab(){
+  let records=[];
+  if(activeTab==="all" || activeTab==="dscr"){
+    records=records.concat(savedDscrScenarios.map(function(item){return {type:"dscr",item:item};}));
+  }
+  if(activeTab==="all" || activeTab==="comps" || activeTab==="relationships"){
+    let comps=savedComparableAnalyses;
+    if(activeTab==="relationships")comps=comps.filter(function(i){return i.linkedDscrScenario || i.linkedFixFlipProject;});
+    records=records.concat(comps.map(function(item){return {type:"comp",item:item};}));
+  }
+  if(activeTab==="all" || activeTab==="flips"){
+    records=records.concat(savedFixFlipProjects.map(function(item){return {type:"flip",item:item};}));
+  }
+  return records.filter(passesFilters).sort(function(a,b){
+    return new Date(b.item._updatedDate || b.item._createdDate || 0) - new Date(a.item._updatedDate || a.item._createdDate || 0);
+  });
+}
+
+function renderActiveList(){
+  const wrap=document.getElementById("savedList");
+  const records=getRecordsForActiveTab();
+
+  if(!records.length){
+    wrap.innerHTML='<div class="empty">No saved items match the current view.</div>';
+    return;
+  }
+
+  wrap.innerHTML=records.map(renderRecordCard).join("");
+}
+
+function renderRecordCard(record){
+  const item=record.item;
+  const type=record.type;
+  if(type==="dscr")return renderDscrCard(item);
+  if(type==="comp")return renderCompCard(item);
+  return renderFlipCard(item);
+}
+
+function renderDscrCard(item){
+  const dscr=num(item.dscr);
+  const dscrClass=dscr>=1?"green":(dscr>=.75?"gold":"red");
+  return '<div class="item">'+
+    '<div class="item-top"><div><h4>'+escapeHtml(item.scenarioName || "Saved DSCR Scenario")+'</h4><div class="item-sub">'+escapeHtml(itemAddress(item) || "No address saved")+'</div></div><span class="pill '+dscrClass+'"><span class="status-dot '+dscrClass+'"></span> DSCR '+(dscr?dscr.toFixed(2):"--")+'</span></div>'+
+    '<div class="item-metrics">'+
+      metric("Loan Amount",money(item.loanAmount))+metric("LTV",pct(item.ltv))+metric("Cash Flow",money(item.cashFlow))+metric("Status",item.scenarioStatus || "Saved")+
+    '</div>'+
+    '<div class="item-links">'+linkedCompPillsFor("dscr",item._id)+'</div>'+
+    '<div class="item-actions"><button onclick="viewDetail(\'dscr\',\''+escapeHtml(item._id)+'\')">View Details</button><button class="danger" onclick="deleteItem(\'INVESTOR_DELETE_DSCR\',\''+escapeHtml(item._id)+'\')">Delete</button></div>'+
+  '</div>';
+}
+
+function renderCompCard(item){
+  const dscr=getDscrById(item.linkedDscrScenario);
+  const flip=getFlipById(item.linkedFixFlipProject);
+  return '<div class="item">'+
+    '<div class="item-top"><div><h4>'+escapeHtml(item.analysisName || "Saved Comparable Analysis")+'</h4><div class="item-sub">'+escapeHtml(itemAddress(item) || "No subject address saved")+'</div></div><span class="pill gold">Comps: '+(item.compCount || (item.comparables ? item.comparables.length : 0) || 0)+'</span></div>'+
+    '<div class="item-metrics">'+
+      metric("Estimated ARV",money(item.estimatedARV))+metric("As-Is Value",money(item.estimatedAsIsValue))+metric("Avg $/SqFt",money(item.averagePricePerSqft))+metric("Confidence",item.confidenceLevel || "--")+
+    '</div>'+
+    '<div class="relationship-box">'+
+      '<strong>Linked To:</strong> '+
+      (dscr ? '<span class="pill green">DSCR: '+escapeHtml(dscr.scenarioName || "Saved DSCR")+'</span> ' : '')+
+      (flip ? '<span class="pill gold">Flip: '+escapeHtml(flip.projectName || "Saved Flip")+'</span> ' : '')+
+      (!dscr && !flip ? '<span class="pill">No linked scenario</span>' : '')+
+    '</div>'+
+    '<div class="item-actions"><button onclick="viewDetail(\'comp\',\''+escapeHtml(item._id)+'\')">View Details</button><button class="danger" onclick="deleteItem(\'INVESTOR_DELETE_COMPARABLE_ANALYSIS\',\''+escapeHtml(item._id)+'\')">Delete</button></div>'+
+  '</div>';
+}
+
+function renderFlipCard(item){
+  const roi=num(item.projectedROI);
+  const roiClass=roi>=25?"green":(roi>=10?"gold":"red");
+  return '<div class="item">'+
+    '<div class="item-top"><div><h4>'+escapeHtml(item.projectName || "Saved Fix & Flip Project")+'</h4><div class="item-sub">'+escapeHtml(itemAddress(item) || "No address saved")+'</div></div><span class="pill '+roiClass+'"><span class="status-dot '+roiClass+'"></span> ROI '+pct(item.projectedROI)+'</span></div>'+
+    '<div class="item-metrics">'+
+      metric("ARV",money(item.estimatedARV))+metric("Profit",money(item.projectedProfit))+metric("Loan",money(item.loanAmount))+metric("Status",item.projectStatus || "Saved")+
+    '</div>'+
+    '<div class="item-links">'+linkedCompPillsFor("flip",item._id)+'</div>'+
+    '<div class="item-actions"><button onclick="viewDetail(\'flip\',\''+escapeHtml(item._id)+'\')">View Details</button><button class="danger" onclick="deleteItem(\'INVESTOR_DELETE_FIX_FLIP\',\''+escapeHtml(item._id)+'\')">Delete</button></div>'+
+  '</div>';
+}
+
+function metric(label,value){
+  return '<div class="metric"><span>'+escapeHtml(label)+'</span><strong>'+escapeHtml(value || "--")+'</strong></div>';
+}
+
+function linkedCompPillsFor(type,id){
+  const comps=savedComparableAnalyses.filter(function(c){
+    return type==="dscr" ? c.linkedDscrScenario===id : c.linkedFixFlipProject===id;
+  });
+  if(!comps.length)return '<span class="pill">No linked comp analyses</span>';
+  return comps.map(function(c){return '<span class="pill gold">Comp: '+escapeHtml(c.analysisName || "Saved Analysis")+'</span>';}).join("");
+}
+
+function renderRelationships(){
+  const wrap=document.getElementById("relationshipList");
+  const linked=savedComparableAnalyses.filter(function(c){return c.linkedDscrScenario || c.linkedFixFlipProject;});
+  if(!linked.length){
+    wrap.innerHTML='<div class="empty">No linked comparable analyses yet. In the comparables calculator, choose a saved DSCR scenario or saved fix & flip project before saving the analysis.</div>';
+    return;
+  }
+  wrap.innerHTML=linked.map(function(comp){
+    const dscr=getDscrById(comp.linkedDscrScenario);
+    const flip=getFlipById(comp.linkedFixFlipProject);
+    return '<div class="item">'+
+      '<h4>'+escapeHtml(comp.analysisName || "Comparable Analysis")+'</h4>'+
+      '<div class="item-sub">'+escapeHtml(itemAddress(comp))+'</div>'+
+      '<div class="item-links">'+
+        (dscr ? '<span class="pill green">Supports DSCR: '+escapeHtml(dscr.scenarioName || "Saved DSCR")+'</span>' : '')+
+        (flip ? '<span class="pill gold">Supports Flip: '+escapeHtml(flip.projectName || "Saved Flip")+'</span>' : '')+
+      '</div>'+
+    '</div>';
+  }).join("");
+}
+
+function viewDetail(type,id){
+  let item;
+  if(type==="dscr")item=savedDscrScenarios.find(function(i){return i._id===id;});
+  if(type==="comp")item=savedComparableAnalyses.find(function(i){return i._id===id;});
+  if(type==="flip")item=savedFixFlipProjects.find(function(i){return i._id===id;});
+  if(!item)return;
+
+  document.getElementById("detailTitle").innerText=titleOf(item,type);
+  document.getElementById("detailBody").innerHTML=detailHtml(type,item);
+  document.getElementById("detailModal").style.display="flex";
+}
+
+function closeDetail(){document.getElementById("detailModal").style.display="none";}
+
+function detailHtml(type,item){
+  if(type==="dscr"){
+    return '<div class="detail-grid">'+
+      detail("Address",itemAddress(item))+detail("DSCR",num(item.dscr).toFixed(2))+detail("Loan Amount",money(item.loanAmount))+detail("LTV",pct(item.ltv))+detail("Monthly P&I",money(item.monthlyPI))+detail("Cash Flow",money(item.cashFlow))+detail("Gross Rent",money(item.grossMonthlyRent))+detail("Status",item.scenarioStatus || "Saved")+
+    '</div>';
+  }
+  if(type==="comp"){
+    const dscr=getDscrById(item.linkedDscrScenario);
+    const flip=getFlipById(item.linkedFixFlipProject);
+    const compRows=(item.comparables || []).map(function(c){
+      return '<div class="line-row"><div>'+escapeHtml(c.compType || "--")+'</div><div>'+escapeHtml(itemAddress(c) || "--")+'</div><div>'+money(c.saleOrListPrice || c.monthlyRent)+'</div><div>'+money(c.adjustedValue)+'</div><div>'+escapeHtml(c.source || "--")+'</div></div>';
+    }).join("");
+    return '<div class="detail-grid">'+
+      detail("Subject Address",itemAddress(item))+detail("Estimated ARV",money(item.estimatedARV))+detail("Estimated As-Is",money(item.estimatedAsIsValue))+detail("Average Comp Price",money(item.averageCompPrice))+detail("Average $/SqFt",money(item.averagePricePerSqft))+detail("Confidence",item.confidenceLevel || "--")+detail("Linked DSCR",dscr ? titleOf(dscr,"dscr") : "Not linked")+detail("Linked Fix & Flip",flip ? titleOf(flip,"flip") : "Not linked")+
+    '</div><div class="line-items"><h3>Comparable Properties</h3><div class="line-row head"><div>Type</div><div>Address</div><div>Price/Rent</div><div>Adjusted</div><div>Source</div></div>'+(compRows || '<div class="empty">No comp properties saved.</div>')+'</div>';
+  }
+  const lineRows=(item.lineItems || []).map(function(l){
+    return '<div class="line-row"><div>'+escapeHtml(l.category || "--")+'</div><div>'+escapeHtml(l.itemName || "--")+'</div><div>'+money(l.estimatedCost)+'</div><div>'+money(l.actualCost)+'</div><div>'+escapeHtml(l.status || "--")+'</div></div>';
+  }).join("");
+  return '<div class="detail-grid">'+
+    detail("Address",itemAddress(item))+detail("ARV",money(item.estimatedARV))+detail("Purchase Price",money(item.purchasePrice))+detail("Rehab Budget",money(item.rehabBudget))+detail("Total Cost",money(item.totalProjectCost))+detail("Projected Profit",money(item.projectedProfit))+detail("Projected ROI",pct(item.projectedROI))+detail("Loan Amount",money(item.loanAmount))+detail("LTC",pct(item.ltc))+detail("Status",item.projectStatus || "Saved")+
+  '</div><div class="line-items"><h3>Rehab Line Items</h3><div class="line-row head"><div>Category</div><div>Item</div><div>Estimated</div><div>Actual</div><div>Status</div></div>'+(lineRows || '<div class="empty">No line items saved.</div>')+'</div>';
+}
+
+function detail(label,value){
+  return '<div class="detail"><span>'+escapeHtml(label)+'</span><strong>'+escapeHtml(value || "--")+'</strong></div>';
+}
+
+function deleteItem(type,id){
+  if(!id)return;
+  window.parent.postMessage({type:type,itemId:id},"*");
+  showNotice("Deleting item...");
+}
+
+function showNotice(message){
+  const n=document.getElementById("notice");
+  n.innerText=message;
+  n.style.display="block";
+  setTimeout(function(){n.style.display="none";},3000);
+}
+
+window.addEventListener("message",function(event){
+  const data=event.data || {};
+
+  if(data.type==="INVESTOR_MEMBER_STATUS"){
+    document.getElementById("memberAlert").style.display=data.loggedIn ? "none" : "block";
+  }
+
+  if(data.type==="INVESTOR_LOGIN_REQUIRED"){
+    document.getElementById("memberAlert").style.display="block";
+    document.getElementById("memberAlert").innerText=data.message || "Please log in to view and save investor scenarios.";
+  }
+
+  if(data.type==="INVESTOR_DSCR_LIST"){
+    savedDscrScenarios=data.items || [];
+    renderDashboard();
+  }
+
+  if(data.type==="INVESTOR_COMPARABLE_ANALYSIS_LIST"){
+    savedComparableAnalyses=data.items || [];
+    renderDashboard();
+  }
+
+  if(data.type==="INVESTOR_FIX_FLIP_LIST"){
+    savedFixFlipProjects=data.items || [];
+    renderDashboard();
+  }
+
+  if(data.type==="INVESTOR_DSCR_SAVED" || data.type==="INVESTOR_COMPARABLE_ANALYSIS_SAVED" || data.type==="INVESTOR_FIX_FLIP_SAVED"){
+    showNotice(data.message || "Saved.");
+    requestAllSaved();
+  }
+
+  if(data.type==="INVESTOR_ERROR"){
+    showNotice(data.message || "Something went wrong.");
+  }
+});
+
+renderDashboard();
+requestAllSaved();
+</script>
+</body>
+</html>
