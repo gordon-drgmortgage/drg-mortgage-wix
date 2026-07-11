@@ -1,0 +1,914 @@
+<!--
+Source: Public Wix rendered HTML component scrape
+Scrape date: 2026-07-11
+Wix page label: Investor Tools
+Requested URL: https://www.drgmortgagellc.com/investor-tools
+Final URL: https://www.drgmortgagellc.com/investor-tools
+Wix page ID: s5avu
+Rendered component ID: comp-mr2iafa3
+Velo role/component ID: #comparablesHtml
+Iframe title: Comparables Calculator
+Source HTML URL: https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_b3137094861480fdc64dea25c1ec923d.html
+HTTP status: 200
+Note: This is the publicly rendered HTML component file, not a manual export from the Wix Editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparable Sales & Rental Income Calculator V7 - Places New</title>
+<style>
+:root{--navy:#0F2744;--blue:#1E4E79;--soft:#f6f8fb;--panel:#f8fbff;--line:#ddeaf7;--green:#2E8B57;--gold:#E6A23C;--red:#D9534F;--ink:#0F2744;--muted:#52677f;--shadow:0 12px 30px rgba(0,0,0,.10)}
+*{box-sizing:border-box}body{margin:0;padding:20px;background:var(--soft);font-family:Arial,sans-serif;color:var(--ink)}.calc{max-width:1240px;margin:auto;background:white;border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.header{background:radial-gradient(circle at 15% 15%,rgba(255,255,255,.16),transparent 32%),linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:30px}.hero-row{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:bold;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}.header h2{margin:0;font-size:34px;line-height:1.1}.header p{margin:10px 0 0;opacity:.92;line-height:1.45;font-size:15px;max-width:800px}.hero-cards{display:grid;grid-template-columns:1fr;gap:10px}.hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:14px}.hero-card strong{display:block;font-size:18px}.hero-card span{display:block;font-size:12px;opacity:.85;margin-top:4px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.btn{border:none;border-radius:12px;padding:13px 16px;font-size:14px;font-weight:bold;cursor:pointer;background:var(--blue);color:white;transition:.18s ease;display:inline-flex;justify-content:center;align-items:center;gap:8px}.btn:hover{transform:translateY(-1px);background:var(--navy)}.btn.primary{background:#fff;color:var(--navy)}.btn.secondary{background:white;color:var(--blue);border:2px solid var(--blue)}.btn.light{background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.25)}.btn.danger{background:var(--red);color:white}.btn.small{padding:9px 11px;font-size:12px;border-radius:10px}.btn.locked{background:#eef5fc!important;color:var(--blue)!important;border:2px solid var(--line)!important;box-shadow:none!important}.save-status{font-size:13px;opacity:.92;align-self:center}.member-lock-note{display:none;margin-top:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:12px;font-size:13px;line-height:1.4;max-width:760px}.content{display:grid;grid-template-columns:1.13fr .87fr;gap:24px;padding:24px}.section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:18px}.section h3{margin:0 0 14px;color:var(--blue);display:flex;align-items:center;justify-content:space-between;gap:10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid.three{grid-template-columns:repeat(3,1fr)}label{display:block;font-weight:bold;font-size:14px;margin-bottom:6px}input,select,textarea{width:100%;box-sizing:border-box;padding:12px;border:1px solid #cbd8e6;border-radius:10px;font-size:15px;font-family:Arial,sans-serif;background:white}input[readonly]{background:#eef5fc;color:#0F2744;border-style:dashed}select.locked-select,select[disabled]{appearance:none;-webkit-appearance:none;-moz-appearance:none;background:#eef5fc!important;color:#0F2744;border-style:dashed;pointer-events:none;padding-right:12px}select.locked-select::-ms-expand,select[disabled]::-ms-expand{display:none}textarea{min-height:82px;resize:vertical;line-height:1.35}.helper{font-size:12px;color:var(--muted);line-height:1.35;margin-top:8px}.maps-helper{grid-column:1/-1;background:#eef5fc;border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--blue);font-size:13px;line-height:1.4}.maps-helper strong{display:block;margin-bottom:3px}.linked-dscr-box{grid-column:1/-1;background:#eef5fc;border:1px solid var(--line);border-radius:14px;padding:14px}.linked-dscr-box label{color:var(--blue)}.comp{border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:14px;background:white;box-shadow:0 6px 18px rgba(15,39,68,.04)}.comp-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.comp-title{font-size:20px;font-weight:bold;color:var(--blue)}.badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.badge{display:inline-block;background:#DDEAF7;color:var(--navy);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:bold}.badge.strong{background:#dff3e9;color:#17613a}.badge.good{background:#e7f1ff;color:#174e8a}.badge.limited{background:#fff1d6;color:#8a5a00}.badge.weak,.badge.excluded{background:#ffe0df;color:#9b2723}.adjustment{display:grid;grid-template-columns:1.05fr 1fr 1fr .7fr auto;gap:10px;align-items:end;margin-top:10px;padding:10px;border:1px dashed var(--line);border-radius:12px;background:#fbfdff}.results{background:var(--navy);color:white;border-radius:22px;padding:24px;position:sticky;top:10px}.big{font-size:40px;font-weight:bold;margin:10px 0;line-height:1}.confidence{font-size:22px;font-weight:bold;margin:8px 0 18px;color:#ffd46b;letter-spacing:1px}.line{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.2);padding:10px 0;gap:12px}.note,.report{margin-top:16px;background:rgba(255,255,255,.10);border-radius:14px;padding:14px;font-size:14px;line-height:1.4}.report h4{margin:0 0 8px}.report-item{border-top:1px solid rgba(255,255,255,.18);padding-top:8px;margin-top:8px}.small{font-size:12px;opacity:.8}.result-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.modal-backdrop{position:fixed;inset:0;background:rgba(15,39,68,.55);display:none;align-items:center;justify-content:center;z-index:9999;padding:18px}.modal{background:white;color:var(--navy);border-radius:20px;max-width:820px;width:100%;max-height:85vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line)}.modal-head h3{margin:0;color:var(--blue)}.modal-body{padding:18px 20px}.saved-list{display:grid;gap:12px}.saved-item{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--panel);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.saved-item h4{margin:0 0 6px;color:var(--blue)}.saved-meta{font-size:13px;color:var(--muted);line-height:1.5}.empty-state{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--muted);background:var(--panel);text-align:center}.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:white;border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);display:none;z-index:10000;max-width:360px}.toast strong{display:block;margin-bottom:4px}.address-status{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:bold;margin-top:8px;background:#fff1d6;color:#8a5a00;border:1px solid rgba(138,90,0,.18)}.address-status.valid{background:#dff3e9;color:#17613a;border-color:rgba(23,97,58,.18)}.address-status.warn{background:#fff1d6;color:#8a5a00;border-color:rgba(138,90,0,.18)}.address-status.invalid{background:#ffe0df;color:#9b2723;border-color:rgba(155,39,35,.18)}.distanceStatus.warn{color:#8a5a00;font-weight:bold}.distanceStatus.invalid{color:#9b2723;font-weight:bold}.distanceStatus.valid{color:#17613a;font-weight:bold}.field-note{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.3}.proximity-lock{display:flex;gap:8px;align-items:center}.proximity-lock input{flex:1}.lock-chip{white-space:nowrap;background:#eef5fc;color:var(--blue);border:1px solid var(--line);border-radius:999px;padding:10px 10px;font-size:12px;font-weight:bold}.pac-container{z-index:100000!important}.drg-place-wrap{position:relative}.drg-place-suggestions{display:none;position:absolute;left:0;right:0;top:100%;background:white;border:1px solid #cbd8e6;border-radius:0 0 12px 12px;box-shadow:0 10px 24px rgba(15,39,68,.18);z-index:10000;max-height:260px;overflow:auto}.drg-place-option{display:block;width:100%;padding:10px 12px;border:0;border-bottom:1px solid #edf2f7;background:white;color:#0F2744;text-align:left;font-size:14px;line-height:1.35;cursor:pointer}.drg-place-option:hover,.drg-place-option:focus{background:#f2f7fd}.drg-place-option small{display:block;color:#52677f;font-size:12px;margin-top:2px}.drg-place-message{padding:10px 12px;color:#52677f;font-size:13px;background:#fbfdff}
+@media(max-width:900px){body{padding:12px}.hero-row,.content{grid-template-columns:1fr}.grid,.grid.three,.adjustment{grid-template-columns:1fr}.results{position:static}.comp-head{display:block}.badges{justify-content:flex-start;margin-top:10px}.big{font-size:32px}.result-actions{grid-template-columns:1fr}.saved-item{grid-template-columns:1fr}}@media print{body{background:white;padding:0}.toolbar,.btn,.modal-backdrop,.toast,.section button{display:none!important}.calc{box-shadow:none;border-radius:0}.content{display:block}.results{position:static;margin:20px 24px;color:white}}
+
+
+/* DRG mobile optimization + soft results-column graphics
+   Desktop/default layout remains unchanged. These additions improve Wix mobile embeds
+   and add subtle visual texture to the dark blue results panel. */
+.results {
+  position: sticky;
+  top: 10px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 118% 12%, rgba(255,255,255,.16), transparent 30%),
+    radial-gradient(circle at 96% 72%, rgba(230,162,60,.18), transparent 28%),
+    linear-gradient(180deg, rgba(15,39,68,1), rgba(10,32,58,1));
+}
+.results::before {
+  content: "";
+  position: absolute;
+  right: -92px;
+  top: 96px;
+  width: 235px;
+  height: 235px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.13);
+  box-shadow:
+    inset 0 0 0 24px rgba(255,255,255,.035),
+    inset 0 0 0 62px rgba(255,255,255,.025),
+    0 20px 60px rgba(0,0,0,.10);
+  z-index: -1;
+}
+.results::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 22px;
+  width: 150px;
+  height: 150px;
+  opacity: .36;
+  z-index: -1;
+  background:
+    linear-gradient(135deg, transparent 0 42%, rgba(255,255,255,.18) 43% 46%, transparent 47%),
+    linear-gradient(35deg, transparent 0 52%, rgba(230,162,60,.23) 53% 56%, transparent 57%);
+  border-radius: 24px;
+  transform: rotate(-6deg);
+}
+.results > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (hover: none) {
+  .btn:hover { transform: none; }
+}
+
+@media (max-width: 900px) {
+  html, body { width: 100%; overflow-x: hidden; }
+  body { padding: 12px; }
+  .calc { border-radius: 20px; }
+  .header { padding: 24px 18px; }
+  .hero-row, .content { grid-template-columns: 1fr; gap: 18px; }
+  .header h2 { font-size: clamp(26px, 8vw, 34px); }
+  .header p { font-size: 14px; }
+  .hero-cards { grid-template-columns: 1fr; }
+  .toolbar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .toolbar .btn, .toolbar .save-status { width: 100%; }
+  .toolbar .save-status { grid-column: 1 / -1; text-align: center; }
+  .member-lock-note { max-width: none; }
+  .content { padding: 18px; }
+  .section { padding: 18px; border-radius: 16px; margin-bottom: 16px; }
+  .section h3 { align-items: flex-start; flex-direction: column; }
+  .section h3 .btn { width: 100%; }
+  .grid, .grid.three, .adjustment { grid-template-columns: 1fr; }
+  input, select, textarea { min-height: 46px; font-size: 16px; }
+  .linked-dscr-box, .maps-helper { grid-column: auto; }
+  .results { position: static; border-radius: 20px; padding: 22px 18px; }
+  .big { font-size: clamp(30px, 9vw, 38px); overflow-wrap: anywhere; }
+  .line { align-items: flex-start; }
+  .result-actions { grid-template-columns: 1fr; }
+  .comp { padding: 14px; border-radius: 16px; }
+  .comp-head { display: block; }
+  .comp-title { font-size: 18px; }
+  .badges { justify-content: flex-start; margin-top: 10px; }
+  .badge, .address-status, .lock-chip { white-space: normal; }
+  .proximity-lock { align-items: stretch; }
+  .proximity-lock input { min-width: 0; }
+  .adjustment { align-items: stretch; }
+  .adjustment .btn { width: 100%; }
+  .saved-item { grid-template-columns: 1fr; }
+  .modal-backdrop { padding: 12px; align-items: flex-start; }
+  .modal { max-height: calc(100vh - 24px); border-radius: 18px; }
+  .modal-head { padding: 16px; align-items: flex-start; }
+  .modal-body { padding: 16px; }
+  .toast { left: 12px; right: 12px; bottom: 12px; max-width: none; }
+}
+
+@media (max-width: 640px) {
+  body { padding: 8px; background: #ffffff; }
+  .calc { border-radius: 18px; box-shadow: 0 10px 24px rgba(15,39,68,.10); }
+  .header { padding: 22px 14px; }
+  .eyebrow { font-size: 11px; line-height: 1.25; }
+  .toolbar { grid-template-columns: 1fr; }
+  .content { padding: 14px; gap: 14px; }
+  .section { padding: 16px 14px; }
+  .hero-card { padding: 12px; }
+  .hero-card strong { font-size: 16px; }
+  .btn { width: 100%; min-height: 46px; padding: 12px 14px; }
+  .btn.small { width: auto; min-height: 38px; }
+  .section > .btn.secondary { width: 100%; }
+  .comp .btn.secondary, .comp .btn.danger { width: 100%; margin-top: 8px; }
+  .line { display: grid; grid-template-columns: 1fr; gap: 3px; }
+  .note, .report { padding: 12px; }
+  .results::before { right: -130px; top: 40px; opacity: .75; }
+  .results::after { right: -22px; bottom: 10px; opacity: .24; }
+}
+
+@media (max-width: 420px) {
+  .header h2 { font-size: 25px; }
+  .big { font-size: 28px; }
+  .confidence { font-size: 19px; }
+  .comp-title { font-size: 17px; }
+  label { font-size: 13px; }
+}
+
+
+
+/* Investor Intelligence Panel expansion */
+.results {
+  min-height: 940px;
+}
+.results .valuation-watermark {
+  position: absolute;
+  left: 22px;
+  bottom: 42px;
+  z-index: 0;
+  color: rgba(255,255,255,.035);
+  font-size: clamp(52px, 7vw, 86px);
+  font-weight: 950;
+  line-height: .86;
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transform: rotate(-7deg);
+}
+.results .blueprint-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .34;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+    radial-gradient(circle at 80% 38%, rgba(255,255,255,.14), transparent 2px),
+    radial-gradient(circle at 67% 52%, rgba(230,162,60,.18), transparent 2px),
+    radial-gradient(circle at 88% 66%, rgba(46,139,87,.16), transparent 2px);
+  background-size: 34px 34px, 34px 34px, 160px 160px, 190px 190px, 220px 220px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+}
+.intel-divider {
+  height: 1px;
+  margin: 18px 0 16px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.32), transparent);
+}
+.intel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-weight: 950;
+  letter-spacing: -.02em;
+  font-size: 17px;
+}
+.intel-head span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.78);
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.market-pulse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.075);
+  margin-bottom: 12px;
+}
+.pulse-label strong { display: block; color: #fff; font-size: 13px; }
+.pulse-label span { display: block; color: rgba(255,255,255,.70); font-size: 12px; margin-top: 3px; }
+.pulse-dots { display: inline-flex; gap: 5px; }
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(82,210,115,.95);
+  box-shadow: 0 0 14px rgba(82,210,115,.55);
+  animation: intelPulse 1.9s ease-in-out infinite;
+}
+.pulse-dot:nth-child(2){ animation-delay:.16s; }
+.pulse-dot:nth-child(3){ animation-delay:.32s; }
+.pulse-dot:nth-child(4){ animation-delay:.48s; }
+.pulse-dot:nth-child(5){ animation-delay:.64s; }
+@keyframes intelPulse { 0%,100%{opacity:.35; transform:scale(.82)} 50%{opacity:1; transform:scale(1.12)} }
+.intel-gauge-card, .intel-quality-card, .intel-map-card, .intel-why, .intel-insight, .intel-brand {
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.085);
+  border-radius: 18px;
+  padding: 14px;
+  margin-top: 12px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+}
+.intel-gauge-card {
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+.confidence-gauge {
+  --score: 0deg;
+  --intel-color: #ffd46b;
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at center, #0F2744 0 55%, transparent 56%),
+    conic-gradient(var(--intel-color) var(--score), rgba(255,255,255,.14) 0);
+  box-shadow: 0 16px 34px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.15);
+}
+.confidence-gauge strong {
+  display: block;
+  color: #fff;
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.gauge-copy strong { display:block; font-size: 15px; }
+.gauge-copy span { display:block; color: rgba(255,255,255,.72); font-size: 12px; line-height:1.38; margin-top:5px; }
+.intel-quality-title {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  color:rgba(255,255,255,.76);
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  margin-bottom:9px;
+}
+.intel-score-track {
+  height: 13px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.13);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+}
+.intel-score-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #D9534F, #E6A23C 45%, #2E8B57 100%);
+  transition: width .28s ease;
+}
+.intel-micro-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+  margin-top:12px;
+}
+.intel-metric-tile {
+  min-height: 82px;
+  border-radius: 15px;
+  padding: 11px;
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.14);
+}
+.intel-metric-tile span {
+  display:block;
+  color:rgba(255,255,255,.62);
+  font-size:10px;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.intel-metric-tile strong {
+  display:block;
+  margin-top:8px;
+  color:white;
+  font-size:18px;
+  letter-spacing:-.03em;
+  line-height:1.05;
+}
+.intel-map-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 196px;
+}
+.intel-map-card::before {
+  content:"";
+  position:absolute;
+  inset:12px;
+  border-radius:16px;
+  opacity:.48;
+  background:
+    linear-gradient(90deg, transparent 0 20%, rgba(255,255,255,.16) 21% 22%, transparent 23% 100%),
+    linear-gradient(0deg, transparent 0 30%, rgba(255,255,255,.13) 31% 32%, transparent 33% 100%),
+    linear-gradient(35deg, transparent 0 44%, rgba(255,255,255,.11) 45% 46%, transparent 47% 100%),
+    linear-gradient(120deg, transparent 0 54%, rgba(230,162,60,.15) 55% 56%, transparent 57% 100%);
+}
+.map-pin {
+  position:absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: #ffd46b;
+  box-shadow: 0 0 18px rgba(255,212,107,.45);
+}
+.map-pin::after { content:""; position:absolute; inset:4px; border-radius:50%; background:#0F2744; }
+.map-pin.subject { left: 48%; top: 44%; background:#52d273; box-shadow:0 0 18px rgba(82,210,115,.55); }
+.map-pin.p1 { left: 68%; top: 28%; }
+.map-pin.p2 { left: 28%; top: 58%; }
+.map-pin.p3 { left: 76%; top: 70%; }
+.map-pin.p4 { left: 38%; top: 25%; }
+.map-copy {
+  position:relative;
+  z-index:1;
+  padding-top: 118px;
+}
+.map-copy strong { display:block; color:white; font-size:14px; }
+.map-copy span { display:block; color:rgba(255,255,255,.70); font-size:12px; margin-top:4px; line-height:1.35; }
+.intel-why h4, .intel-insight h4 { margin:0 0 8px; color:#fff; font-size:14px; }
+.intel-why ul { list-style:none; padding:0; margin:0; display:grid; gap:7px; }
+.intel-why li { color:rgba(255,255,255,.78); font-size:12.5px; line-height:1.35; }
+.intel-why li::before { content:"✓"; color:#52d273; font-weight:950; margin-right:7px; }
+.intel-insight p { margin:0; color:rgba(255,255,255,.78); font-size:13px; line-height:1.45; }
+.intel-brand {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:14px;
+  color:rgba(255,255,255,.70);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-weight:900;
+}
+.intel-brand-mark {
+  width:34px;height:34px;border-radius:13px;display:grid;place-items:center;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);color:#fff;font-size:15px;
+}
+
+@media(max-width:900px){
+  .results { min-height: auto; }
+  .results .valuation-watermark { display:none; }
+  .intel-gauge-card { grid-template-columns: 96px 1fr; }
+  .confidence-gauge { width:92px; height:92px; }
+  .intel-map-card { min-height: 180px; }
+}
+@media(max-width:520px){
+  .intel-head { align-items:flex-start; flex-direction:column; }
+  .market-pulse { align-items:flex-start; flex-direction:column; }
+  .intel-gauge-card { grid-template-columns: 1fr; text-align:center; }
+  .confidence-gauge { margin: 0 auto; }
+  .intel-micro-grid { grid-template-columns: 1fr; }
+  .intel-brand { align-items:flex-start; flex-direction:column; }
+}
+
+
+
+/* Right-column vertical fill refinement
+   Spaces the Investor Intelligence Panel so the blue column feels intentionally full on desktop,
+   while keeping the mobile layout compact. */
+@media (min-width: 901px) {
+  .results {
+    min-height: 1320px;
+    padding: 30px 26px;
+  }
+  .intel-divider {
+    margin: 26px 0 24px;
+  }
+  .market-pulse {
+    min-height: 92px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .intel-gauge-card,
+  .intel-quality-card,
+  .intel-map-card,
+  .intel-why,
+  .intel-insight,
+  .intel-brand,
+  .note,
+  .report {
+    margin-top: 20px;
+  }
+  .intel-gauge-card {
+    min-height: 164px;
+    padding: 20px;
+    grid-template-columns: 132px 1fr;
+  }
+  .confidence-gauge {
+    width: 122px;
+    height: 122px;
+  }
+  .confidence-gauge strong {
+    font-size: 27px;
+  }
+  .gauge-copy strong {
+    font-size: 17px;
+  }
+  .gauge-copy span {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .intel-quality-card {
+    padding: 20px;
+  }
+  .intel-score-track {
+    height: 16px;
+  }
+  .intel-micro-grid {
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .intel-metric-tile {
+    min-height: 104px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .intel-metric-tile strong {
+    font-size: 20px;
+  }
+  .intel-map-card {
+    min-height: 320px;
+    padding: 18px;
+  }
+  .intel-map-card::before {
+    inset: 16px;
+    opacity: .56;
+    background-size: auto;
+  }
+  .map-copy {
+    padding-top: 222px;
+  }
+  .map-copy strong {
+    font-size: 15px;
+  }
+  .map-copy span {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .intel-why {
+    min-height: 166px;
+    padding: 20px;
+  }
+  .intel-why h4,
+  .intel-insight h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .intel-why ul {
+    gap: 11px;
+  }
+  .intel-why li {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .intel-insight {
+    min-height: 154px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .intel-insight p {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .intel-brand {
+    min-height: 82px;
+    padding: 18px;
+  }
+  .result-actions {
+    margin-top: 22px;
+  }
+  .note,
+  .report {
+    padding: 18px;
+    line-height: 1.55;
+  }
+  .report {
+    min-height: 170px;
+  }
+  .small[style] {
+    margin-top: 22px !important;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.14);
+  }
+}
+
+
+
+/* Extra desktop vertical spread for the live Wix investor-tools embed
+   The right blue column has a lot of available vertical room on desktop, so this version
+   intentionally gives the Investor Intelligence Panel a taller, more evenly distributed feel. */
+@media (min-width: 901px) {
+  .results {
+    min-height: 2050px;
+    padding: 38px 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #rangeLabel {
+    margin-bottom: 16px;
+  }
+
+  .big {
+    margin: 22px 0 30px;
+    font-size: 44px;
+  }
+
+  .line {
+    padding: 18px 0;
+  }
+
+  .confidence {
+    margin: 22px 0 34px;
+    font-size: 25px;
+    letter-spacing: 2px;
+  }
+
+  .intel-divider {
+    margin: 48px 0 38px;
+  }
+
+  .intel-head {
+    margin-bottom: 26px;
+    font-size: 19px;
+  }
+
+  .market-pulse {
+    min-height: 145px;
+    padding: 24px;
+    margin-bottom: 42px;
+  }
+
+  .pulse-label strong {
+    font-size: 15px;
+  }
+
+  .pulse-label span {
+    font-size: 13px;
+    line-height: 1.55;
+    max-width: 280px;
+  }
+
+  .pulse-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .intel-gauge-card,
+  .intel-quality-card,
+  .intel-map-card,
+  .intel-why,
+  .intel-insight,
+  .intel-brand,
+  .note,
+  .report {
+    margin-top: 42px;
+  }
+
+  .intel-gauge-card {
+    min-height: 220px;
+    padding: 26px;
+    grid-template-columns: 154px 1fr;
+  }
+
+  .confidence-gauge {
+    width: 142px;
+    height: 142px;
+  }
+
+  .confidence-gauge strong {
+    font-size: 31px;
+  }
+
+  .gauge-copy strong {
+    font-size: 18px;
+  }
+
+  .gauge-copy span {
+    font-size: 13.5px;
+    line-height: 1.7;
+    margin-top: 10px;
+  }
+
+  .intel-quality-card {
+    padding: 26px;
+    min-height: 300px;
+  }
+
+  .intel-quality-title {
+    margin-bottom: 18px;
+  }
+
+  .intel-score-track {
+    height: 18px;
+  }
+
+  .intel-micro-grid {
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .intel-metric-tile {
+    min-height: 124px;
+    padding: 18px;
+  }
+
+  .intel-metric-tile strong {
+    font-size: 22px;
+    margin-top: 12px;
+  }
+
+  .intel-map-card {
+    min-height: 460px;
+    padding: 24px;
+  }
+
+  .intel-map-card::before {
+    inset: 22px;
+    opacity: .62;
+  }
+
+  .map-copy {
+    padding-top: 346px;
+  }
+
+  .map-copy strong {
+    font-size: 16px;
+  }
+
+  .map-copy span {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .intel-why {
+    min-height: 245px;
+    padding: 26px;
+  }
+
+  .intel-why h4,
+  .intel-insight h4 {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .intel-why ul {
+    gap: 16px;
+  }
+
+  .intel-why li {
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  .intel-insight {
+    min-height: 230px;
+    padding: 26px;
+  }
+
+  .intel-insight p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .intel-brand {
+    min-height: 120px;
+    padding: 24px;
+  }
+
+  .intel-brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+  }
+
+  .result-actions {
+    margin-top: 44px;
+  }
+
+  .result-actions .btn {
+    min-height: 54px;
+  }
+
+  .note {
+    min-height: 128px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    line-height: 1.75;
+  }
+
+  .report {
+    min-height: 300px;
+    padding: 24px;
+    line-height: 1.7;
+  }
+
+  .report h4 {
+    margin-bottom: 18px;
+  }
+
+  .report-item {
+    padding-top: 14px;
+    margin-top: 14px;
+  }
+
+  .small[style] {
+    margin-top: 42px !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .results .valuation-watermark {
+    bottom: 170px;
+    font-size: clamp(72px, 8vw, 112px);
+  }
+}
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+</head>
+<body>
+<div class="calc">
+  <div class="header"><div class="hero-row"><div><div class="eyebrow">Investor Workspace</div><h2>Comparable Sales & Rental Income Calculator</h2><p>Estimate as-is value, ARV, or market rent with a streamlined comparable sales analysis. Property locations are verified for consistency, and comparable distances are calculated for you to save time and support a cleaner valuation review.</p></div><div class="hero-cards"><div class="hero-card"><strong id="heroEstimate">--</strong><span>Current best estimate</span></div><div class="hero-card"><strong id="heroConfidence">--</strong><span>Confidence level</span></div><div class="hero-card"><strong id="heroSaved">Not saved yet</strong><span>Save status</span></div></div></div><div class="toolbar"><button class="btn primary locked" id="saveBtn">🔒 Sign In to Save This Analysis</button><button class="btn light locked" id="loadSavedBtn">🔒 Sign In to View Saved</button><button class="btn light" id="duplicateBtn">Duplicate</button><button class="btn light" id="exportBtn">Export / Print</button><span class="save-status" id="saveStatus">Checking member login...</span></div><div class="member-lock-note" id="memberLockNote"><strong>🔒 Sign in to save this analysis</strong>Save comparable analyses, link them to DSCR scenarios or fix & flip projects, and access your investor records from any device.</div></div>
+  <div class="content"><div>
+    <div class="section"><h3>Analysis Details</h3><div class="grid"><div><label>Analysis Name</label><input type="text" id="analysisName" value="New Comparable Analysis"></div><div><label>Analysis Purpose</label><select id="analysisPurpose"><option>Investor Deal Review</option><option>Estimated ARV</option><option>Estimated As-Is Value</option><option>Market Rent Review</option><option>Refinance Review</option><option>Purchase Offer Support</option></select></div><div><label>Analysis Type</label><select id="analysisType"><option value="asis">Sales Comparison</option><option value="arv">ARV Comparison</option><option value="rent">Rental Income</option></select></div><div><label>Market Type</label><select id="marketType"><option value="urban">Urban / Suburban</option><option value="rural">Rural</option></select></div><div><label>Status</label><select id="analysisStatus"><option>Draft</option><option>Saved</option><option>Reviewing</option><option>Ready for Submission</option><option>Archived</option></select></div><div><label>Confidence Override</label><select id="confidenceOverride"><option value="">Use Calculator Confidence</option><option>High</option><option>Good</option><option>Moderate</option><option>Limited</option></select></div><div class="linked-dscr-box"><label>Optional: Link to Saved DSCR Scenario</label><select id="linkedDscrScenario"><option value="">Not linked to a DSCR scenario</option></select><div class="helper" id="linkedDscrHelper">Save or load DSCR scenarios on this page, then connect this comp analysis to the matching rental loan scenario.</div></div><div class="linked-dscr-box"><label>Optional: Link to Saved Fix & Flip Project</label><select id="linkedFixFlipProject"><option value="">Not linked to a fix & flip project</option></select><div class="helper" id="linkedFixFlipHelper">Save or load fix & flip projects on this page, then connect this comp analysis to the matching rehab project.</div></div></div></div>
+    <div class="section"><h3>Subject Property</h3><div class="grid"><div><label>Property Type</label><select id="propertyType"><option>Single Family</option><option>2-4 Unit</option><option>Condo</option><option>Townhome</option><option>Mixed Use</option><option>Multifamily</option></select></div><div id="subjectPriceWrap"><label id="subjectPriceLabel">Subject List Price / Target Value</label><input type="text" inputmode="numeric" class="moneyField" id="subjectPrice" value="250000"></div><div><label>Street Address</label><input type="text" id="subjectStreet" placeholder="Start typing, then select the property address"></div><div><label>Apt / Unit</label><input type="text" id="subjectUnit" placeholder="Optional"></div><div><label>City</label><input type="text" id="subjectCity" placeholder="Cleveland"></div><div><label>State</label><input type="text" id="subjectState" placeholder="OH"></div><div><label>ZIP Code</label><input type="text" id="subjectZip" placeholder="44114"></div><div><label>Bedrooms</label><input type="number" id="subjectBeds" value="3"></div><div><label>Bathrooms</label><input type="number" step="0.5" id="subjectBaths" value="2"></div><div><label>Square Feet</label><input type="number" id="subjectSqft" value="1500"></div><div><label>Year Built</label><input type="number" id="subjectYearBuilt" placeholder="1955"></div><div><label>Property Condition</label><select id="subjectCondition"><option>Average</option><option>Needs Work</option><option>Updated</option><option>Fully Renovated</option><option>Luxury</option></select></div><div class="maps-helper"><strong id="mapsStatus">Address tools loading...</strong><span>Select the subject property first. Comparable distances will calculate from that location.</span><div id="subjectAddressStatus" class="address-status warn">⚠️ Subject property not selected yet</div></div></div></div>
+    <div class="section"><h3><span id="compsHeading">Comparable Sales</span><button class="btn small secondary" type="button" onclick="addComp()">Add Comparable</button></h3><div id="comps"></div><button class="btn secondary" type="button" onclick="addComp()">Add Additional Comparable</button></div>
+    <div class="section"><h3>Notes</h3><textarea id="notes" placeholder="Add deal notes, comp concerns, repair assumptions, rent notes, or valuation context."></textarea></div>
+  </div><div class="results"><div class="blueprint-grid" aria-hidden="true"></div><div class="valuation-watermark" aria-hidden="true">Valuation<br>Analysis</div><div id="rangeLabel">Estimated Value Range</div><div class="big" id="estimatedRange">--</div><div class="line"><span id="bestEstimateLabel">Best Estimate</span><strong id="estimatedValue">--</strong></div><div class="line"><span>Confidence</span><strong id="confidenceText">--</strong></div><div class="confidence" id="confidenceStars">--</div><div class="line"><span id="avgAdjustedLabel">Weighted Avg Adjusted Comp</span><strong id="avgAdjusted">--</strong></div><div class="line"><span id="avgPpsfLabel">Weighted Avg Price / Sq Ft</span><strong id="avgPpsf">--</strong></div><div class="line"><span id="subjectPpsfLabel">Subject Price / Sq Ft</span><strong id="subjectPpsf">--</strong></div><div class="line"><span>Valid Comps Used</span><strong id="compCount">--</strong></div><div class="line"><span>Excluded Comps</span><strong id="excludedCount">--</strong></div>
+      <div class="intel-divider"></div>
+      <div class="intel-head">Investor Intelligence <span>Live analysis</span></div>
+      <div class="market-pulse"><div class="pulse-label"><strong id="intelPulseTitle">Market Activity</strong><span id="intelPulseText">Add comparables to activate the analysis panel.</span></div><div class="pulse-dots" aria-hidden="true"><i class="pulse-dot"></i><i class="pulse-dot"></i><i class="pulse-dot"></i><i class="pulse-dot"></i><i class="pulse-dot"></i></div></div>
+      <div class="intel-gauge-card"><div class="confidence-gauge" id="confidenceGauge"><strong id="intelScore">--</strong></div><div class="gauge-copy"><strong id="intelConfidenceLabel">Confidence Score</strong><span id="intelConfidenceCopy">The score improves as you add stronger, closer, and more recent comparable properties.</span></div></div>
+      <div class="intel-quality-card"><div class="intel-quality-title"><span>Comparable Quality</span><strong id="intelQualityLabel">--</strong></div><div class="intel-score-track"><div class="intel-score-fill" id="intelQualityFill"></div></div><div class="intel-micro-grid"><div class="intel-metric-tile"><span>Avg Distance</span><strong id="intelAvgDistance">--</strong></div><div class="intel-metric-tile"><span>Strong Comps</span><strong id="intelStrongComps">--</strong></div><div class="intel-metric-tile"><span>Newest Sale</span><strong id="intelNewestSale">--</strong></div><div class="intel-metric-tile"><span>Subject Size</span><strong id="intelSubjectSize">--</strong></div></div></div>
+      <div class="intel-map-card"><i class="map-pin subject"></i><i class="map-pin p1"></i><i class="map-pin p2"></i><i class="map-pin p3"></i><i class="map-pin p4"></i><div class="map-copy"><strong id="intelMapTitle">Neighborhood Support Map</strong><span id="intelMapCopy">Select subject and comparable addresses to build a distance-weighted view.</span></div></div>
+      <div class="intel-why"><h4>Why this confidence?</h4><ul id="intelWhyList"><li>Add comparable properties to see the confidence drivers.</li></ul></div>
+      <div class="intel-insight"><h4>Investor Insight</h4><p id="intelInsightText">Once comparable data is entered, this panel will summarize whether the subject appears supported by the current comp set.</p></div>
+      <div class="intel-brand"><div><span>Powered by</span><br>DRG Mortgage Investor Analytics</div><div class="intel-brand-mark">DRG</div></div>
+      <div class="result-actions"><button class="btn primary locked" id="saveBtnSide">🔒 Sign In to Save This Analysis</button><button class="btn light locked" id="loadSavedBtnSide">🔒 Sign In to View Saved</button></div><div class="note" id="analysisNote">This calculator places more emphasis on comparable properties that are closer to the subject property and sold more recently. Mileage is calculated automatically as straight-line distance.</div><div class="report"><h4>Comparable Strength Summary</h4><div id="compReport">Add comparable sales to see the report.</div></div><div class="small" style="margin-top:14px;">For educational purposes only. This is not an appraisal, valuation, rent guarantee, or loan approval.</div></div></div>
+</div>
+<div class="modal-backdrop" id="savedModal"><div class="modal"><div class="modal-head"><h3>Saved Comparable Analyses</h3><button class="btn small secondary" id="closeModalBtn">Close</button></div><div class="modal-body"><div id="savedList" class="saved-list"><div class="empty-state">No saved analyses loaded yet.</div></div></div></div></div><div class="toast" id="toast"><strong id="toastTitle">Saved</strong><span id="toastBody">Analysis saved.</span></div>
+<script>
+let compIndex=0,lastScenario=null,savedComparableAnalyses=[],savedDscrScenarios=[],savedFixFlipProjects=[],lastSavedAt=null,wixReady=false,loggedIn=false,unsavedChanges=true,subjectLatLng=null,googleReady=false;
+const GOOGLE_MAPS_API_KEY="AIzaSyCInjYwoeRRdQtSil0a7ckQwHl8kN6a6Tw";
+const amenities=[["site","multipleAcres","Multiple Acres",15000],["site","cornerLot","Corner Lot",5000],["site","culdesac","Cul-de-sac Lot",5000],["site","waterfront","Waterfront",30000],["site","woodedLot","Wooded Lot",7500],["site","view","Premium View",10000],["exterior","deck","Deck",8000],["exterior","patio","Patio",6000],["exterior","fencedYard","Fenced Yard",5000],["exterior","abovePool","Above-Ground Pool",4000],["exterior","ingroundPool","Inground Pool",25000],["exterior","poleBarn","Pole Barn",20000],["exterior","detachedGarage","Detached Garage",18000],["interior","fireplace","Fireplace",3000],["interior","centralAir","Central Air",6000],["interior","finishedBasement","Finished Basement",20000],["interior","finishedAttic","Finished Attic",12000],["interior","updatedKitchen","Updated Kitchen",18000],["interior","updatedBath","Updated Bathroom",10000],["interior","newRoof","Newer Roof",12000],["parking","garage1","1-Car Garage",8000],["parking","garage2","2-Car Garage",15000],["parking","garage3","3-Car Garage",25000],["parking","rvParking","RV Parking",7500],["misc","solar","Solar Panels",15000],["misc","guestHouse","Guest House",35000],["misc","workshop","Workshop",15000],["misc","elevator","Elevator",20000],["custom","other","Other Custom Adjustment",0]];
+function money(n){return "$"+Math.round(Number(n)||0).toLocaleString()}function unmoney(v){return parseFloat(String(v||"").replace(/[^0-9.-]/g,""))||0}function val(id){const el=document.getElementById(id);return el?el.value:""}function num(id){return unmoney(val(id))}function setVal(id,value){const el=document.getElementById(id);if(!el)return;if(el.classList.contains("moneyField")){setMoneyValue(el,value||0)}else{el.value=value??""}}function setMoneyValue(el,value){if(!el)return;if(el.cleave){el.cleave.setRawValue(String(Math.round(Number(value)||0)))}else{el.value=String(Math.round(Number(value)||0))}}function setupMoneyFields(){document.querySelectorAll(".moneyField").forEach(el=>{if(el.dataset.cleaveReady==="yes")return;el.dataset.cleaveReady="yes";if(window.Cleave){el.cleave=new Cleave(el,{numeral:true,numeralThousandsGroupStyle:"thousand",prefix:"$",rawValueTrimPrefix:true,noImmediatePrefix:false,numeralDecimalScale:0})}})}function analysis(){return val("analysisType")}function isRentMode(){return analysis()==="rent"}function isArvMode(){return analysis()==="arv"}
+function fullAddress(prefix){const parts=[];[prefix+"Street",prefix+"Unit",prefix+"City",prefix+"State",prefix+"Zip"].forEach((id,i)=>{const v=val(id);if(v)parts.push(i===1?"Unit "+v:v)});return parts.join(", ")}function hasCoordinates(loc){return loc&&loc.latitude!==null&&loc.latitude!==undefined&&loc.longitude!==null&&loc.longitude!==undefined}function locationFromInput(prefix,input){input=input||document.getElementById(prefix+"Street");const latitude=input&&input.dataset.lat?Number(input.dataset.lat):null,longitude=input&&input.dataset.lng?Number(input.dataset.lng):null;return{formattedAddress:(input&&input.dataset.formattedAddress)||fullAddress(prefix),street:val(prefix+"Street"),unit:val(prefix+"Unit"),city:val(prefix+"City"),county:(input&&input.dataset.county)||"",state:val(prefix+"State"),zip:val(prefix+"Zip"),country:"US",latitude:latitude,longitude:longitude,placeId:(input&&input.dataset.placeId)||"",confirmed:!!(input&&input.dataset.googleVerified==="yes")}}function addressObject(prefix){const loc=locationFromInput(prefix);if(!loc.formattedAddress)return undefined;return{formatted:loc.formattedAddress,streetAddress:{name:loc.street,number:"",apt:loc.unit},city:loc.city,subdivision:loc.state,postalCode:loc.zip,country:"US",location:hasCoordinates(loc)?{latitude:loc.latitude,longitude:loc.longitude}:undefined}}
+function parseAddressComponents(place,prefix,input){if(!place||!place.address_components)return;let streetNumber="",route="",city="",county="",state="",zip="";place.address_components.forEach(c=>{const t=c.types||[];if(t.includes("street_number"))streetNumber=c.long_name;if(t.includes("route"))route=c.long_name;if(t.includes("locality"))city=c.long_name;if(!city&&t.includes("postal_town"))city=c.long_name;if(!city&&t.includes("sublocality"))city=c.long_name;if(t.includes("administrative_area_level_2"))county=(c.long_name||"").replace(/ County$/i,"");if(t.includes("administrative_area_level_1"))state=c.short_name;if(t.includes("postal_code"))zip=c.long_name});const streetLine=[streetNumber,route].filter(Boolean).join(" ")||place.formatted_address||"";if(prefix==="comp"&&input){const comp=input.closest(".comp");if(comp){const set=(sel,value)=>{const el=comp.querySelector(sel);if(el)el.value=value||""};set(".compStreet",streetLine);set(".compCity",city);set(".compState",state);set(".compZip",zip);input.dataset.formattedAddress=place.formatted_address||[streetLine,city,state,zip].filter(Boolean).join(", ");input.dataset.placeId=place.place_id||"";input.dataset.county=county;return}}setVal(prefix+"Street",streetLine);setVal(prefix+"City",city);setVal(prefix+"State",state);setVal(prefix+"Zip",zip);const target=input||document.getElementById(prefix+"Street");if(target){target.dataset.formattedAddress=place.formatted_address||fullAddress(prefix);target.dataset.placeId=place.place_id||"";target.dataset.county=county}}
+function setStatus(el,kind,text){if(!el)return;el.classList.remove("valid","warn","invalid");el.classList.add(kind);el.innerText=text}
+function updateSubjectAddressStatus(kind,text){setStatus(document.getElementById("subjectAddressStatus"),kind,text)}
+function updateCompAddressStatus(comp,kind,text){setStatus(comp.querySelector(".compAddressStatus"),kind,text)}
+function setDistanceStatus(comp,kind,text){const status=comp.querySelector(".distanceStatus");if(!status)return;status.classList.remove("valid","warn","invalid");status.classList.add(kind);status.innerText=text}
+function maxPreferredDistance(){return val("marketType")==="rural"?20:5}
+function maxStrongDistance(){return val("marketType")==="rural"?10:2}
+
+function latOf(point){if(!point)return null;if(typeof point.lat==="function")return point.lat();if(point.lat!==undefined)return Number(point.lat);if(point.latitude!==undefined)return Number(point.latitude);return null}
+function lngOf(point){if(!point)return null;if(typeof point.lng==="function")return point.lng();if(point.lng!==undefined)return Number(point.lng);if(point.longitude!==undefined)return Number(point.longitude);return null}
+function makePoint(lat,lng){return{lat:Number(lat),lng:Number(lng)}}
+function setLatLngOnInput(input,latLng){input.dataset.lat=latOf(latLng);input.dataset.lng=lngOf(latLng);input.dataset.googleVerified="yes"}
+function clearLatLngOnInput(input){if(!input)return;delete input.dataset.lat;delete input.dataset.lng;delete input.dataset.formattedAddress;delete input.dataset.placeId;delete input.dataset.county;input.dataset.googleVerified="no"}
+function getLatLngFromComp(comp){const street=comp.querySelector(".compStreet");if(street&&street.dataset.lat&&street.dataset.lng)return makePoint(parseFloat(street.dataset.lat),parseFloat(street.dataset.lng));return null}
+function calcMiles(a,b){const lat1=latOf(a),lng1=lngOf(a),lat2=latOf(b),lng2=lngOf(b);if(lat1===null||lng1===null||lat2===null||lng2===null)return 0;const R=3958.7613,toRad=n=>n*Math.PI/180,dLat=toRad(lat2-lat1),dLng=toRad(lng2-lng1);const h=Math.sin(dLat/2)**2+Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLng/2)**2;return 2*R*Math.asin(Math.sqrt(h))}
+function updateAllDistances(){document.querySelectorAll(".comp").forEach(updateDistanceForComp);calculate()}
+function updateDistanceForComp(comp){const prox=comp.querySelector(".proximity");if(!prox)return;const compLatLng=getLatLngFromComp(comp);if(subjectLatLng&&compLatLng){const miles=calcMiles(subjectLatLng,compLatLng);prox.value=miles?miles.toFixed(2):"";const preferred=maxPreferredDistance(),strong=maxStrongDistance();if(miles>preferred){updateCompAddressStatus(comp,"warn","⚠️ Outside typical range");setDistanceStatus(comp,"warn","Calculated at "+miles.toFixed(2)+" mi. This is outside the preferred "+preferred+" mi range. You can still use it when the comparable is well supported.")}else if(miles>strong){updateCompAddressStatus(comp,"valid","✅ Location confirmed");setDistanceStatus(comp,"warn","Calculated at "+miles.toFixed(2)+" mi. Usable, but farther than the strongest comparable range.")}else{updateCompAddressStatus(comp,"valid","✅ Location confirmed");setDistanceStatus(comp,"valid","Calculated at "+miles.toFixed(2)+" mi from the subject property.")}}else{prox.value="";if(!subjectLatLng){setDistanceStatus(comp,"warn","Select the subject address first.")}else{setDistanceStatus(comp,"warn","Select this comparable address to calculate distance.")}if(comp.querySelector(".compStreet")?.value){updateCompAddressStatus(comp,"warn","⚠️ Check address")}else{updateCompAddressStatus(comp,"warn","⚠️ Address not selected yet")}}}
+
+function normalizeNewPlaceDetails(details){details=details||{};const comps=(details.addressComponents||details.address_components||[]).map(function(c){return{long_name:c.longText||c.long_name||"",short_name:c.shortText||c.short_name||c.longText||c.long_name||"",types:c.types||[]}});const lat=details.location&&(details.location.latitude!==undefined?details.location.latitude:details.location.lat);const lng=details.location&&(details.location.longitude!==undefined?details.location.longitude:details.location.lng);return{address_components:comps,formatted_address:details.formattedAddress||details.formatted_address||"",place_id:details.id||details.placeId||details.place_id||"",geometry:{location:{lat:function(){return Number(lat)||0},lng:function(){return Number(lng)||0}}}}}
+function ensurePlacesNewStyles(input){const parent=input.parentElement;if(parent&&!parent.classList.contains("drg-place-wrap")){parent.classList.add("drg-place-wrap")}}
+function setupPlacesNewAutocomplete(input,onSelect,onDirty,onStatus){if(!input)return;if(!GOOGLE_MAPS_API_KEY||GOOGLE_MAPS_API_KEY.indexOf("PASTE_")===0){if(onStatus)onStatus("check","Address lookup not connected","Add your website key in the HTML to turn on address suggestions.");return}if(input.dataset.placesNewReady==="yes")return;input.dataset.placesNewReady="yes";input.setAttribute("autocomplete","off");ensurePlacesNewStyles(input);let box=document.createElement("div");box.className="drg-place-suggestions";input.parentElement.appendChild(box);let timer=null,requestId=0,sessionToken=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now()+Math.random());function hide(){box.style.display="none"}function showMessage(msg){box.innerHTML='<div class="drg-place-message">'+escapeHtml(msg)+'</div>';box.style.display="block"}function labelFor(pred){return (pred&&pred.text&&pred.text.text)||"Property address"}async function getPredictions(q){const res=await fetch("https://places.googleapis.com/v1/places:autocomplete",{method:"POST",headers:{"Content-Type":"application/json","X-Goog-Api-Key":GOOGLE_MAPS_API_KEY,"X-Goog-FieldMask":"suggestions.placePrediction.place,suggestions.placePrediction.placeId,suggestions.placePrediction.text,suggestions.placePrediction.structuredFormat"},body:JSON.stringify({input:q,includedRegionCodes:["us"],sessionToken:sessionToken})});if(!res.ok)throw new Error("Address suggestions unavailable");const data=await res.json();return (data.suggestions||[]).map(function(s){return s.placePrediction}).filter(Boolean)}async function getDetails(pred){const resource=pred.place||("places/"+encodeURIComponent(pred.placeId));const url="https://places.googleapis.com/v1/"+resource+"?fields=id,formattedAddress,location,addressComponents";const res=await fetch(url,{headers:{"X-Goog-Api-Key":GOOGLE_MAPS_API_KEY}});if(!res.ok)throw new Error("Address details unavailable");return normalizeNewPlaceDetails(await res.json())}input.addEventListener("input",function(){if(input.dataset.justSelected==="yes"){input.dataset.justSelected="no";return}if(onDirty)onDirty();clearTimeout(timer);const q=input.value.trim();if(q.length<3){hide();return}timer=setTimeout(async function(){const thisRequest=++requestId;try{const preds=await getPredictions(q);if(thisRequest!==requestId)return;if(!preds.length){showMessage("No matching property addresses found yet.");return}box.innerHTML=preds.slice(0,6).map(function(pred,i){const main=(pred.structuredFormat&&pred.structuredFormat.mainText&&pred.structuredFormat.mainText.text)||labelFor(pred);const secondary=(pred.structuredFormat&&pred.structuredFormat.secondaryText&&pred.structuredFormat.secondaryText.text)||"";return '<button type="button" class="drg-place-option" data-idx="'+i+'"><span>'+escapeHtml(main)+'</span>'+(secondary?'<small>'+escapeHtml(secondary)+'</small>':'')+'</button>'}).join("");box.style.display="block";Array.from(box.querySelectorAll(".drg-place-option")).forEach(function(btn){btn.addEventListener("mousedown",function(e){e.preventDefault()});btn.addEventListener("click",async function(){const pred=preds[Number(btn.dataset.idx)];showMessage("Confirming property location...");try{const place=await getDetails(pred);input.dataset.justSelected="yes";hide();sessionToken=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now()+Math.random());onSelect(place)}catch(err){if(onStatus)onStatus("error","Address lookup unavailable","Please try again or enter the address manually.")}})})}catch(err){showMessage("Address suggestions are unavailable right now.")}},280)});input.addEventListener("blur",function(){setTimeout(hide,180)})}
+
+function initAutocompleteForInput(input,prefix,onSelect){if(!input||input.dataset.autocompleteReady==="yes")return;input.dataset.autocompleteReady="yes";setupPlacesNewAutocomplete(input,function(place){if(!place||!place.geometry||!place.geometry.location){showToast("Check address","Please choose a full property address from the list.");return}input.dataset.justSelected="yes";parseAddressComponents(place,prefix,input);setLatLngOnInput(input,place.geometry.location);onSelect(place)},function(){clearLatLngOnInput(input);if(prefix==="subject"){subjectLatLng=null;updateSubjectAddressStatus("warn","⚠️ Subject address changed — reselect address");updateAllDistances()}else{const comp=input.closest(".comp");if(comp){updateCompAddressStatus(comp,"warn","⚠️ Address changed — reselect address");updateDistanceForComp(comp)}}},function(mode,title,msg){document.getElementById("mapsStatus").innerText=title||msg||"Address tools ready"})}
+function initGoogleFeatures(){googleReady=true;document.getElementById("mapsStatus").innerText="Address tools ready";updateSubjectAddressStatus("warn","⚠️ Subject property not selected yet");initAutocompleteForInput(document.getElementById("subjectStreet"),"subject",place=>{subjectLatLng=makePoint(latOf(place.geometry.location),lngOf(place.geometry.location));updateSubjectAddressStatus("valid","✅ Subject property confirmed");updateAllDistances();markUnsaved()});document.querySelectorAll(".comp").forEach(initAutocompleteForComp)}
+function loadGoogleMaps(){if(!GOOGLE_MAPS_API_KEY||GOOGLE_MAPS_API_KEY.includes("PASTE_")){document.getElementById("mapsStatus").innerText="Add the address lookup key in the HTML";return}initGoogleFeatures()}
+function initAutocompleteForComp(comp){if(!googleReady||!comp)return;const street=comp.querySelector(".compStreet");initAutocompleteForInput(street,"comp",place=>{parseAddressComponents(place,"comp",street);const idx=[...document.querySelectorAll(".comp")].indexOf(comp)+1;comp.querySelector(".compTitleText").innerText="Comparable #"+idx;updateCompAddressStatus(comp,"valid","✅ Location confirmed");updateDistanceForComp(comp);markUnsaved();calculate()})}
+function amenityOptions(){const groups={site:"Site Features",exterior:"Exterior Features",interior:"Interior Features",parking:"Parking",misc:"Miscellaneous",custom:"Custom"};let html="";Object.keys(groups).forEach(g=>{html+="<optgroup label='"+groups[g]+"'>";amenities.filter(a=>a[0]===g).forEach(a=>{html+="<option value='"+a[1]+"' data-value='"+a[3]+"'>"+a[2]+" - $"+a[3].toLocaleString()+"</option>"});html+="</optgroup>"});return html}
+function recencyWeight(dateValue){if(isRentMode())return 1;if(!dateValue)return 0;const m=(new Date()-new Date(dateValue))/(1000*60*60*24*30.44);if(m<0)return 0;if(m<=6)return 1;if(m<=12)return .8;if(m<=18)return .45;if(m<=24)return .2;return 0}function proximityWeight(miles){const rural=val("marketType")==="rural";if(miles<=0)return 0;if(rural){if(miles<=2)return 1;if(miles<=5)return .9;if(miles<=10)return .75;if(miles<=20)return .5;if(miles<=40)return .25;return 0}if(miles<=.5)return 1;if(miles<=1)return .9;if(miles<=2)return .75;if(miles<=5)return .45;if(miles<=10)return .15;return 0}function rentSourceWeight(s){if(s==="Lease / Actual Rent")return 1;if(s==="Advertised Rent")return .95;if(s==="Zillow Rent Estimate")return .9;if(s==="Other Rent Estimate")return .85;return .85}function combinedWeight(dateValue,miles,rentSource){const p=proximityWeight(miles);if(p===0)return 0;if(isRentMode())return p*.85+rentSourceWeight(rentSource)*.15;const d=recencyWeight(dateValue);if(d===0)return 0;return(d+p)/2}
+function setLabels(){const rent=isRentMode(),arv=isArvMode();document.getElementById("subjectPriceWrap").style.display=rent?"none":"block";document.getElementById("subjectPriceLabel").innerText=arv?"Subject As-Is / Target ARV Reference":"Subject List Price / Target Value";document.getElementById("compsHeading").innerText=rent?"Rental Comparables":"Comparable Sales";document.getElementById("rangeLabel").innerText=rent?"Estimated Monthly Rent Range":(arv?"Estimated ARV Range":"Estimated Value Range");document.getElementById("bestEstimateLabel").innerText=rent?"Estimated Monthly Rent":(arv?"Estimated ARV":"Best Estimate");document.getElementById("avgAdjustedLabel").innerText=rent?"Weighted Avg Adjusted Rent":"Weighted Avg Adjusted Comp";document.getElementById("avgPpsfLabel").innerText=rent?"Weighted Avg Rent / Sq Ft":"Weighted Avg Price / Sq Ft";document.getElementById("subjectPpsfLabel").innerText=rent?"Subject Rent / Sq Ft":"Subject Price / Sq Ft";document.querySelectorAll(".comp").forEach(comp=>{const typeSelect=comp.querySelector(".compType");if(typeSelect){typeSelect.value=rent?"Rental Comp":"Sale";typeSelect.classList.add("locked-select");typeSelect.disabled=true}const saleLabel=comp.querySelector(".saleLabel"),dateBlock=comp.querySelector(".dateBlock"),rentSourceBlock=comp.querySelector(".rentSourceBlock"),amountBox=comp.querySelector(".salePrice");if(saleLabel)saleLabel.innerText=rent?"Comparable Monthly Rent":(arv?"Comparable ARV / Renovated Sale Price":"Comparable As-Is Value");if(amountBox){const current=unmoney(amountBox.value);if(rent&&(current===250000||current===0))setMoneyValue(amountBox,2500);if(!rent&&(current===2500||current===0))setMoneyValue(amountBox,250000)}if(dateBlock)dateBlock.style.display=rent?"none":"block";if(rentSourceBlock)rentSourceBlock.style.display=rent?"block":"none"})}
+function addComp(data){compIndex++;const d=data||{},div=document.createElement("div");div.className="comp";div.id="comp"+compIndex;div.innerHTML="<div class='comp-head'><div class='comp-title'><span class='compTitleText'>Comparable #"+compIndex+"</span></div><div class='badges'><span class='badge' id='badge"+compIndex+"'>Not calculated</span><span class='badge' id='weightBadge"+compIndex+"'>Weight --</span><span class='address-status warn compAddressStatus'>⚠️ Address not selected yet</span></div></div><div class='grid'><div><label>Street Address</label><input type='text' class='compStreet' placeholder='Start typing, then select the property address'></div><div><label>Apt / Unit</label><input type='text' class='compUnit' placeholder='Optional'></div><div><label>City</label><input type='text' class='compCity'></div><div><label>State</label><input type='text' class='compState'></div><div><label>ZIP</label><input type='text' class='compZip'></div><div><label>Comparable Type</label><select class='compType'><option>Sale</option><option>Pending Sale</option><option>Active Listing</option><option>Rental Comp</option><option>Appraiser Selected</option><option>Investor Selected</option></select></div><div><label class='saleLabel'>Comparable As-Is Value</label><input type='text' inputmode='numeric' class='salePrice moneyField' value='250000'></div><div><label>Monthly Rent</label><input type='text' inputmode='numeric' class='monthlyRent moneyField' value='0'></div><div class='dateBlock'><label>Sale Date</label><input type='date' class='saleDate'></div><div class='rentSourceBlock' style='display:none;'><label>Rent Source</label><select class='rentSource'><option>Zillow Rent Estimate</option><option>Advertised Rent</option><option>Lease / Actual Rent</option><option>Other Rent Estimate</option></select></div><div><label>Bedrooms</label><input type='number' class='beds' value='3'></div><div><label>Bathrooms</label><input type='number' step='0.5' class='baths' value='2'></div><div><label>Square Feet</label><input type='number' class='sqft' value='1500'></div><div><label>Year Built</label><input type='number' class='yearBuilt'></div><div><label>Distance - Miles</label><div class='proximity-lock'><input type='number' step='0.01' class='proximity' readonly placeholder='Auto'><span class='lock-chip'>Locked</span></div><div class='field-note'>Calculated from the selected subject and comparable addresses.</div></div><div><label>Condition</label><select class='condition'><option>Average</option><option>Needs Work</option><option>Updated</option><option>Fully Renovated</option><option>Luxury</option></select></div><div><label>Source</label><input type='text' class='source' placeholder='MLS, Zillow, Rentometer, etc.'></div><div><label>Source URL</label><input type='text' class='sourceUrl' placeholder='Optional link'></div><div class='maps-helper'><strong>Distance from subject</strong><span class='distanceStatus warn'>Select the subject and comparable property addresses.</span></div></div><div class='adjustments'></div><button class='btn secondary' type='button' onclick='addAdjustment("+compIndex+")'>Add Adjustment</button> <button class='btn danger' type='button' onclick='removeComp("+compIndex+")'>Remove Comparable</button>";document.getElementById("comps").appendChild(div);initCompManualInvalidation(div);setupMoneyFields();setLabels();initAutocompleteForComp(div);if(data)populateComp(div,data);updateDistanceForComp(div);calculate()}
+function populateComp(comp,data){comp.querySelector(".compStreet").value=data.street||data.propertyStreet||data.propertyAddress?.streetAddress?.name||"";comp.querySelector(".compUnit").value=data.unit||data.propertyUnit||data.propertyAddress?.streetAddress?.apt||"";comp.querySelector(".compCity").value=data.city||"";comp.querySelector(".compState").value=data.state||"";comp.querySelector(".compZip").value=data.zip||"";comp.querySelector(".compType").value=data.compType||data.comparableType||"Sale";setMoneyValue(comp.querySelector(".salePrice"),data.saleOrListPrice||data.salePrice||data.listPrice||data.adjustedValue||250000);setMoneyValue(comp.querySelector(".monthlyRent"),data.monthlyRent||0);comp.querySelector(".saleDate").value=formatDateInput(data.saleDate)||"";if(comp.querySelector(".rentSource"))comp.querySelector(".rentSource").value=data.rentSource||"Zillow Rent Estimate";comp.querySelector(".beds").value=data.beds||"";comp.querySelector(".baths").value=data.baths||"";comp.querySelector(".sqft").value=data.sqft||"";comp.querySelector(".yearBuilt").value=data.yearBuilt||"";comp.querySelector(".proximity").value=data.distanceMiles||data.proximity||"";const streetInput=comp.querySelector(".compStreet");if(streetInput){const savedLoc=data.propertyLocation||{};if(data.lat||data.lng||savedLoc.latitude||savedLoc.longitude){if(data.lat||savedLoc.latitude)streetInput.dataset.lat=data.lat||savedLoc.latitude;if(data.lng||savedLoc.longitude)streetInput.dataset.lng=data.lng||savedLoc.longitude;streetInput.dataset.googleVerified="yes";streetInput.dataset.formattedAddress=savedLoc.formattedAddress||data.propertyAddress?.formatted||"";streetInput.dataset.placeId=savedLoc.placeId||"";streetInput.dataset.county=savedLoc.county||"";updateCompAddressStatus(comp,"valid","✅ Saved location confirmed")}}comp.querySelector(".condition").value=data.condition||"Average";comp.querySelector(".source").value=data.source||"";comp.querySelector(".sourceUrl").value=data.sourceUrl||""}
+function removeComp(id){const el=document.getElementById("comp"+id);if(el)el.remove();markUnsaved();calculate()}function addAdjustment(id){const comp=document.getElementById("comp"+id),wrap=comp.querySelector(".adjustments"),row=document.createElement("div");row.className="adjustment";row.innerHTML="<div><label>Amenity</label><select class='amenity' onchange='updateAdjustmentValue(this)'>"+amenityOptions()+"</select></div><div class='customField' style='display:none;'><label>Custom Description</label><input type='text' class='customName' placeholder='Example: Boat Dock'></div><div><label>Adjustment Direction</label><select class='direction'><option value='add'>Subject has it, comp does not</option><option value='subtract'>Comp has it, subject does not</option></select></div><div><label>Value</label><input type='text' inputmode='numeric' class='adjValue moneyField' value='3000'></div><button class='btn danger small' type='button' onclick='this.parentElement.remove();markUnsaved();calculate();'>X</button>";wrap.appendChild(row);updateAdjustmentValue(row.querySelector(".amenity"));markUnsaved();calculate()}function updateAdjustmentValue(sel){const row=sel.closest(".adjustment"),opt=sel.options[sel.selectedIndex],value=Number(opt.dataset.value)||0,custom=row.querySelector(".customField");custom.style.display=sel.value==="other"?"block":"none";setMoneyValue(row.querySelector(".adjValue"),value||3000);markUnsaved();calculate()}
+function collectAdjustments(comp){const rows=[];comp.querySelectorAll(".adjustment").forEach(row=>{const amenity=row.querySelector(".amenity"),name=amenity.value==="other"?row.querySelector(".customName").value:amenity.options[amenity.selectedIndex].text.replace(/ - \$[\d,]+/,""),amount=unmoney(row.querySelector(".adjValue").value),dir=row.querySelector(".direction").value;rows.push({name,amount,direction:dir,signedAmount:dir==="add"?amount:-amount})});return rows}
+function compHasMeaningfulInput(comp){if(!comp)return false;const street=comp.querySelector(".compStreet");const hasAddress=!!(street&&((street.value||"").trim()||street.dataset.googleVerified==="yes"));const sale=unmoney(comp.querySelector(".salePrice")?.value||"0");const rent=unmoney(comp.querySelector(".monthlyRent")?.value||"0");const beds=Number(comp.querySelector(".beds")?.value)||0;const baths=Number(comp.querySelector(".baths")?.value)||0;const sqft=Number(comp.querySelector(".sqft")?.value)||0;const hasDetails=!!((comp.querySelector(".compCity")?.value||"").trim()||(comp.querySelector(".compState")?.value||"").trim()||(comp.querySelector(".compZip")?.value||"").trim()||(comp.querySelector(".saleDate")?.value||"").trim()||(comp.querySelector(".source")?.value||"").trim()||(comp.querySelector(".sourceUrl")?.value||"").trim()||(comp.querySelector(".yearBuilt")?.value||"").trim()||collectAdjustments(comp).length);const changedDefaults=(sale!==250000&&sale!==2500&&sale!==0)||(rent!==0)||(beds!==3&&beds!==0)||(baths!==2&&baths!==0)||(sqft!==1500&&sqft!==0);return hasAddress||hasDetails||changedDefaults}
+function getCompRows(){const rows=[];document.querySelectorAll(".comp").forEach((comp,i)=>{if(!compHasMeaningfulInput(comp)){const badge=comp.querySelector(".badge"),weightBadge=comp.querySelector("[id^='weightBadge']");if(badge){badge.className="badge excluded";badge.innerText="Not used"}if(weightBadge)weightBadge.innerText="No comp details";return}const price=unmoney(comp.querySelector(".salePrice").value),rent=unmoney(comp.querySelector(".monthlyRent").value),base=isRentMode()?(rent||price):price,sqft=Number(comp.querySelector(".sqft").value)||0,miles=Number(comp.querySelector(".proximity").value)||0,date=comp.querySelector(".saleDate").value,rentSource=comp.querySelector(".rentSource")?.value||"",adjs=collectAdjustments(comp),adj=adjs.reduce((s,a)=>s+a.signedAmount,0),adjusted=base+adj,weight=combinedWeight(date,miles,rentSource);rows.push({comp,i,base,sqft,miles,date,rentSource,adjusted,weight,adjs})});return rows}
+
+function setTextSafe(id,text){const el=document.getElementById(id);if(el)el.innerText=text}
+function setHtmlSafe(id,html){const el=document.getElementById(id);if(el)el.innerHTML=html}
+function daysSince(value){if(!value)return null;const d=new Date(value);if(isNaN(d))return null;return Math.max(0,Math.round((new Date()-d)/(1000*60*60*24)))}
+function updateInvestorIntelligence(rows,valid,excluded,confidence,estimate,avgPpsf){
+  const scoreMap={High:92,Good:78,Moderate:58,Limited:34};
+  let score=scoreMap[confidence]||scoreMap.Limited;
+  if(valid.length>=5)score=Math.min(98,score+4);
+  if(excluded>=2)score=Math.max(22,score-6);
+  const weights=valid.map(r=>Number(r.weight)||0);
+  const avgWeight=weights.length?weights.reduce((a,b)=>a+b,0)/weights.length:0;
+  const strong=valid.filter(r=>r.weight>=.85).length;
+  const distances=valid.map(r=>Number(r.miles)||0).filter(Boolean);
+  const avgDistance=distances.length?distances.reduce((a,b)=>a+b,0)/distances.length:0;
+  const dated=valid.map(r=>daysSince(r.date)).filter(v=>v!==null);
+  const newestDays=dated.length?Math.min(...dated):null;
+  const quality=Math.max(0,Math.min(100,Math.round((avgWeight*72)+(Math.min(valid.length,5)*5)+(strong*2))));
+  const gauge=document.getElementById("confidenceGauge");
+  if(gauge){
+    const deg=Math.round(score*3.6);
+    const color=score>=80?"#52d273":score>=60?"#ffd46b":score>=45?"#E6A23C":"#D9534F";
+    gauge.style.setProperty("--score",deg+"deg");
+    gauge.style.setProperty("--intel-color",color);
+  }
+  setTextSafe("intelScore",valid.length?score+"%":"--");
+  setTextSafe("intelConfidenceLabel",valid.length?confidence+" Confidence":"Confidence Score");
+  setTextSafe("intelConfidenceCopy",valid.length?"Based on comp count, distance, recency, and weighted comparable strength.":"The score improves as you add stronger, closer, and more recent comparable properties.");
+  setTextSafe("intelQualityLabel",valid.length?(quality>=82?"Excellent":quality>=68?"Strong":quality>=48?"Developing":"Limited"):"--");
+  const fill=document.getElementById("intelQualityFill"); if(fill)fill.style.width=(valid.length?quality:0)+"%";
+  setTextSafe("intelAvgDistance",avgDistance?avgDistance.toFixed(2)+" mi":"--");
+  setTextSafe("intelStrongComps",valid.length?strong+" / "+valid.length:"--");
+  setTextSafe("intelNewestSale",isRentMode()?"Rent mode":(newestDays!==null?(newestDays<31?newestDays+" days":Math.round(newestDays/30)+" mos"):"--"));
+  const sq=num("subjectSqft"); setTextSafe("intelSubjectSize",sq?sq.toLocaleString()+" sqft":"--");
+  setTextSafe("intelPulseTitle",valid.length>=3?"Comparable Activity":"Market Activity");
+  setTextSafe("intelPulseText",valid.length>=3?"Active comp set detected. The panel is weighting strength, distance, and support.":valid.length?"Add at least three usable comps for a stronger read.":"Add comparables to activate the analysis panel.");
+  setTextSafe("intelMapTitle",valid.length?"Distance-Weighted Support":"Neighborhood Support Map");
+  setTextSafe("intelMapCopy",valid.length?(avgDistance?valid.length+" usable comps averaging "+avgDistance.toFixed(2)+" miles from the subject property.":valid.length+" usable comps. Select addresses to strengthen distance support."):"Select subject and comparable addresses to build a distance-weighted view.");
+  const reasons=[];
+  if(valid.length>=4)reasons.push(valid.length+" usable comparable properties support the estimate.");
+  else if(valid.length>=2)reasons.push(valid.length+" usable comparable properties create a developing valuation picture.");
+  else if(valid.length===1)reasons.push("Only one usable comp is active, so confidence remains limited.");
+  else reasons.push("No usable comps are active yet.");
+  if(strong)reasons.push(strong+" comparable"+(strong===1?" is":"s are")+" currently rated strong by the weighting model.");
+  if(avgDistance)reasons.push("Average calculated comp distance is "+avgDistance.toFixed(2)+" miles.");
+  if(newestDays!==null&&!isRentMode())reasons.push("Newest dated sale is about "+(newestDays<31?newestDays+" days":Math.round(newestDays/30)+" months")+" old.");
+  if(excluded>0)reasons.push(excluded+" comp"+(excluded===1?" is":"s are")+" excluded or limited by distance, date, or missing details.");
+  if(avgPpsf)reasons.push("Weighted price per square foot is "+money(avgPpsf)+".");
+  setHtmlSafe("intelWhyList",reasons.slice(0,5).map(r=>"<li>"+escapeHtml(r)+"</li>").join(""));
+  let insight="Once comparable data is entered, this panel will summarize whether the subject appears supported by the current comp set.";
+  if(valid.length){
+    if(score>=80) insight="This property appears well supported by the current comp set. Confidence is strongest when nearby, recent, similar properties carry most of the weight.";
+    else if(score>=60) insight="This analysis has useful support, but one or two additional close and recent comps could make the valuation story cleaner.";
+    else if(score>=45) insight="The comp set is usable for early review, but confidence is still moderate. Add stronger proximity, more recent dates, or better similarity to improve the read.";
+    else insight="This is an early-stage valuation read. Add more complete comparable data before relying on the estimate for an investor decision.";
+  }
+  setTextSafe("intelInsightText",insight);
+}
+function calculate(){setLabels();const rows=getCompRows(),valid=rows.filter(r=>r.adjusted>0&&r.sqft>0&&r.weight>0);let totalW=0,total=0,totalPpsf=0;valid.forEach(r=>{totalW+=r.weight;total+=r.adjusted*r.weight;totalPpsf+=(r.adjusted/r.sqft)*r.weight});const avg=totalW?total/totalW:0,avgPpsf=totalW?totalPpsf/totalW:0,subjectSqft=num("subjectSqft"),subjectPrice=num("subjectPrice"),estimate=avgPpsf&&subjectSqft?avgPpsf*subjectSqft:avg,low=estimate*.95,high=estimate*1.05,excluded=rows.length-valid.length;let confidence="Limited",stars="★☆☆☆";if(valid.length>=4&&excluded<=1){confidence="High";stars="★★★★"}else if(valid.length>=3){confidence="Good";stars="★★★☆"}else if(valid.length>=2){confidence="Moderate";stars="★★☆☆"}if(val("confidenceOverride"))confidence=val("confidenceOverride");document.getElementById("estimatedRange").innerText=estimate?money(low)+" - "+money(high):"--";document.getElementById("estimatedValue").innerText=estimate?money(estimate):"--";document.getElementById("confidenceText").innerText=confidence;document.getElementById("confidenceStars").innerText=stars;document.getElementById("avgAdjusted").innerText=avg?money(avg):"--";document.getElementById("avgPpsf").innerText=avgPpsf?money(avgPpsf):"--";document.getElementById("subjectPpsf").innerText=subjectSqft&&subjectPrice?money(subjectPrice/subjectSqft):"--";document.getElementById("compCount").innerText=String(valid.length);document.getElementById("excludedCount").innerText=String(excluded);document.getElementById("heroEstimate").innerText=estimate?money(estimate):"--";document.getElementById("heroConfidence").innerText=confidence;rows.forEach(r=>{const badge=r.comp.querySelector(".badge"),weightBadge=r.comp.querySelector("[id^='weightBadge']");if(!badge||!weightBadge)return;let cls="excluded",txt="Excluded";if(r.weight>=.85){cls="strong";txt="Strong comp"}else if(r.weight>=.6){cls="good";txt="Good comp"}else if(r.weight>0){cls="limited";txt="Limited comp"}badge.className="badge "+cls;badge.innerText=txt;weightBadge.innerText="Weight "+Math.round(r.weight*100)+"%"});renderCompReport(rows);updateInvestorIntelligence(rows,valid,excluded,confidence,estimate,avgPpsf);lastScenario={subjectEstimated:estimate,avgAdjusted:avg,avgPpsf,compRows:rows,count:valid.length,confidenceText:confidence};return lastScenario}
+function renderCompReport(rows){const wrap=document.getElementById("compReport");if(!rows.length){wrap.innerHTML="Add comparable sales to see the report.";return}wrap.innerHTML=rows.map((r,i)=>"<div class='report-item'><strong>Comp #"+(i+1)+": "+(r.weight>0?Math.round(r.weight*100)+"% weight":"Excluded")+"</strong><br>Distance: "+(r.miles?r.miles.toFixed(2)+" mi":"not calculated")+" • Adjusted: "+money(r.adjusted)+(r.weight===0?"<br><span class='small'>Not used because distance/date/source requirements were not met.</span>":"")+"</div>").join("")}
+function buildCalculatorState(){return{analysisDetails:{analysisName:val("analysisName"),analysisPurpose:val("analysisPurpose"),analysisType:val("analysisType"),marketType:val("marketType"),analysisStatus:val("analysisStatus"),confidenceOverride:val("confidenceOverride"),linkedDscrScenario:val("linkedDscrScenario"),linkedFixFlipProject:val("linkedFixFlipProject")},subjectLocation:locationFromInput("subject"),subject:{street:val("subjectStreet"),unit:val("subjectUnit"),city:val("subjectCity"),state:val("subjectState"),zip:val("subjectZip"),lat:subjectLatLng?latOf(subjectLatLng):undefined,lng:subjectLatLng?lngOf(subjectLatLng):undefined,propertyType:val("propertyType"),subjectPrice:num("subjectPrice"),subjectBeds:num("subjectBeds"),subjectBaths:num("subjectBaths"),subjectSqft:num("subjectSqft"),subjectYearBuilt:num("subjectYearBuilt"),subjectCondition:val("subjectCondition"),notes:val("notes")},comparables:collectComparablesForState(),results:lastScenario}}
+function collectComparableFromElement(comp){const street=comp.querySelector(".compStreet");return{street:street.value,unit:comp.querySelector(".compUnit").value,city:comp.querySelector(".compCity").value,state:comp.querySelector(".compState").value,zip:comp.querySelector(".compZip").value,lat:street.dataset.lat?Number(street.dataset.lat):undefined,lng:street.dataset.lng?Number(street.dataset.lng):undefined,formattedAddress:street.dataset.formattedAddress||"",placeId:street.dataset.placeId||"",county:street.dataset.county||"",confirmed:street.dataset.googleVerified==="yes",compType:comp.querySelector(".compType").value,saleOrListPrice:unmoney(comp.querySelector(".salePrice").value),monthlyRent:unmoney(comp.querySelector(".monthlyRent").value),saleDate:comp.querySelector(".saleDate").value,rentSource:comp.querySelector(".rentSource")?comp.querySelector(".rentSource").value:"",beds:Number(comp.querySelector(".beds").value)||0,baths:Number(comp.querySelector(".baths").value)||0,sqft:Number(comp.querySelector(".sqft").value)||0,yearBuilt:Number(comp.querySelector(".yearBuilt").value)||0,distanceMiles:Number(comp.querySelector(".proximity").value)||0,condition:comp.querySelector(".condition").value,source:comp.querySelector(".source").value,sourceUrl:comp.querySelector(".sourceUrl").value,adjustments:collectAdjustments(comp)}}
+function collectComparablesForState(){const comps=[];document.querySelectorAll(".comp").forEach(comp=>{if(!compHasMeaningfulInput(comp))return;comps.push(collectComparableFromElement(comp))});return comps}
+function buildInvestorPayload(){const s=calculate(),rent=isRentMode(),state=buildCalculatorState(),subjectLocation=locationFromInput("subject"),rowsByComp=new Map((s.compRows||[]).map(r=>[r.comp,r]));const comps=Array.from(document.querySelectorAll(".comp")).filter(compHasMeaningfulInput).map((compEl,idx)=>{const comp=collectComparableFromElement(compEl);const row=rowsByComp.get(compEl)||{};const adjustedValue=row.adjusted||0,adjustmentAmount=adjustedValue-(rent?(comp.monthlyRent||comp.saleOrListPrice):comp.saleOrListPrice),formatted=[comp.street,comp.unit?"Unit "+comp.unit:"",comp.city,comp.state,comp.zip].filter(Boolean).join(", "),compLocation={formattedAddress:comp.formattedAddress||formatted,street:comp.street,unit:comp.unit,city:comp.city,county:comp.county||"",state:comp.state,zip:comp.zip,country:"US",latitude:comp.lat||null,longitude:comp.lng||null,placeId:comp.placeId||"",confirmed:!!comp.confirmed};return{propertyAddress:formatted?{formatted:compLocation.formattedAddress,streetAddress:{name:comp.street,number:"",apt:comp.unit},city:comp.city,subdivision:comp.state,postalCode:comp.zip,country:"US",location:hasCoordinates(compLocation)?{latitude:compLocation.latitude,longitude:compLocation.longitude}:undefined}:undefined,propertyLocation:compLocation,city:comp.city,state:comp.state,zip:comp.zip,county:comp.county||"",latitude:comp.lat||null,longitude:comp.lng||null,placeID:comp.placeId||"",addressStatus:comp.confirmed?"Confirmed":"Check Address",compType:comp.compType,saleOrListPrice:comp.saleOrListPrice,monthlyRent:comp.monthlyRent,saleDate:comp.saleDate||undefined,beds:comp.beds,baths:comp.baths,sqft:comp.sqft,yearBuilt:comp.yearBuilt,distanceMiles:comp.distanceMiles,condition:comp.condition,pricePerSqft:adjustedValue&&comp.sqft?adjustedValue/comp.sqft:0,adjustmentAmount,adjustedValue,source:comp.source||(rent?comp.rentSource:""),sourceUrl:comp.sourceUrl,notes:JSON.stringify({adjustments:comp.adjustments,propertyLocation:compLocation})}});return{analysisName:val("analysisName")||"Saved Comparable Analysis",linkedDscrScenario:val("linkedDscrScenario")||undefined,linkedFixFlipProject:val("linkedFixFlipProject")||undefined,subjectAddress:addressObject("subject"),subjectLocation:subjectLocation,city:val("subjectCity"),state:val("subjectState"),zip:val("subjectZip"),county:subjectLocation.county||"",latitude:subjectLocation.latitude||null,longitude:subjectLocation.longitude||null,placeID:subjectLocation.placeId||"",addressStatus:subjectLocation.confirmed?"Confirmed":"Check Address",propertyType:val("propertyType"),subjectBeds:num("subjectBeds"),subjectBaths:num("subjectBaths"),subjectSqft:num("subjectSqft"),subjectYearBuilt:num("subjectYearBuilt"),subjectCondition:val("subjectCondition"),estimatedARV:isArvMode()?s.subjectEstimated:0,estimatedAsIsValue:isRentMode()?0:s.subjectEstimated,averageCompPrice:s.avgAdjusted,averagePricePerSqft:s.avgPpsf,compCount:s.count,analysisPurpose:val("analysisPurpose"),confidenceLevel:s.confidenceText,analysisStatus:val("analysisStatus")||"Saved",comparableDetails:comps,calculatorState:JSON.stringify(state),notes:val("notes"),comparables:comps}}
+function saveAnalysis(){if(!loggedIn){requestMemberLogin();return}postToWix({type:"INVESTOR_SAVE_COMPARABLE_ANALYSIS",payload:buildInvestorPayload()});showToast("Saving analysis","Sending this comparable analysis to your Investor Workspace.")}function requestSaved(){if(!loggedIn){requestMemberLogin();return}postToWix({type:"INVESTOR_LOAD_SAVED"});openSavedModal()}function duplicateAnalysis(){setVal("analysisName",(val("analysisName")||"Comparable Analysis")+" Copy");markUnsaved();showToast("Duplicated","This copy is ready to edit and save as a new analysis.")}function exportAnalysis(){window.print()}function postToWix(message){try{window.parent.postMessage(message,"*")}catch(e){showToast("Could not reach Wix","The calculator could not send data to the page.")}}function requestMemberLogin(){showToast("Sign in required","Please sign in to save or view your comparable analyses.");postToWix({type:"INVESTOR_REQUEST_LOGIN",source:"comparablesHtml"})}
+function setMemberSaveState(isLoggedIn){loggedIn=!!isLoggedIn;[document.getElementById("saveBtn"),document.getElementById("saveBtnSide")].filter(Boolean).forEach(btn=>{btn.classList.toggle("locked",!loggedIn);btn.innerText=loggedIn?"💾 Save Analysis":"🔒 Sign In to Save This Analysis"});[document.getElementById("loadSavedBtn"),document.getElementById("loadSavedBtnSide")].filter(Boolean).forEach(btn=>{btn.classList.toggle("locked",!loggedIn);btn.innerText=loggedIn?(btn.id==="loadSavedBtn"?"Load Saved":"View Saved"):"🔒 Sign In to View Saved"});document.getElementById("memberLockNote").style.display=loggedIn?"none":"block";document.getElementById("saveStatus").innerText=loggedIn?"Unsaved changes":"Sign in to save analyses";document.getElementById("heroSaved").innerText=loggedIn?"Ready to save":"Sign in to save"}
+function handleWixMessage(event){const data=typeof event.data==="string"?safeJson(event.data):event.data;if(!data||!data.type)return;if(data.type==="INVESTOR_HUB_READY"){wixReady=true;setMemberSaveState(!!data.loggedIn);savedDscrScenarios=data.dscrScenarios||savedDscrScenarios;savedFixFlipProjects=data.fixFlipProjects||savedFixFlipProjects;renderDscrScenarioOptions();renderFixFlipProjectOptions()}if(data.type==="INVESTOR_MEMBER_STATUS")setMemberSaveState(!!data.loggedIn);if(data.type==="INVESTOR_LOGIN_REQUIRED"){setMemberSaveState(false);showToast("Login required",data.message||"Please log in to save this analysis.")}if(data.type==="INVESTOR_COMPARABLE_ANALYSIS_SAVED"){lastSavedAt=new Date();unsavedChanges=false;document.getElementById("analysisStatus").value="Saved";document.getElementById("saveStatus").innerText="Last saved "+lastSavedAt.toLocaleTimeString([],{hour:"numeric",minute:"2-digit"});document.getElementById("heroSaved").innerText="Saved";showToast("Analysis saved",data.message||"Comparable analysis saved.")}if(data.type==="INVESTOR_COMPARABLE_ANALYSIS_LIST"){savedComparableAnalyses=data.items||[];renderSavedList()}if(data.type==="INVESTOR_DSCR_SCENARIO_LIST"||data.type==="INVESTOR_DSCR_LIST"){savedDscrScenarios=data.items||[];renderDscrScenarioOptions()}if(data.type==="INVESTOR_FIX_FLIP_PROJECT_LIST"||data.type==="INVESTOR_FIX_FLIP_LIST"){savedFixFlipProjects=data.items||[];renderFixFlipProjectOptions()}if(data.type==="INVESTOR_DELETE_COMPARABLE_ANALYSIS_DONE"){savedComparableAnalyses=savedComparableAnalyses.filter(i=>i._id!==data.itemId);renderSavedList();showToast("Deleted","Comparable analysis removed.")}}
+function renderDscrScenarioOptions(){const select=document.getElementById("linkedDscrScenario");let current=select.value,html='<option value="">Not linked to a DSCR scenario</option>';savedDscrScenarios.forEach(item=>{const label=(item.scenarioName||"Saved DSCR Scenario")+(([item.city,item.state,item.zip].filter(Boolean).length)?" — "+[item.city,item.state,item.zip].filter(Boolean).join(", "):"")+(item.dscr!=null?" • DSCR "+Number(item.dscr).toFixed(2):"");html+=`<option value="${escapeHtml(item._id)}">${escapeHtml(label)}</option>`});select.innerHTML=html;if(current)select.value=current;document.getElementById("linkedDscrHelper").innerText=savedDscrScenarios.length?"Choose the DSCR scenario this comp analysis supports, or leave it unlinked.":"No saved DSCR scenarios loaded yet."}
+function renderFixFlipProjectOptions(){const select=document.getElementById("linkedFixFlipProject");let current=select.value,html='<option value="">Not linked to a fix & flip project</option>';savedFixFlipProjects.forEach(item=>{const label=(item.projectName||"Saved Fix & Flip Project")+(([item.city,item.state,item.zip].filter(Boolean).length)?" — "+[item.city,item.state,item.zip].filter(Boolean).join(", "):"")+(item.projectedProfit!=null?" • Profit "+money(item.projectedProfit):"");html+=`<option value="${escapeHtml(item._id)}">${escapeHtml(label)}</option>`});select.innerHTML=html;if(current)select.value=current;document.getElementById("linkedFixFlipHelper").innerText=savedFixFlipProjects.length?"Choose the fix & flip project this comp analysis supports, or leave it unlinked.":"No saved fix & flip projects loaded yet."}
+function openSavedModal(){document.getElementById("savedModal").style.display="flex";renderSavedList()}function closeSavedModal(){document.getElementById("savedModal").style.display="none"}function renderSavedList(){const wrap=document.getElementById("savedList");if(!savedComparableAnalyses.length){wrap.innerHTML='<div class="empty-state">No saved analyses loaded yet.</div>';return}wrap.innerHTML=savedComparableAnalyses.map((item,idx)=>`<div class="saved-item"><div><h4>${escapeHtml(item.analysisName||"Comparable Analysis")}</h4><div class="saved-meta">${escapeHtml([item.city,item.state,item.zip].filter(Boolean).join(", "))}<br>Estimate: ${item.estimatedARV?money(item.estimatedARV):(item.estimatedAsIsValue?money(item.estimatedAsIsValue):"--")} • Confidence: ${escapeHtml(item.confidenceLevel||"--")}</div></div><div><button class="btn small secondary" onclick="loadSavedAnalysis(${idx})">Load Copy</button> <button class="btn small danger" onclick="deleteSavedAnalysis('${escapeHtml(item._id||"")}')">Delete</button></div></div>`).join("")}function loadSavedAnalysis(idx){const item=savedComparableAnalyses[idx];if(!item)return;setVal("analysisName",(item.analysisName||"Comparable Analysis")+" Copy");setVal("analysisPurpose",item.analysisPurpose||"Investor Deal Review");setVal("analysisStatus","Draft");setVal("linkedDscrScenario",item.linkedDscrScenario||"");setVal("linkedFixFlipProject",item.linkedFixFlipProject||"");setVal("propertyType",item.propertyType||"Single Family");const savedSubjectAddress=item.subjectAddress||{};const savedSubjectLocation=item.subjectLocation||{};setVal("subjectStreet",savedSubjectLocation.street||savedSubjectAddress.streetAddress?.name||"");setVal("subjectUnit",savedSubjectLocation.unit||savedSubjectAddress.streetAddress?.apt||"");setVal("subjectCity",item.city||savedSubjectLocation.city||savedSubjectAddress.city||"");setVal("subjectState",item.state||savedSubjectLocation.state||savedSubjectAddress.subdivision||"");setVal("subjectZip",item.zip||savedSubjectLocation.zip||savedSubjectAddress.postalCode||"");const subjStreet=document.getElementById("subjectStreet");if(subjStreet&&savedSubjectLocation.latitude&&savedSubjectLocation.longitude){subjStreet.dataset.lat=savedSubjectLocation.latitude;subjStreet.dataset.lng=savedSubjectLocation.longitude;subjStreet.dataset.formattedAddress=savedSubjectLocation.formattedAddress||savedSubjectAddress.formatted||"";subjStreet.dataset.placeId=savedSubjectLocation.placeId||"";subjStreet.dataset.county=savedSubjectLocation.county||"";subjStreet.dataset.googleVerified="yes";subjectLatLng=makePoint(Number(savedSubjectLocation.latitude),Number(savedSubjectLocation.longitude));updateSubjectAddressStatus("valid","✅ Saved subject location confirmed");}setVal("subjectBeds",item.subjectBeds||"");setVal("subjectBaths",item.subjectBaths||"");setVal("subjectSqft",item.subjectSqft||"");setVal("subjectYearBuilt",item.subjectYearBuilt||"");setVal("subjectCondition",item.subjectCondition||"Average");setVal("notes",item.notes||"");document.getElementById("comps").innerHTML="";compIndex=0;(item.comparables||[]).forEach(c=>addComp(c));if(!(item.comparables||[]).length){addComp();addComp();addComp()}closeSavedModal();markUnsaved();calculate();showToast("Loaded as copy","The saved analysis was loaded as a new editable copy.")}function deleteSavedAnalysis(itemId){if(!itemId)return;postToWix({type:"INVESTOR_DELETE_COMPARABLE_ANALYSIS",itemId});showToast("Deleting","Removing the saved comparable analysis.")}
+function markUnsaved(){unsavedChanges=true;document.getElementById("saveStatus").innerText=loggedIn?"Unsaved changes":"Sign in to save analyses";document.getElementById("heroSaved").innerText=loggedIn?"Unsaved":"Sign in to save"}function showToast(title,body){const t=document.getElementById("toast");document.getElementById("toastTitle").innerText=title;document.getElementById("toastBody").innerText=body;t.style.display="block";clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>{t.style.display="none"},3600)}function escapeHtml(str){return String(str||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}function formatDateInput(value){if(!value)return"";const d=new Date(value);return Number.isNaN(d.getTime())?"":d.toISOString().slice(0,10)}function safeJson(str){try{return JSON.parse(str)}catch(e){return null}}
+
+function initManualAddressInvalidation(){["subjectCity","subjectState","subjectZip"].forEach(id=>{const el=document.getElementById(id);if(el&&el.dataset.manualInvalidation!=="yes"){el.dataset.manualInvalidation="yes";el.addEventListener("input",()=>{const street=document.getElementById("subjectStreet");if(street&&street.dataset.googleVerified==="yes"){clearLatLngOnInput(street);subjectLatLng=null;updateSubjectAddressStatus("warn","⚠️ Subject address details changed — reselect address");updateAllDistances()}})}})}
+function initCompManualInvalidation(comp){[".compCity",".compState",".compZip"].forEach(sel=>{const el=comp.querySelector(sel);if(el&&el.dataset.manualInvalidation!=="yes"){el.dataset.manualInvalidation="yes";el.addEventListener("input",()=>{const street=comp.querySelector(".compStreet");if(street&&street.dataset.googleVerified==="yes"){clearLatLngOnInput(street);updateCompAddressStatus(comp,"warn","⚠️ Address details changed — reselect address");updateDistanceForComp(comp)}})}})}
+document.addEventListener("input",e=>{if(e.target.classList.contains("proximity"))return;markUnsaved();calculate()});document.addEventListener("change",()=>{markUnsaved();calculate();updateAllDistances()});window.addEventListener("message",handleWixMessage);document.getElementById("saveBtn").addEventListener("click",saveAnalysis);document.getElementById("saveBtnSide").addEventListener("click",saveAnalysis);document.getElementById("loadSavedBtn").addEventListener("click",requestSaved);document.getElementById("loadSavedBtnSide").addEventListener("click",requestSaved);document.getElementById("duplicateBtn").addEventListener("click",duplicateAnalysis);document.getElementById("exportBtn").addEventListener("click",exportAnalysis);document.getElementById("closeModalBtn").addEventListener("click",closeSavedModal);document.getElementById("savedModal").addEventListener("click",e=>{if(e.target.id==="savedModal")closeSavedModal()});setupMoneyFields();initManualAddressInvalidation();addComp();addComp();addComp();setMemberSaveState(false);markUnsaved();calculate();loadGoogleMaps();
+</script>
+</body>
+</html>

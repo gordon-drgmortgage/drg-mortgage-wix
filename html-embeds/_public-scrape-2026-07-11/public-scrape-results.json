@@ -1,0 +1,580 @@
+[
+  {
+    "label": "Home",
+    "requestedPath": "/",
+    "finalUrl": "https://www.drgmortgagellc.com/",
+    "status": 200,
+    "pageId": "tuckg",
+    "pageTitle": "Home",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mql7ov8b",
+        "title": "Freddie Mac Mortgage Rates",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_106055acc66e42b4ce8cbd6c91a20588.html",
+        "role": "mortgageAdvantageHtml",
+        "bucket": "mortgageadvantagehtml",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/mortgageadvantagehtml/mortgageadvantagehtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 87500,
+        "duplicateOf": ""
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_dc498e83cac1a1963a7731f5e6ad9ad9_383.json"
+  },
+  {
+    "label": "Borrower Tools",
+    "requestedPath": "/borrower-tools",
+    "finalUrl": "https://www.drgmortgagellc.com/borrower-tools",
+    "status": 200,
+    "pageId": "rp9wa",
+    "pageTitle": "Borrower Tools",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mr3j68v0",
+        "title": "Amortization Calculator",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_ee2b94bf904da19e166c584d9881c970.html",
+        "role": "amortizationHtml",
+        "bucket": "amortization-calculator",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/amortization-calculator/borrower-tools-amortizationhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 742314,
+        "duplicateOf": ""
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_5e803f320621532e29cc711dbb96e644_364.json"
+  },
+  {
+    "label": "Investor Tools",
+    "requestedPath": "/investor-tools",
+    "finalUrl": "https://www.drgmortgagellc.com/investor-tools",
+    "status": 200,
+    "pageId": "s5avu",
+    "pageTitle": "Investor Tools",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mr29ut26",
+        "title": "DSCR Calculator",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_4fe26fe99ef5b96c6041a788fb227288.html",
+        "role": "dscrHtml",
+        "bucket": "dscr-calculator",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/dscr-calculator/investor-tools-dscrhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 81895,
+        "duplicateOf": ""
+      },
+      {
+        "compId": "comp-mr2iafa3",
+        "title": "Comparables Calculator",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_b3137094861480fdc64dea25c1ec923d.html",
+        "role": "comparablesHtml",
+        "bucket": "comparables-calculator",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/comparables-calculator/investor-tools-comparableshtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 92081,
+        "duplicateOf": ""
+      },
+      {
+        "compId": "comp-mr3g9neg",
+        "title": "Fix & Flip Analyzer",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_13cfde7dd0cd202fd33abf723ea9ff39.html",
+        "role": "fixFlipHtml",
+        "bucket": "fix-and-flip-analyzer",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/fix-and-flip-analyzer/investor-tools-fixfliphtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 75244,
+        "duplicateOf": ""
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_b6eb9737dd7e93c23f59b3f12e5d4a21_375.json"
+  },
+  {
+    "label": "Investor Hub",
+    "requestedPath": "/investor-hub",
+    "finalUrl": "https://www.drgmortgagellc.com/investor-hub",
+    "status": 200,
+    "pageId": "masterPage",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "No public HtmlComponent URL found in page assets."
+    ],
+    "pageJsonFileName": "4d4d61_5f7d85ebf5872fb3299d86d74d91a69a_405.json"
+  },
+  {
+    "label": "My Mortgage Dashboard",
+    "requestedPath": "/my-mortgage-dashboard",
+    "finalUrl": "https://www.drgmortgagellc.com/my-mortgage-dashboard",
+    "status": 200,
+    "pageId": "masterPage",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "No public HtmlComponent URL found in page assets."
+    ],
+    "pageJsonFileName": "4d4d61_5f7d85ebf5872fb3299d86d74d91a69a_405.json"
+  },
+  {
+    "label": "Loan Details",
+    "requestedPath": "/loan-details",
+    "finalUrl": "https://www.drgmortgagellc.com/loan-details",
+    "status": 200,
+    "pageId": "masterPage",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "No public HtmlComponent URL found in page assets."
+    ],
+    "pageJsonFileName": "4d4d61_5f7d85ebf5872fb3299d86d74d91a69a_405.json"
+  },
+  {
+    "label": "Realtor Tools",
+    "requestedPath": "/realtor-tools",
+    "finalUrl": "https://www.drgmortgagellc.com/realtor-tools",
+    "status": 200,
+    "pageId": "weyoj",
+    "pageTitle": "Realtor Tools",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mrdhppm4",
+        "title": "Quick Tools",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_3a16739972c698e68c817f9cbfdc6d5c.html",
+        "role": "quickToolsHtml",
+        "bucket": "quicktoolshtml",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/quicktoolshtml/realtor-tools-quicktoolshtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 26383,
+        "duplicateOf": ""
+      },
+      {
+        "compId": "comp-mrdi37xy",
+        "title": "Seller Net Sheet",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_05db6f72684c3cac3c7c7d1d6eb22f12.html",
+        "role": "sellerNetSheetHtml",
+        "bucket": "sellernetsheethtml",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/sellernetsheethtml/realtor-tools-sellernetsheethtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 24263,
+        "duplicateOf": ""
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_3b48a04e7a1f1411594b4a475bf3e92b_383.json"
+  },
+  {
+    "label": "Knowledge Center",
+    "requestedPath": "/knowledge-center",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center",
+    "status": 200,
+    "pageId": "zkhqo",
+    "pageTitle": "Knowledge Center",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mrbhfxgm",
+        "title": "Knowledge Center",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_fc93a9b3bb0a37bb95e1fc3947174025.html",
+        "role": "knowledgeCenterHtml",
+        "bucket": "knowledge-center",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-center/knowledge-center-knowledgecenterhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 33416,
+        "duplicateOf": ""
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_e56dddad09fbc50cf97c2f60ff400e03_399.json"
+  },
+  {
+    "label": "Knowledge Resource Dynamic",
+    "requestedPath": "/knowledge-resources/test",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-resources/test",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Homebuyer Basics",
+    "requestedPath": "/homebuyer-basics",
+    "finalUrl": "https://www.drgmortgagellc.com/homebuyer-basics",
+    "status": 200,
+    "pageId": "jllw3",
+    "pageTitle": "Homebuyer Basics",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre2l524",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": ""
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_46771045a4045cdb5865d96a6c895247_399.json"
+  },
+  {
+    "label": "Mortgage Basics",
+    "requestedPath": "/mortgage-basics",
+    "finalUrl": "https://www.drgmortgagellc.com/mortgage-basics",
+    "status": 200,
+    "pageId": "wer5x",
+    "pageTitle": "Mortgage Basics",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre4xkoz",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/mortgage-basics-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_7d3b995dfc4ed68f081b429be9c7164f_399.json"
+  },
+  {
+    "label": "Loan Programs",
+    "requestedPath": "/loan-programs",
+    "finalUrl": "https://www.drgmortgagellc.com/loan-programs",
+    "status": 200,
+    "pageId": "zpung",
+    "pageTitle": "Loan Programs",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre504cr",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/loan-programs-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_931e65ceba3a62b890442938c2f64d51_400.json"
+  },
+  {
+    "label": "Refinance Homeowner",
+    "requestedPath": "/refinance-homeowner",
+    "finalUrl": "https://www.drgmortgagellc.com/refinance-homeowner",
+    "status": 200,
+    "pageId": "skwrn",
+    "pageTitle": "Refinance Homeowner",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre50sw0",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/refinance-homeowner-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_f3db5aaf04a8d948a10eb6633ca6f4ee_400.json"
+  },
+  {
+    "label": "Credit Qualification",
+    "requestedPath": "/credit-qualification",
+    "finalUrl": "https://www.drgmortgagellc.com/credit-qualification",
+    "status": 200,
+    "pageId": "bal09",
+    "pageTitle": "Credit Qualification",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre4yxp0",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/credit-qualification-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_a12b9c0ef802b5e636710668948161aa_399.json"
+  },
+  {
+    "label": "Investor Resources",
+    "requestedPath": "/investor-resources",
+    "finalUrl": "https://www.drgmortgagellc.com/investor-resources",
+    "status": 200,
+    "pageId": "j12kv",
+    "pageTitle": "Investor Resources",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre51jr2",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/investor-resources-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_cef3a49cd6ae0b6b46aa9ca7258445af_400.json"
+  },
+  {
+    "label": "Realtor Resources",
+    "requestedPath": "/realtor-resources",
+    "finalUrl": "https://www.drgmortgagellc.com/realtor-resources",
+    "status": 200,
+    "pageId": "e5kxd",
+    "pageTitle": "Realtor Resources",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre5313c1",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/realtor-resources-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_c379916ca7eff8c6f3e4d6f8a6b3e40c_400.json"
+  },
+  {
+    "label": "Resource Library",
+    "requestedPath": "/resource-library",
+    "finalUrl": "https://www.drgmortgagellc.com/resource-library",
+    "status": 200,
+    "pageId": "jk4b0",
+    "pageTitle": "Resource Library",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre53m8p",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/resource-library-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_39badb9384e83813c8a8f9bf25667044_400.json"
+  },
+  {
+    "label": "Flyer Library",
+    "requestedPath": "/flyer-library",
+    "finalUrl": "https://www.drgmortgagellc.com/flyer-library",
+    "status": 200,
+    "pageId": "x6yo9",
+    "pageTitle": "Flyer Library",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre54t7g1",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/flyer-library-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_68c2532a1b54bad04efa598708193ddd_400.json"
+  },
+  {
+    "label": "Social Media Library",
+    "requestedPath": "/social-media-library",
+    "finalUrl": "https://www.drgmortgagellc.com/social-media-library",
+    "status": 200,
+    "pageId": "z20o0",
+    "pageTitle": "Social Media Library",
+    "pageFullPath": "",
+    "components": [
+      {
+        "compId": "comp-mre543wv2",
+        "title": "Knowledge Category",
+        "url": "https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_6b8e25c34a64077c5a275021c4b0e640.html",
+        "role": "knowledgeCategoryHtml",
+        "bucket": "knowledge-category",
+        "filePath": "html-embeds/_public-scrape-2026-07-11/knowledge-category/social-media-library-knowledgecategoryhtml.html",
+        "htmlStatus": 200,
+        "htmlBytes": 53416,
+        "duplicateOf": "html-embeds/_public-scrape-2026-07-11/knowledge-category/homebuyer-basics-knowledgecategoryhtml.html"
+      }
+    ],
+    "notes": [],
+    "pageJsonFileName": "4d4d61_53d079676025b1dea7f314478a576a44_400.json"
+  },
+  {
+    "label": "Knowledge Homebuyer Basics Nested",
+    "requestedPath": "/knowledge-center/homebuyer-basics",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/homebuyer-basics",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Mortgage Basics Nested",
+    "requestedPath": "/knowledge-center/mortgage-basics",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/mortgage-basics",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Loan Programs Nested",
+    "requestedPath": "/knowledge-center/loan-programs",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/loan-programs",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Refinance Homeowner Nested",
+    "requestedPath": "/knowledge-center/refinance-homeowner",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/refinance-homeowner",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Credit Qualification Nested",
+    "requestedPath": "/knowledge-center/credit-qualification",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/credit-qualification",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Investor Resources Nested",
+    "requestedPath": "/knowledge-center/investor-resources",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/investor-resources",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Realtor Resources Nested",
+    "requestedPath": "/knowledge-center/realtor-resources",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/realtor-resources",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Resource Library Nested",
+    "requestedPath": "/knowledge-center/resource-library",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/resource-library",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Flyer Library Nested",
+    "requestedPath": "/knowledge-center/flyer-library",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/flyer-library",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  },
+  {
+    "label": "Knowledge Social Media Library Nested",
+    "requestedPath": "/knowledge-center/social-media-library",
+    "finalUrl": "https://www.drgmortgagellc.com/knowledge-center/social-media-library",
+    "status": 404,
+    "pageId": "",
+    "pageTitle": "",
+    "pageFullPath": "",
+    "components": [],
+    "notes": [
+      "Page fetch failed with HTTP 404."
+    ]
+  }
+]

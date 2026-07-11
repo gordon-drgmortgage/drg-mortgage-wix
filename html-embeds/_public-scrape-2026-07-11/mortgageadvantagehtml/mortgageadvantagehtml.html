@@ -1,0 +1,2404 @@
+<!--
+Source: Public Wix rendered HTML component scrape
+Scrape date: 2026-07-11
+Wix page label: Home
+Requested URL: https://www.drgmortgagellc.com/
+Final URL: https://www.drgmortgagellc.com/
+Wix page ID: tuckg
+Rendered component ID: comp-mql7ov8b
+Velo role/component ID: #mortgageAdvantageHtml
+Iframe title: Freddie Mac Mortgage Rates
+Source HTML URL: https://www-drgmortgagellc-com.filesusr.com/html/4d4d61_106055acc66e42b4ce8cbd6c91a20588.html
+HTTP status: 200
+Note: This is the publicly rendered HTML component file, not a manual export from the Wix Editor.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root {
+  --navy: #0F2744;
+  --navy-2: #163B63;
+  --gold: #D4A73C;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #667085;
+  --line: #dde4ee;
+  --good: #16803C;
+  --good-bg: #E8F5EC;
+  --warn: #8A6D1D;
+  --warn-bg: #FFF4D6;
+  --bad: #B42318;
+  --bad-bg: #FDECEC;
+  --shadow: 0 10px 25px rgba(15,39,68,.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--navy), var(--navy-2));
+  color: white;
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  color: #dfe9f6;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1 {
+  font-size: 30px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  color: #e8eef7;
+  line-height: 1.45;
+  margin-bottom: 0;
+  max-width: 760px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  color: white;
+  border-radius: 999px;
+  padding: 9px 13px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 22px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.section-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.rate-box, .stat-box, .mini-box {
+  background: #f8fafd;
+  border: 1px solid #edf1f6;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.rate-box { text-align: center; }
+
+.label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.value {
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.stat-value {
+  font-size: 27px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.change {
+  font-size: 14px;
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+.good { color: var(--good); }
+.bad { color: var(--bad); }
+.neutral { color: var(--warn); }
+
+.market-meter {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.meter-badge {
+  display: inline-block;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.meter-good { background: var(--good-bg); color: var(--good); }
+.meter-neutral { background: #EAF3FF; color: #175CD3; }
+.meter-bad { background: var(--good-bg); color: var(--good); }
+.positive-box {
+  background: var(--good-bg);
+  border: 1px solid #BFE7CB;
+}
+.opportunity-text { color: var(--good); font-weight: 800; }
+.realtor-details {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.realtor-details summary {
+  cursor: pointer;
+  padding: 16px 18px;
+  font-weight: 900;
+  color: var(--navy);
+  background: #f8fafd;
+  list-style-position: inside;
+}
+.realtor-details[open] summary { border-bottom: 1px solid var(--line); }
+.realtor-content { padding: 18px; }
+
+.progress-wrap {
+  margin-top: 12px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background: #e8eef6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  border-radius: 999px;
+  transition: width .3s ease;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tabs button, .toggle button, .small-action {
+  border: none;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: #e8edf5;
+  color: var(--navy);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tabs button.active, .toggle button.active, .small-action.primary {
+  background: var(--navy);
+  color: white;
+}
+
+.chart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.toggle {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  min-height: 340px;
+}
+
+#mortgageChart {
+  width: 100% !important;
+  height: 340px !important;
+}
+
+.insight-text, .plain-text {
+  color: #344054;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.calc-row label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.calc-row input, .calc-row select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cfd8e3;
+  border-radius: 12px;
+  font-size: 16px;
+  background: white;
+  color: var(--navy);
+}
+
+.payment-panel {
+  background: #f8fafd;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.payment-result {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+  margin: 6px 0 10px;
+}
+
+.breakdown {
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  margin: 7px 0;
+  color: #344054;
+}
+
+.breakdown-row strong { color: var(--navy); }
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.callout {
+  border-left: 5px solid var(--gold);
+  background: #fffaf0;
+  border-radius: 14px;
+  padding: 16px;
+  color: #344054;
+  line-height: 1.5;
+}
+
+.cta {
+  text-align: center;
+  padding: 8px 0 2px;
+}
+
+.cta button {
+  background: var(--gold);
+  color: white;
+  border: none;
+  padding: 16px 30px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(212,167,60,.28);
+}
+
+.cta button:hover { opacity: .92; }
+
+.small-note {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+.error-box {
+  display: none;
+  background: var(--bad-bg);
+  color: var(--bad);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #f1f4f8 25%, #e8edf5 50%, #f1f4f8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  color: transparent !important;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+
+.good-news-card {
+  background: linear-gradient(135deg, #E8F5EC, #ffffff);
+  border: 1px solid #BFE7CB;
+}
+
+.good-news-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.good-news-badge {
+  display: inline-block;
+  background: var(--good-bg);
+  color: var(--good);
+  border: 1px solid #BFE7CB;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.advantage-card {
+  background: #f8fafd;
+  border: 1px solid #edf1f6;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.advantage-list {
+  display: grid;
+  gap: 9px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.advantage-list li {
+  color: #344054;
+  line-height: 1.35;
+}
+
+.green-highlight {
+  color: var(--good);
+  font-weight: 900;
+}
+
+.beat-offer-card {
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #dfe8f5;
+}
+
+.offer-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.offer-form .full { grid-column: 1 / -1; }
+
+.offer-form label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.offer-form input, .offer-form textarea, .offer-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cfd8e3;
+  border-radius: 12px;
+  font-size: 16px;
+  background: white;
+  color: var(--navy);
+}
+
+.offer-form textarea { min-height: 90px; resize: vertical; }
+
+.offer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.offer-actions button {
+  border: none;
+  padding: 13px 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.offer-actions .primary {
+  background: var(--good);
+  color: white;
+}
+
+.offer-actions .secondary {
+  background: #e8edf5;
+  color: var(--navy);
+}
+
+.offer-confirmation {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--good-bg);
+  color: var(--good);
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.rate-advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.rate-advantage-box {
+  background: var(--good-bg);
+  border: 1px solid #BFE7CB;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+}
+
+.rate-advantage-box .stat-value { color: var(--good); }
+
+.positive-box {
+  background: var(--good-bg);
+  border: 1px solid #BFE7CB;
+}
+
+.mini-copy {
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--navy);
+  margin-top: 8px;
+}
+
+.offer-savings-preview {
+  background: var(--good-bg);
+  border: 1px solid #BFE7CB;
+  border-radius: 16px;
+  padding: 14px;
+  margin: 14px 0;
+  color: var(--navy);
+}
+
+.offer-savings-preview strong {
+  color: var(--good);
+}
+
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background: #f0f8f3;
+  border: 1px solid #BFE7CB;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.trust-item {
+  color: var(--good);
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.history-box {
+  background: #f8fafd;
+  border: 1px solid #edf1f6;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.history-box.positive {
+  background: var(--good-bg);
+  border-color: #BFE7CB;
+}
+
+.history-value {
+  font-size: 26px;
+  font-weight: 900;
+  margin-top: 4px;
+}
+
+.history-note {
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.info-box {
+  background: #f8fafd;
+  border: 1px solid #edf1f6;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.upload-prompt {
+  background: #fffaf0;
+  border: 1px dashed var(--gold);
+  border-radius: 16px;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.upload-prompt input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ead7a4;
+  border-radius: 12px;
+}
+
+.realtor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.realtor-actions button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  background: #e8edf5;
+  color: var(--navy);
+}
+
+.realtor-actions button.primary {
+  background: var(--good);
+  color: white;
+}
+
+.copy-confirmation {
+  display: none;
+  margin-top: 10px;
+  background: var(--good-bg);
+  color: var(--good);
+  border-radius: 12px;
+  padding: 10px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  body { padding: 12px; }
+  h1 { font-size: 25px; }
+  .grid-2, .grid-3, .grid-4, .market-meter, .calculator, .compare-grid, .good-news-grid, .offer-form, .rate-advantage-grid, .history-grid, .info-grid, .trust-strip {
+    grid-template-columns: 1fr;
+  }
+  .offer-form .full { grid-column: auto; }
+  .value, .payment-result { font-size: 32px; }
+  .chart-container, #mortgageChart {
+    height: 300px !important;
+    min-height: 300px;
+  }
+}
+
+/* v7 finance-style semantic color system */
+:root {
+  --green: #16803C;
+  --green-dark: #0F6B32;
+  --green-bg: #EAF8EF;
+  --green-border: #A9DEC0;
+  --yellow: #8A6D1D;
+  --yellow-bg: #FFF8E1;
+  --yellow-border: #EBCB62;
+  --orange: #B85C00;
+  --orange-bg: #FFF2E8;
+  --orange-border: #F4B47D;
+  --red: #B42318;
+  --red-bg: #FDECEC;
+  --red-border: #F5B5B0;
+  --blue: #175CD3;
+  --blue-bg: #EAF3FF;
+  --blue-border: #BBD6FF;
+}
+
+.card, .rate-box, .stat-box, .mini-box, .history-box, .info-box, .rate-advantage-box, .payment-panel, .callout, .advantage-card {
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.card:hover, .rate-box:hover, .stat-box:hover, .history-box:hover, .rate-advantage-box:hover, .info-box:hover, .payment-panel:hover, .callout:hover, .advantage-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15,39,68,.12);
+}
+
+.rate-box, .stat-box, .history-box, .rate-advantage-box, .info-box, .payment-panel {
+  position: relative;
+  overflow: visible;
+}
+
+.stat-good { background: var(--green-bg) !important; border-color: var(--green-border) !important; }
+.stat-good .value, .stat-good .stat-value, .stat-good .history-value { color: var(--green-dark) !important; }
+.stat-warn { background: var(--yellow-bg) !important; border-color: var(--yellow-border) !important; }
+.stat-warn .value, .stat-warn .stat-value, .stat-warn .history-value { color: var(--yellow) !important; }
+.stat-caution { background: var(--orange-bg) !important; border-color: var(--orange-border) !important; }
+.stat-caution .value, .stat-caution .stat-value, .stat-caution .history-value { color: var(--orange) !important; }
+.stat-bad { background: var(--red-bg) !important; border-color: var(--red-border) !important; }
+.stat-bad .value, .stat-bad .stat-value, .stat-bad .history-value { color: var(--red) !important; }
+.stat-info { background: var(--blue-bg) !important; border-color: var(--blue-border) !important; }
+.stat-info .value, .stat-info .stat-value, .stat-info .history-value { color: var(--blue) !important; }
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 10px;
+  line-height: 1;
+}
+.status-chip.good { background: rgba(22,128,60,.12); color: var(--green-dark); }
+.status-chip.warn { background: rgba(138,109,29,.14); color: var(--yellow); }
+.status-chip.caution { background: rgba(184,92,0,.12); color: var(--orange); }
+.status-chip.bad { background: rgba(180,35,24,.11); color: var(--red); }
+.status-chip.info { background: rgba(23,92,211,.11); color: var(--blue); }
+
+[data-tooltip] { cursor: help; }
+[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: calc(100% + 8px);
+  background: #101828;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.35;
+  z-index: 9999;
+  box-shadow: 0 10px 24px rgba(16,24,40,.24);
+}
+[data-tooltip]:hover::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  bottom: calc(100% + 2px);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #101828 transparent transparent transparent;
+  z-index: 10000;
+}
+
+.market-pulse-card {
+  background: linear-gradient(135deg, #ffffff, #f7fbff);
+  border: 1px solid #dfe8f5;
+}
+.market-pulse-layout {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 18px;
+  align-items: center;
+}
+.pulse-score {
+  text-align: center;
+  border-radius: 20px;
+  padding: 18px;
+  background: var(--green-bg);
+  border: 1px solid var(--green-border);
+}
+.pulse-number {
+  font-size: 52px;
+  font-weight: 950;
+  line-height: 1;
+  color: var(--green-dark);
+}
+.pulse-label {
+  font-weight: 900;
+  margin-top: 8px;
+  color: var(--green-dark);
+}
+.pulse-track {
+  width: 100%;
+  height: 14px;
+  background: linear-gradient(90deg, var(--red-bg), var(--orange-bg), var(--yellow-bg), var(--green-bg));
+  border: 1px solid #e3e8ef;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+.pulse-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #54C77A, var(--green-dark));
+  border-radius: 999px;
+  transition: width .4s ease;
+}
+.pulse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+.pulse-item {
+  border-radius: 14px;
+  padding: 11px;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid #edf1f6;
+  background: #fff;
+}
+.pulse-item.good { background: var(--green-bg); border-color: var(--green-border); color: var(--green-dark); }
+.pulse-item.warn { background: var(--yellow-bg); border-color: var(--yellow-border); color: var(--yellow); }
+.pulse-item.caution { background: var(--orange-bg); border-color: var(--orange-border); color: var(--orange); }
+.pulse-item.info { background: var(--blue-bg); border-color: var(--blue-border); color: var(--blue); }
+
+.progress-fill { background: linear-gradient(90deg, var(--green-dark), var(--yellow), var(--orange)); }
+
+@media (max-width: 700px) {
+  .market-pulse-layout { grid-template-columns: 1fr; }
+  .pulse-grid { grid-template-columns: 1fr; }
+}
+
+
+
+/* DRG mobile optimization layer for Wix embed - desktop styles above remain default */
+@media (max-width: 900px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  .dashboard {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero,
+  .card {
+    border-radius: 20px;
+  }
+
+  .hero {
+    padding: 22px;
+    margin-bottom: 14px;
+  }
+
+  .hero-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .status-pill {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+  }
+
+  .card {
+    padding: 18px;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: 19px;
+    line-height: 1.18;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .market-meter,
+  .calculator,
+  .compare-grid,
+  .good-news-grid,
+  .offer-form,
+  .rate-advantage-grid,
+  .history-grid,
+  .info-grid,
+  .trust-strip,
+  .market-pulse-layout,
+  .pulse-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .offer-form .full {
+    grid-column: 1 / -1;
+  }
+
+  .trust-strip {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .trust-item {
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.65);
+  }
+
+  .rate-box,
+  .stat-box,
+  .mini-box,
+  .history-box,
+  .info-box,
+  .rate-advantage-box,
+  .payment-panel,
+  .advantage-card,
+  .pulse-score,
+  .pulse-item {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .market-pulse-layout,
+  .good-news-grid {
+    gap: 16px;
+  }
+
+  .pulse-number {
+    font-size: 46px;
+  }
+
+  .value,
+  .payment-result {
+    font-size: 32px;
+  }
+
+  .stat-value,
+  .history-value {
+    font-size: 25px;
+  }
+
+  .chart-head {
+    align-items: stretch;
+  }
+
+  .toggle,
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 8px;
+  }
+
+  .tabs button,
+  .toggle button,
+  .small-action {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+  }
+
+  .chart-container,
+  #mortgageChart {
+    height: 300px !important;
+    min-height: 300px;
+  }
+
+  .calc-row {
+    margin-bottom: 12px;
+  }
+
+  .calc-row input,
+  .calc-row select,
+  .offer-form input,
+  .offer-form textarea,
+  .offer-form select,
+  .upload-prompt input[type="file"] {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .breakdown-row {
+    align-items: flex-start;
+    line-height: 1.35;
+  }
+
+  .offer-actions,
+  .realtor-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .offer-actions button,
+  .realtor-actions button,
+  .cta button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .realtor-details summary {
+    padding: 15px;
+    line-height: 1.35;
+  }
+
+  .realtor-content {
+    padding: 15px;
+  }
+
+  [data-tooltip]:hover::after,
+  [data-tooltip]:hover::before {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  h1 {
+    font-size: 26px;
+    line-height: 1.08;
+  }
+
+  .hero p,
+  .plain-text,
+  .insight-text,
+  .mini-copy,
+  .small-note {
+    line-height: 1.5;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .rate-box,
+  .stat-box,
+  .mini-box,
+  .history-box,
+  .info-box,
+  .rate-advantage-box,
+  .payment-panel,
+  .callout,
+  .advantage-card,
+  .offer-savings-preview,
+  .upload-prompt {
+    padding: 14px;
+    border-radius: 15px;
+  }
+
+  .value,
+  .payment-result {
+    font-size: 29px;
+  }
+
+  .stat-value,
+  .history-value {
+    font-size: 23px;
+  }
+
+  .pulse-number {
+    font-size: 42px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .toggle {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chart-container,
+  #mortgageChart {
+    height: 280px !important;
+    min-height: 280px;
+  }
+
+  .progress-labels,
+  .breakdown-row {
+    font-size: 13px;
+  }
+
+  .breakdown-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  .cta {
+    padding: 4px 0 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .tabs,
+  .toggle {
+    grid-template-columns: 1fr;
+  }
+
+  .value,
+  .payment-result {
+    font-size: 27px;
+  }
+
+  .chart-container,
+  #mortgageChart {
+    height: 260px !important;
+    min-height: 260px;
+  }
+}
+
+
+/* Compliance clarity + cleaner pointer behavior */
+[data-tooltip],
+[data-tooltip] * {
+  cursor: default !important;
+}
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before {
+  display: none !important;
+  content: none !important;
+}
+.source-chip,
+.rate-disclosure,
+.compliance-note {
+  display: block;
+  margin-top: 9px;
+  color: #344054;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.source-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #EAF3FF;
+  border: 1px solid #BBD6FF;
+  color: #175CD3;
+  font-weight: 900;
+}
+.rate-disclosure strong,
+.compliance-note strong { color: var(--navy); }
+.compliance-banner {
+  background: #fffaf0;
+  border: 1px solid #ead7a4;
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  color: #344054;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.compliance-banner strong { color: var(--navy); }
+.realtor-template-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.realtor-template-box {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #f8fafd;
+  padding: 14px;
+}
+.realtor-template-box strong {
+  display: block;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+@media (max-width: 800px) {
+  .source-chip { width: 100%; justify-content: center; text-align: center; white-space: normal; border-radius: 14px; }
+  .rate-disclosure, .compliance-note { font-size: 11.5px; }
+}
+
+</style>
+</head>
+
+<body>
+<div class="dashboard">
+  <div class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">DRG Mortgage Advantage Center</div>
+        <h1>Mortgage Advantage Center</h1>
+        <p>Track national mortgage trends, estimate your payment, compare today's market, and submit your current offer so DRG Mortgage can look for a better path.</p>
+      </div>
+      <div class="status-pill" id="statusPill">Loading live data...</div>
+    </div>
+  </div>
+
+  <div class="error-box" id="errorBox"></div>
+
+  <div class="compliance-banner">
+    <strong>Rate data disclosure:</strong> Mortgage rates shown on this page are Freddie Mac PMMS national average benchmark rates unless clearly labeled otherwise. They are not DRG Mortgage offered rates, not a Loan Estimate, not an approval, and not a rate lock. Your actual rate/APR, payment, points, credits, closing costs, and loan terms depend on your complete application, credit profile, property, occupancy, loan program, lock period, and live lender pricing.
+  </div>
+
+  <div class="trust-strip">
+    <div class="trust-item">✓ Licensed mortgage broker</div>
+    <div class="trust-item">✓ Wholesale lender access</div>
+    <div class="trust-item">✓ Rate + fee comparison</div>
+    <div class="trust-item">✓ Personalized pricing after review</div>
+  </div>
+
+
+  <div class="card market-pulse-card">
+    <div class="market-pulse-layout">
+      <div class="pulse-score" id="pulseScoreBox">
+        <div class="label">Market Pulse</div>
+        <div class="pulse-number" id="pulseNumber">--</div>
+        <div class="pulse-label" id="pulseLabel">Loading...</div>
+        <div class="pulse-track"><div class="pulse-fill" id="pulseFill"></div></div>
+        <div class="small-note">Green means more buyer opportunity. Orange or yellow means compare structure, credits, and fees carefully.</div>
+      </div>
+      <div>
+        <h2 class="section-title" style="margin-bottom:8px;">Buyer Opportunity Snapshot</h2>
+        <p class="plain-text" id="pulseSummary">Loading market pulse...</p>
+        <div class="pulse-grid">
+          <div class="pulse-item good" id="pulseRatePosition">Rate position</div>
+          <div class="pulse-item info" id="pulseTrend">Trend</div>
+          <div class="pulse-item good" id="pulseStrategy">Strategy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card good-news-card">
+    <div class="good-news-grid">
+      <div>
+        <div class="good-news-badge">🟢 Good News This Week</div>
+        <h2 class="section-title" style="margin-bottom:8px;">Today’s market may be better than the headline rate suggests.</h2>
+        <p class="plain-text" id="goodNewsText">Loading the positive market takeaway...</p>
+      </div>
+      <div class="advantage-card">
+        <div class="label">DRG Mortgage Advantage</div>
+        <div class="stat-value green-highlight">Research-Backed Savings</div>
+        <p class="small-note" style="margin-top:8px;">Independent research using 2023 HMDA mortgage data found borrowers working with mortgage brokers saved an average of $10,662 over the life of the loan compared with nonbank retail lenders. Individual results vary.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="grid-2">
+      <div class="rate-box">
+        <div class="label">30-Year Fixed National Average</div>
+        <div class="value" id="rate30">Loading...</div>
+        <span class="source-chip">Source: Freddie Mac PMMS</span>
+        <div class="change" id="change30"></div>
+        <div class="rate-disclosure"><strong>Benchmark only:</strong> This is not a DRG Mortgage offered rate, APR, quote, approval, or lock.</div>
+      </div>
+      <div class="rate-box">
+        <div class="label">15-Year Fixed National Average</div>
+        <div class="value" id="rate15">Loading...</div>
+        <span class="source-chip">Source: Freddie Mac PMMS</span>
+        <div class="change" id="change15"></div>
+        <div class="rate-disclosure"><strong>Benchmark only:</strong> This is not a DRG Mortgage offered rate, APR, quote, approval, or lock.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Wholesale Advantage: Why Compare Your Offer?</h2>
+    <p class="plain-text" style="margin-bottom:14px;">As a wholesale mortgage broker, DRG Mortgage can shop multiple wholesale lenders instead of presenting one retail pricing option. The safest way to know whether there is room to improve your deal is to compare your actual Loan Estimate.</p>
+    <div class="rate-advantage-grid">
+      <div class="rate-advantage-box">
+        <div class="label">Freddie Mac PMMS National Average</div>
+        <div class="stat-value" id="nationalAvgRate">--</div>
+      </div>
+      <div class="rate-advantage-box">
+        <div class="label">Hypothetical 0.10% Lower Benchmark</div>
+        <div class="stat-value" id="drgTargetRate">--</div>
+      </div>
+      <div class="rate-advantage-box">
+        <div class="label">Example P&I Savings</div>
+        <div class="stat-value" id="drgMonthlySavings">--</div>
+      </div>
+    </div>
+    <p class="small-note" style="margin-top:12px;"><strong>Important:</strong> The national average is Freddie Mac PMMS benchmark data. The hypothetical 0.10 percentage-point lower benchmark is only a math illustration using the home price entered in the payment estimator. It is not a DRG Mortgage rate offer, APR, quote, approval, or lock. Actual pricing depends on credit, loan amount, LTV, occupancy, property type, points/credits, lock period, loan program, and live wholesale pricing.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Research-Backed Broker Savings</h2>
+    <div class="grid-3">
+      <div class="stat-box positive-box">
+        <div class="label">Average Lifetime Savings</div>
+        <div class="stat-value">$10,662</div>
+        <div class="mini-copy">Polygon Research analyzed 2023 HMDA data and found borrowers using independent mortgage brokers saved this average amount versus nonbank retail lenders.</div>
+      </div>
+      <div class="stat-box positive-box">
+        <div class="label">VA Loan Savings</div>
+        <div class="stat-value">$13,432</div>
+        <div class="mini-copy">The same research found larger average savings for VA borrowers using independent mortgage brokers versus retail lenders.</div>
+      </div>
+      <div class="stat-box positive-box">
+        <div class="label">Lower Upfront Costs</div>
+        <div class="stat-value">115 vs 148 bps</div>
+        <div class="mini-copy">The study reported lower average upfront discount-point costs in the wholesale channel than the retail channel.</div>
+      </div>
+    </div>
+    <p class="small-note" style="margin-top:12px;">Sources: <a href="https://www.consumerfinance.gov/data-research/hmda/summary-of-2023-data-on-mortgage-lending/" target="_blank" rel="noopener">CFPB 2023 HMDA mortgage lending data summary</a>; <a href="https://www.businesswire.com/news/home/20240828524747/en/New-Research-Concludes-Consumers-Save-%2410662-Working-With-a-Mortgage-Broker" target="_blank" rel="noopener">Polygon Research / Business Wire broker savings release</a>; <a href="https://nationalmortgageprofessional.com/news/study-reveals-brokers-are-better-borrowers-wallets" target="_blank" rel="noopener">National Mortgage Professional coverage of the study</a>. These are industry research findings using HMDA data, not a guarantee that every borrower will save money. Individual results vary by borrower qualifications, loan type, lender pricing, fees, points, credits, property, occupancy, lock period, and market conditions.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Your DRG Mortgage Advantage</h2>
+    <div class="grid-4">
+      <div class="stat-box positive-box"><div class="label">Wholesale Access</div><div class="mini-copy">Shop multiple lenders instead of one retail offer.</div></div>
+      <div class="stat-box positive-box"><div class="label">Offer Competition</div><div class="mini-copy">Compare your actual Loan Estimate against wholesale options.</div></div>
+      <div class="stat-box positive-box"><div class="label">Cost Strategy</div><div class="mini-copy">Compare rates, points, credits, and monthly payment.</div></div>
+      <div class="stat-box positive-box"><div class="label">Offer Review</div><div class="mini-copy">Send your current quote and see if there is room to improve.</div></div>
+    </div>
+  </div>
+
+  <div class="card good-news-card">
+    <div class="good-news-badge">Good News This Week</div>
+    <h2 class="section-title">What changed this week?</h2>
+    <p class="plain-text" id="weeklyChangeText">Loading weekly rate movement...</p>
+    <div class="offer-savings-preview" id="weeklySavingsText">Loading estimated payment impact...</div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Not All Rates Are Equal</h2>
+    <div class="info-grid">
+      <div class="info-box positive-box"><div class="label">Rate</div><div class="mini-copy">A lower rate can help payment, but it may come with higher upfront cost.</div></div>
+      <div class="info-box positive-box"><div class="label">Points & Credits</div><div class="mini-copy">I compare discount points, lender credits, and closing costs — not just the advertised rate.</div></div>
+      <div class="info-box positive-box"><div class="label">Total Strategy</div><div class="mini-copy">The best offer is the one that fits your timeline, cash-to-close, payment, and refinance plan.</div></div>
+    </div>
+  </div>
+
+  <div class="card market-meter">
+    <div>
+      <div class="label">Mortgage Market Score</div>
+      <div class="meter-badge meter-neutral" id="marketBadge">Loading...</div>
+      <p class="plain-text" id="marketSummary">Analyzing mortgage rate trends...</p>
+    </div>
+    <div>
+      <div class="label">Current 30-year rate position vs. past 52 weeks</div>
+      <div class="progress-wrap">
+        <div class="progress-track"><div class="progress-fill" id="percentileBar"></div></div>
+        <div class="progress-labels"><span>Most favorable</span><span>More strategy needed</span></div>
+      </div>
+      <p class="small-note" id="percentileText" style="margin-top:10px;"></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Key Market Stats</h2>
+    <div class="grid-4">
+      <div class="stat-box">
+        <div class="label">52-Week High</div>
+        <div class="stat-value" id="high52">--</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">52-Week Low</div>
+        <div class="stat-value" id="low52">--</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">52-Week Average</div>
+        <div class="stat-value" id="avg52">--</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">30-Day Trend</div>
+        <div class="stat-value" id="trend30">--</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Compare Historical PMMS Results</h2>
+    <p class="plain-text">Freddie Mac’s PMMS is a weekly national average. This comparison gives visitors context: today, last week, one year ago, and longer-term averages from the historical PMMS dataset.</p>
+    <span class="source-chip">All rates in this section: Freddie Mac PMMS national average benchmark data</span>
+    <p class="rate-disclosure"><strong>Not offered rates:</strong> These benchmark rates are not DRG Mortgage rate offers, APRs, quotes, approvals, or locks.</p>
+    <div class="history-grid">
+      <div class="history-box positive"><div class="label">Today</div><div class="history-value" id="histToday">--</div><div class="history-note" id="histTodayNote">Latest PMMS reading</div></div>
+      <div class="history-box"><div class="label">Last Week</div><div class="history-value" id="histLastWeek">--</div><div class="history-note" id="histLastWeekNote">Week-over-week context</div></div>
+      <div class="history-box"><div class="label">One Year Ago</div><div class="history-value" id="histYearAgo">--</div><div class="history-note" id="histYearAgoNote">Closest PMMS week one year prior</div></div>
+      <div class="history-box positive"><div class="label">52-Week Average</div><div class="history-value" id="histAvg52">--</div><div class="history-note">Useful for judging the current rate against the recent market.</div></div>
+      <div class="history-box"><div class="label">5-Year Average</div><div class="history-value" id="histAvg5y">--</div><div class="history-note">Includes unusually low pandemic-era rates and the later rate-reset period.</div></div>
+      <div class="history-box"><div class="label">10-Year Average</div><div class="history-value" id="histAvg10y">--</div><div class="history-note">A broader cycle view for buyers who ask whether today is “normal.”</div></div>
+      <div class="history-box"><div class="label">Since 1971 Average</div><div class="history-value" id="histAvgAll">--</div><div class="history-note">Long-term historical average from available Freddie Mac data.</div></div>
+      <div class="history-box positive"><div class="label">Best Buyer Takeaway</div><div class="history-value" style="font-size:18px;" id="histTakeaway">Loading...</div><div class="history-note">A simple interpretation for consumers.</div></div>
+    </div>
+    <p class="small-note" style="margin-top:12px;">Source: Freddie Mac Primary Mortgage Market Survey. PMMS results are weekly national averages based on mortgage rates collected from loan applications submitted to Freddie Mac through Loan Product Advisor from lenders across the country. Freddie Mac publishes PMMS weekly and notes that the results are an average of loan rates offered from the prior Thursday through Wednesday. Individual rates can differ based on credit, loan amount, occupancy, property type, points/credits, lock period, and program.</p>
+  </div>
+
+  <div class="card">
+    <div class="chart-head">
+      <h2 class="section-title" style="margin-bottom:0;">Interactive Rate Chart</h2>
+      <div class="toggle">
+        <button class="active" id="toggle30" onclick="toggleSeries('rate30', this)">30-Year</button>
+        <button class="active" id="toggle15" onclick="toggleSeries('rate15', this)">15-Year</button>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button onclick="setRange(4, this)">1M</button>
+      <button onclick="setRange(13, this)">3M</button>
+      <button onclick="setRange(26, this)">6M</button>
+      <button class="active" onclick="setRange(52, this)">1Y</button>
+      <button onclick="setRange(260, this)">5Y</button>
+      <button onclick="setRange('max', this)">MAX</button>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="mortgageChart" style="width:100%; height:340px;"></canvas>
+    </div>
+    <p class="rate-disclosure"><strong>Chart source:</strong> Freddie Mac PMMS national average benchmark data. These are not DRG Mortgage offered rates or APRs.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Market Context From Current PMMS Data</h2>
+    <p class="insight-text" id="aiCommentary">Loading market context...</p>
+    <p class="rate-disclosure"><strong>Auto-updated:</strong> This text is generated by page logic from the latest PMMS data loaded by the widget. It is not personalized financial advice.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Monthly Payment Estimator</h2>
+    <div class="calculator">
+      <div>
+        <div class="calc-row">
+          <label for="homePrice">Home Price</label>
+          <input id="homePrice" type="text" value="$350,000" inputmode="numeric">
+        </div>
+        <div class="calc-row">
+          <label for="downPayment">Down Payment %</label>
+          <input id="downPayment" type="number" value="5" step="0.1">
+        </div>
+        <div class="calc-row">
+          <label for="interestRate">Interest Rate</label>
+          <input id="interestRate" type="number" step="0.01">
+          <div class="rate-disclosure">Default value uses Freddie Mac PMMS national average data. You may enter a different rate for estimate purposes. This is not a DRG offer or APR.</div>
+        </div>
+        <div class="calc-row">
+          <label for="loanProgram">Loan Type</label>
+          <select id="loanProgram">
+            <option value="conventional">Conventional</option>
+            <option value="fha">FHA</option>
+            <option value="va">VA</option>
+            <option value="usda">USDA</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="payment-panel">
+        <div class="label">Estimated Monthly Payment</div>
+        <div class="payment-result" id="paymentResult">--</div>
+        <div class="breakdown">
+          <div class="breakdown-row"><span>Principal & Interest</span><strong id="piPayment">--</strong></div>
+          <div class="breakdown-row"><span>Estimated Taxes</span><strong id="taxPayment">--</strong></div>
+          <div class="breakdown-row"><span>Estimated Insurance</span><strong id="insPayment">--</strong></div>
+          <div class="breakdown-row"><span>Estimated PMI / MI</span><strong id="miPayment">--</strong></div>
+        </div>
+        <p class="small-note" style="margin-top:12px;">Estimate only. Actual payment depends on taxes, insurance, HOA dues, mortgage insurance, loan program, credit profile, occupancy, property type, pricing adjustments, and market conditions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Buy Now vs. Wait</h2>
+    <div class="calculator">
+      <div>
+        <div class="calc-row">
+          <label for="futureRateDrop">Possible Future Rate Drop</label>
+          <select id="futureRateDrop">
+            <option value="0.25">0.25%</option>
+            <option value="0.50" selected>0.50%</option>
+            <option value="0.75">0.75%</option>
+            <option value="1.00">1.00%</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label for="homeAppreciation">Possible Home Price Increase</label>
+          <select id="homeAppreciation">
+            <option value="0.01">1%</option>
+            <option value="0.02">2%</option>
+            <option value="0.03" selected>3%</option>
+            <option value="0.05">5%</option>
+          </select>
+        </div>
+      </div>
+      <div class="callout" id="buyWaitText">Loading comparison...</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">Rate Lock Planning Context</h2>
+    <p class="plain-text" id="lockText">Loading rate lock context...</p>
+    <p class="rate-disclosure"><strong>Auto-updated:</strong> This is rule-based context from the latest PMMS data loaded by the widget. It is not a lock recommendation, quote, or commitment to lend.</p>
+  </div>
+
+
+  <div class="card beat-offer-card">
+    <h2 class="section-title">Compare Your Current Mortgage Offer</h2>
+    <p class="plain-text" style="margin-bottom:14px;">Already have a Loan Estimate or rate quote? Enter the basics below so DRG Mortgage can review whether another structure may improve the rate, payment, credits, costs, or overall fit. No guarantee — just a real comparison against your actual offer.</p>
+    <div class="offer-savings-preview" id="offerSavingsPreview">Enter a loan amount and offered rate to preview what a hypothetical 0.10 percentage-point difference could mean. This is not a quote, approval, or rate lock.</div>
+    <div class="offer-form">
+      <div>
+        <label for="offerName">Name</label>
+        <input id="offerName" type="text" placeholder="Your name">
+      </div>
+      <div>
+        <label for="offerContact">Email or Phone</label>
+        <input id="offerContact" type="text" placeholder="Best way to contact you">
+      </div>
+      <div>
+        <label for="offerLoanAmount">Loan Amount</label>
+        <input id="offerLoanAmount" type="text" placeholder="$350,000" inputmode="numeric">
+      </div>
+      <div>
+        <label for="offerRate">Current Offered Rate</label>
+        <input id="offerRate" type="number" step="0.01" placeholder="6.50">
+      </div>
+      <div>
+        <label for="offerPoints">Points / Credits</label>
+        <input id="offerPoints" type="text" placeholder="Ex: 0 points, $2,500 credit">
+      </div>
+      <div>
+        <label for="offerType">Review Type</label>
+        <select id="offerType">
+          <option value="Review my loan estimate">Review my Loan Estimate</option>
+          <option value="Compare rate and costs">Compare rate and costs</option>
+          <option value="Explore possible improvement">Explore possible improvement</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="offerNotes">Anything else I should know?</label>
+        <textarea id="offerNotes" placeholder="Purchase price, down payment, credit score range, FHA/VA/conventional, lender fees, closing date, or anything from your Loan Estimate."></textarea>
+      </div>
+      <div class="full upload-prompt">
+        <label for="loanEstimateFile"><strong>Loan Estimate Upload Prompt</strong></label>
+        <input id="loanEstimateFile" type="file" accept=".pdf,.jpg,.jpeg,.png">
+        <p class="small-note" id="fileNote" style="margin-top:8px;">Choose your Loan Estimate so you remember which file to send after starting the review. For security, this HTML widget does not upload the file by itself; the pre-approval/contact form is the next step.</p>
+      </div>
+    </div>
+    <div class="offer-actions">
+      <button class="primary" onclick="submitOfferReview()">Request Offer Review</button>
+      <button class="secondary" onclick="copyOfferSummary()">Copy My Offer Details</button>
+      <button class="secondary" onclick="emailOfferSummary()">Open Email Draft</button>
+    </div>
+    <div class="offer-confirmation" id="offerConfirmation"></div>
+    <p class="small-note" style="margin-top:12px;">For best results, provide your Loan Estimate so the comparison can evaluate the rate, points, lender credits, APR, closing costs, and cash-to-close. This page prepares your comparison request and directs you to the pre-approval form so DRG Mortgage can follow up.</p>
+  </div>
+
+  <div class="card">
+    <details class="realtor-details">
+      <summary>For Realtors: PMMS-Based Client Messaging</summary>
+      <div class="realtor-content">
+        <p class="plain-text"><strong>Auto-updated from the latest PMMS data loaded by this widget.</strong> This section is not AI-generated; it uses the current Freddie Mac PMMS rate, recent trend, and 52-week context to create compliant, benchmark-based talking points.</p>
+        <div class="realtor-template-grid">
+          <div class="realtor-template-box"><strong>Talking Point</strong><p class="plain-text" id="realtorText">Loading PMMS-based talking point...</p></div>
+          <div class="realtor-template-box"><strong>Client Email Draft</strong><div class="callout" id="realtorEmailText">Loading client email...</div></div>
+          <div class="realtor-template-box"><strong>Social Caption</strong><p class="plain-text" id="realtorSocialText">Loading social caption...</p></div>
+        </div>
+        <p class="rate-disclosure"><strong>Compliance note:</strong> Realtor copy references Freddie Mac PMMS national average data only. It does not advertise DRG Mortgage rates, APRs, approvals, or locks.</p>
+        <div class="realtor-actions">
+          <button class="primary" onclick="copyElementText('realtorText')">Copy Talking Point</button>
+          <button onclick="copyElementText('realtorEmailText')">Copy Client Email</button>
+          <button onclick="copyElementText('realtorSocialText')">Copy Social Caption</button>
+        </div>
+        <div class="copy-confirmation" id="realtorCopyConfirmation">Copied.</div>
+      </div>
+    </details>
+  </div>
+
+  <div class="card">
+    <p class="small-note" id="sourceNote"></p>
+  </div>
+
+  <div class="cta">
+    <button onclick="window.parent.location.href='https://www.drgmortgagellc.com/#get-pre-approved'">Get Pre-Approved</button>
+  </div>
+</div>
+
+<script>
+const CONFIG = {
+  csvUrl: "https://www.drgmortgagellc.com/_functions/mortgageRates",
+  defaultRange: 52,
+  defaultHomePrice: 350000,
+  defaultDownPayment: 5,
+  annualTaxRate: 0.0125,
+  annualInsuranceRate: 0.0035,
+  conventionalMonthlyPmiRate: 0.0045 / 12,
+  fhaMonthlyMiRate: 0.0055 / 12,
+  usdaMonthlyFeeRate: 0.0035 / 12
+};
+
+let allData = [];
+let currentRange = CONFIG.defaultRange;
+let mortgageChart = null;
+let visibleSeries = { rate30: true, rate15: true };
+let latestData = null;
+let latestMarket = null;
+
+function parseCSV(text) {
+  const rows = [];
+  let row = [];
+  let cell = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    const next = text[i + 1];
+
+    if (char === '"' && next === '"') {
+      cell += '"';
+      i++;
+    } else if (char === '"') {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      row.push(cell.trim());
+      cell = "";
+    } else if ((char === "\n" || char === "\r") && !inQuotes) {
+      if (cell || row.length) {
+        row.push(cell.trim());
+        rows.push(row);
+        row = [];
+        cell = "";
+      }
+    } else {
+      cell += char;
+    }
+  }
+
+  if (cell || row.length) row.push(cell.trim()), rows.push(row);
+  return rows;
+}
+
+function parseDate(value) {
+  if (!value) return null;
+  const cleaned = String(value).trim();
+
+  if (!isNaN(cleaned) && Number(cleaned) > 20000) {
+    return new Date((Number(cleaned) - 25569) * 86400 * 1000);
+  }
+
+  const parsed = new Date(cleaned);
+  return isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function parseRate(value) {
+  if (!value) return null;
+  const rate = parseFloat(String(value).replace("%", "").trim());
+  return isNaN(rate) ? null : rate;
+}
+
+function formatDate(date) {
+  return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+function formatShortDate(date) {
+  return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+
+function currencyToNumber(value) {
+  return Number(String(value).replace(/[^0-9.]/g, "")) || 0;
+}
+
+function formatMoney(value) {
+  return value.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+}
+
+function formatPercent(value) {
+  return value.toFixed(2) + "%";
+}
+
+function getMortgageData(text) {
+  const rows = parseCSV(text);
+  const data = rows.map(row => {
+    const date = parseDate(row[0]);
+    const rate30 = parseRate(row[1]);
+    const rate15 = parseRate(row[3]);
+    if (!date || rate30 === null || rate15 === null) return null;
+    return { date, label: formatDate(date), shortLabel: formatShortDate(date), rate30, rate15 };
+  }).filter(Boolean);
+
+  data.sort((a, b) => a.date - b.date);
+  return data;
+}
+
+function formatChange(current, previous) {
+  const change = current - previous;
+  if (Math.abs(change) < 0.01) return `<span class="good">Stable from last week</span>`;
+  const arrow = change > 0 ? "▲" : "▼";
+  if (change < 0) return `<span class="good">${arrow} improved ${Math.abs(change).toFixed(2)}% from last week</span>`;
+  return `<span class="neutral">${arrow} up ${Math.abs(change).toFixed(2)}% from last week — compare options</span>`;
+}
+
+function changeValue(current, previous) {
+  return current - previous;
+}
+
+function trendLabel(change) {
+  if (Math.abs(change) < 0.03) return "Stable";
+  return change < 0 ? "Improving" : "Opportunity";
+}
+
+function calculatePayment(loanAmount, annualRate, years) {
+  const monthlyRate = annualRate / 100 / 12;
+  const numberOfPayments = years * 12;
+  if (monthlyRate === 0) return loanAmount / numberOfPayments;
+  return loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+}
+
+function calculateMarket(latest, last52) {
+  const rates = last52.map(item => item.rate30);
+  const high = Math.max(...rates);
+  const low = Math.min(...rates);
+  const avg = rates.reduce((a, b) => a + b, 0) / rates.length;
+  const percentile = rates.filter(rate => latest.rate30 >= rate).length / rates.length;
+  const lowerThanPct = (1 - percentile) * 100;
+  return { high, low, avg, percentile, lowerThanPct };
+}
+
+function updateMarketMeter(latest, market) {
+  document.getElementById("high52").textContent = formatPercent(market.high);
+  document.getElementById("low52").textContent = formatPercent(market.low);
+  document.getElementById("avg52").textContent = formatPercent(market.avg);
+
+  const badge = document.getElementById("marketBadge");
+  const summary = document.getElementById("marketSummary");
+  const bar = document.getElementById("percentileBar");
+  const percentileText = document.getElementById("percentileText");
+
+  const pct = Math.round(market.percentile * 100);
+  bar.style.width = pct + "%";
+  percentileText.textContent = `Opportunity check: today’s 30-year rate is lower than about ${Math.round(market.lowerThanPct)}% of the past year’s weekly readings. Even when rates are higher than ideal, the right loan structure, seller credits, and timing can create a better path forward.`;
+
+  if (market.percentile <= 0.55) {
+    badge.textContent = "🟢 Favorable Opportunity";
+    badge.className = "meter-badge meter-good";
+    summary.textContent = "Current rates are in a relatively encouraging part of the past year’s range. Buyers who are ready may have a stronger payment opportunity than they did during higher-rate stretches.";
+  } else if (market.percentile <= 0.85) {
+    badge.textContent = "🟢 Strategy Opportunity";
+    badge.className = "meter-badge meter-good";
+    summary.textContent = "Rates are not at the lowest point of the year, but this can still be a positive planning window. The opportunity is in structuring the loan well: seller credits, temporary buydowns, lender options, and the right program.";
+  } else {
+    badge.textContent = "🟢 Buyer Opportunity";
+    badge.className = "meter-badge meter-good";
+    summary.textContent = "Rates are elevated compared with much of the past year, but that can create opportunity too: less buyer competition, more room to negotiate seller credits, and a plan to refinance if the market improves later.";
+  }
+}
+
+function updateStats() {
+  const latest = latestData;
+  const fourWeeksAgo = allData[Math.max(0, allData.length - 5)];
+  const diff = changeValue(latest.rate30, fourWeeksAgo.rate30);
+  const arrow = diff > 0 ? "▲" : diff < 0 ? "▼" : "•";
+  document.getElementById("trend30").textContent = `${arrow} ${trendLabel(diff)}`;
+}
+
+function updateCommentary() {
+  const latest = latestData;
+  const prev = allData[allData.length - 2];
+  const fourWeeksAgo = allData[Math.max(0, allData.length - 5)];
+  const twelveWeeksAgo = allData[Math.max(0, allData.length - 13)];
+
+  const weeklyMove = latest.rate30 - prev.rate30;
+  const monthlyMove = latest.rate30 - fourWeeksAgo.rate30;
+  const quarterlyMove = latest.rate30 - twelveWeeksAgo.rate30;
+
+  let direction = Math.abs(weeklyMove) < 0.01 ? "held steady" : weeklyMove < 0 ? "moved lower" : "moved higher";
+  let monthly = Math.abs(monthlyMove) < 0.03 ? "mostly stable over the past month" : monthlyMove < 0 ? "lower than they were about a month ago" : "higher than they were about a month ago";
+  let quarter = Math.abs(quarterlyMove) < 0.05 ? "little changed over the past three months" : quarterlyMove < 0 ? "down over the past three months" : "up over the past three months";
+
+  document.getElementById("aiCommentary").textContent =
+    `The national 30-year fixed average ${direction} this week to ${formatPercent(latest.rate30)}. Rates are ${monthly} and ${quarter}. The positive takeaway: buyers still have ways to improve the deal beyond the headline rate, including program choice, seller credits, points, mortgage insurance strategy, down payment options, and timing.`;
+}
+
+
+function updateGoodNews() {
+  if (!latestData || !latestMarket) return;
+  const latest = latestData;
+  const avgText = latest.rate30 <= latestMarket.avg
+    ? `below the 52-week average of ${formatPercent(latestMarket.avg)}`
+    : `within a market where strategy can matter more than the headline average`;
+  document.getElementById("goodNewsText").textContent =
+    `The positive takeaway: today’s national 30-year fixed average is ${avgText}. Even better, independent research using HMDA data found mortgage broker borrowers saved money on average compared with nonbank retail borrowers. The real opportunity is not just watching rates — it is comparing your actual offer and structuring the loan well.`;
+}
+
+function updateRateAdvantage() {
+  if (!latestData) return;
+  const homePrice = currencyToNumber(document.getElementById("homePrice").value) || CONFIG.defaultHomePrice;
+  const downPaymentPercent = Number(document.getElementById("downPayment").value) || CONFIG.defaultDownPayment;
+  const loanAmount = homePrice * (1 - downPaymentPercent / 100);
+  const nationalRate = latestData.rate30;
+  const drgRate = Math.max(nationalRate - 0.10, 0.01);
+  const nationalPayment = calculatePayment(loanAmount, nationalRate, 30);
+  const drgPayment = calculatePayment(loanAmount, drgRate, 30);
+  const savings = Math.max(0, nationalPayment - drgPayment);
+
+  document.getElementById("nationalAvgRate").textContent = formatPercent(nationalRate);
+  document.getElementById("drgTargetRate").textContent = formatPercent(drgRate);
+  document.getElementById("drgMonthlySavings").textContent = formatMoney(savings) + "/mo";
+}
+
+function estimateMortgageInsurance(loanAmount, homePrice, program) {
+  const ltv = loanAmount / homePrice;
+  if (program === "va") return 0;
+  if (program === "fha") return loanAmount * CONFIG.fhaMonthlyMiRate;
+  if (program === "usda") return loanAmount * CONFIG.usdaMonthlyFeeRate;
+  if (program === "conventional" && ltv > 0.80) return loanAmount * CONFIG.conventionalMonthlyPmiRate;
+  return 0;
+}
+
+function closestDataToDate(targetDate) {
+  if (!allData.length) return null;
+  let closest = allData[0];
+  let minDiff = Math.abs(allData[0].date - targetDate);
+  allData.forEach(item => {
+    const diff = Math.abs(item.date - targetDate);
+    if (diff < minDiff) { closest = item; minDiff = diff; }
+  });
+  return closest;
+}
+
+function averageRate(items, key = "rate30") {
+  const valid = items.filter(item => typeof item[key] === "number" && !isNaN(item[key]));
+  if (!valid.length) return null;
+  return valid.reduce((sum, item) => sum + item[key], 0) / valid.length;
+}
+
+function updateWeeklyChange(previous) {
+  if (!latestData || !previous) return;
+  const diff = latestData.rate30 - previous.rate30;
+  const abs = Math.abs(diff);
+  const per100k = Math.abs(calculatePayment(100000, latestData.rate30, 30) - calculatePayment(100000, previous.rate30, 30));
+  let line;
+  if (abs < 0.01) {
+    line = `The 30-year fixed rate was essentially unchanged this week at ${formatPercent(latestData.rate30)}. Stability can help buyers plan with more confidence.`;
+  } else if (diff < 0) {
+    line = `The 30-year fixed rate improved by ${abs.toFixed(2)} percentage points this week. That is good news for payment-sensitive buyers.`;
+  } else {
+    line = `The 30-year fixed rate moved up by ${abs.toFixed(2)} percentage points this week, but buyers still have ways to improve the deal through lender shopping, credits, and loan structure.`;
+  }
+  document.getElementById("weeklyChangeText").textContent = line;
+  document.getElementById("weeklySavingsText").innerHTML = `Payment impact: this week’s change equals about <strong>${formatMoney(per100k)}/mo per $100,000 financed</strong> in principal and interest. Small rate changes can matter, but the full offer — rate, points, credits, and fees — matters more.`;
+}
+
+function updateHistoricalComparison(previous, last52) {
+  if (!latestData || !allData.length) return;
+  const oneYearAgo = closestDataToDate(new Date(latestData.date.getTime() - 365 * 24 * 60 * 60 * 1000));
+  const avg52 = averageRate(last52);
+  const avg5y = averageRate(allData.slice(-260));
+  const avg10y = averageRate(allData.slice(-520));
+  const avgAll = averageRate(allData);
+  document.getElementById("histToday").textContent = formatPercent(latestData.rate30);
+  document.getElementById("histTodayNote").textContent = `Latest update: ${formatDate(latestData.date)}`;
+  document.getElementById("histLastWeek").textContent = previous ? formatPercent(previous.rate30) : "--";
+  document.getElementById("histLastWeekNote").textContent = previous ? `${formatDate(previous.date)}` : "Previous PMMS week";
+  document.getElementById("histYearAgo").textContent = oneYearAgo ? formatPercent(oneYearAgo.rate30) : "--";
+  document.getElementById("histYearAgoNote").textContent = oneYearAgo ? `Closest week: ${formatDate(oneYearAgo.date)}` : "Closest PMMS week one year prior";
+  document.getElementById("histAvg52").textContent = avg52 ? formatPercent(avg52) : "--";
+  document.getElementById("histAvg5y").textContent = avg5y ? formatPercent(avg5y) : "--";
+  document.getElementById("histAvg10y").textContent = avg10y ? formatPercent(avg10y) : "--";
+  document.getElementById("histAvgAll").textContent = avgAll ? formatPercent(avgAll) : "--";
+  let takeaway = "Today’s rate has context — compare it with your exact offer.";
+  if (avg52 && latestData.rate30 <= avg52) takeaway = "Positive: today is below the 52-week average.";
+  else if (oneYearAgo && latestData.rate30 < oneYearAgo.rate30) takeaway = "Positive: today is lower than around this time last year.";
+  else if (avg10y && latestData.rate30 < avg10y) takeaway = "Long-term context: today is below the 10-year average.";
+  document.getElementById("histTakeaway").textContent = takeaway;
+}
+
+function updatePayment() {
+  const homePrice = currencyToNumber(document.getElementById("homePrice").value) || CONFIG.defaultHomePrice;
+  const downPaymentPercent = Number(document.getElementById("downPayment").value) || 0;
+  const rate = Number(document.getElementById("interestRate").value) || (latestData ? latestData.rate30 : 6.5);
+  const program = document.getElementById("loanProgram").value;
+
+  const loanAmount = homePrice * (1 - downPaymentPercent / 100);
+  const pi = calculatePayment(loanAmount, rate, 30);
+  const taxes = (homePrice * CONFIG.annualTaxRate) / 12;
+  const insurance = (homePrice * CONFIG.annualInsuranceRate) / 12;
+  const mi = estimateMortgageInsurance(loanAmount, homePrice, program);
+  const total = pi + taxes + insurance + mi;
+
+  document.getElementById("paymentResult").textContent = formatMoney(total) + "/mo";
+  document.getElementById("piPayment").textContent = formatMoney(pi);
+  document.getElementById("taxPayment").textContent = formatMoney(taxes);
+  document.getElementById("insPayment").textContent = formatMoney(insurance);
+  document.getElementById("miPayment").textContent = formatMoney(mi);
+
+  updateRateAdvantage();
+  updateBuyWait();
+}
+
+function updateBuyWait() {
+  if (!latestData) return;
+
+  const homePriceNow = currencyToNumber(document.getElementById("homePrice").value) || CONFIG.defaultHomePrice;
+  const downPaymentPercent = Number(document.getElementById("downPayment").value) || CONFIG.defaultDownPayment;
+  const rateDrop = Number(document.getElementById("futureRateDrop").value) || 0.5;
+  const appreciation = Number(document.getElementById("homeAppreciation").value) || 0.03;
+
+  const futureRate = Math.max(latestData.rate30 - rateDrop, 0.01);
+  const loanNow = homePriceNow * (1 - downPaymentPercent / 100);
+  const paymentNow = calculatePayment(loanNow, latestData.rate30, 30);
+  const futurePrice = homePriceNow * (1 + appreciation);
+  const futureLoan = futurePrice * (1 - downPaymentPercent / 100);
+  const paymentFuture = calculatePayment(futureLoan, futureRate, 30);
+  const monthlyDiff = paymentFuture - paymentNow;
+  const priceDiff = futurePrice - homePriceNow;
+
+  const result = monthlyDiff < 0
+    ? `If rates fell by ${rateDrop.toFixed(2)}% but the home price rose ${Math.round(appreciation * 100)}%, the principal and interest payment could be about ${formatMoney(Math.abs(monthlyDiff))}/mo lower. However, the purchase price would be about ${formatMoney(priceDiff)} higher. Waiting only helps if the lower rate, home price, inventory, and your personal timing all work in your favor.`
+    : `If rates fell by ${rateDrop.toFixed(2)}% but the home price rose ${Math.round(appreciation * 100)}%, the principal and interest payment could still be about ${formatMoney(monthlyDiff)}/mo higher. That is why buying sooner can sometimes be the stronger financial move, even when today’s rate is not perfect.`;
+
+  document.getElementById("buyWaitText").textContent = result;
+}
+
+function updateLockText() {
+  if (!latestMarket) return;
+  let text;
+  if (latestMarket.percentile <= 0.55) {
+    text = "PMMS context: rates are in a more favorable part of the past year’s range. If you are under contract or close to making an offer, ask for a personalized lock discussion rather than assuming the market will keep improving.";
+  } else if (latestMarket.percentile <= 0.85) {
+    text = "PMMS context: rates are not at the lowest point of the year, but buyers can still compare programs, lender credits, discount points, temporary buydowns, and payment options. This is context only, not a lock recommendation.";
+  } else {
+    text = "PMMS context: rates are elevated compared with more favorable weeks, which may make seller credits, buydown options, affordability review, and future refinance planning more important. This is context only, not a lock recommendation.";
+  }
+  document.getElementById("lockText").textContent = text;
+}
+
+function updateRealtorText() {
+  if (!latestData || !latestMarket) return;
+  const prev = allData[allData.length - 2];
+  const weeklyMove = prev ? latestData.rate30 - prev.rate30 : 0;
+  const movement = Math.abs(weeklyMove) < 0.01 ? "held mostly steady" : weeklyMove < 0 ? `improved by ${Math.abs(weeklyMove).toFixed(2)} percentage points` : `moved up by ${Math.abs(weeklyMove).toFixed(2)} percentage points`;
+  const context = latestData.rate30 <= latestMarket.avg ? `below the 52-week average of ${formatPercent(latestMarket.avg)}` : `above the 52-week average of ${formatPercent(latestMarket.avg)}`;
+  const opportunity = latestMarket.percentile <= 0.55
+    ? "This can be a useful window for payment-sensitive buyers to revisit numbers."
+    : latestMarket.percentile <= 0.85
+      ? "This is a strategy market where credits, program choice, points, and full-cost comparison matter."
+      : "Higher-rate periods can still create opportunity through seller credits, price negotiation, and future refinance planning.";
+
+  const talkingPoint = `Freddie Mac PMMS update (${formatDate(latestData.date)}): the national 30-year fixed average is ${formatPercent(latestData.rate30)} and ${movement} from last week. It is ${context}. ${opportunity} This is a national benchmark only — a buyer’s actual rate/APR and payment depend on credit, down payment, property type, occupancy, program, points, credits, lock period, and live lender pricing.`;
+  document.getElementById("realtorText").textContent = talkingPoint;
+
+  const email = `Mortgage market update: Freddie Mac PMMS shows the national 30-year fixed average at ${formatPercent(latestData.rate30)} as of ${formatDate(latestData.date)}. That benchmark ${movement} from last week and is ${context}. The important reminder for buyers is that the national average is not a quote. Their actual rate/APR, payment, and cash-to-close depend on credit, down payment, property type, occupancy, loan program, points, credits, and live lender pricing. If you have a buyer who wants a clearer picture, I can run a personalized scenario and compare the full structure — not just the headline rate.`;
+  const social = `Freddie Mac PMMS update: the national 30-year fixed average is ${formatPercent(latestData.rate30)} as of ${formatDate(latestData.date)}. National averages are benchmarks, not quotes. Buyers should compare the full offer: rate/APR, points, credits, fees, payment, and program fit.`;
+  document.getElementById("realtorEmailText").textContent = email;
+  document.getElementById("realtorSocialText").textContent = social;
+}
+
+function chartDataForRange(range) {
+  return range === "max" ? allData : allData.slice(-range);
+}
+
+function drawChart(data) {
+  const ctx = document.getElementById("mortgageChart");
+  if (!ctx || typeof Chart === "undefined") return;
+  if (mortgageChart) mortgageChart.destroy();
+
+  const datasets = [];
+  if (visibleSeries.rate30) {
+    datasets.push({
+      label: "30-Year Fixed PMMS National Avg",
+      data: data.map(item => item.rate30),
+      borderColor: "#0F2744",
+      backgroundColor: "rgba(15,39,68,.10)",
+      fill: true,
+      borderWidth: 4,
+      pointRadius: data.length > 80 ? 0 : 2,
+      pointHoverRadius: 6,
+      tension: .25
+    });
+  }
+  if (visibleSeries.rate15) {
+    datasets.push({
+      label: "15-Year Fixed PMMS National Avg",
+      data: data.map(item => item.rate15),
+      borderColor: "#D4A73C",
+      backgroundColor: "rgba(212,167,60,.08)",
+      fill: false,
+      borderWidth: 3,
+      pointRadius: data.length > 80 ? 0 : 2,
+      pointHoverRadius: 6,
+      tension: .25
+    });
+  }
+
+  mortgageChart = new Chart(ctx, {
+    type: "line",
+    data: { labels: data.map(item => item.label), datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 450 },
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: true, position: "bottom" },
+        title: { display: true, text: "National Mortgage Rate Trends" },
+        tooltip: {
+          callbacks: {
+            title: items => items[0].label,
+            label: context => `${context.dataset.label}: ${context.parsed.y.toFixed(2)}%`
+          }
+        }
+      },
+      scales: {
+        x: { ticks: { maxTicksLimit: 8 }, grid: { display: false } },
+        y: { ticks: { callback: value => value + "%" } }
+      }
+    }
+  });
+}
+
+function setRange(range, button) {
+  currentRange = range;
+  document.querySelectorAll(".tabs button").forEach(btn => btn.classList.remove("active"));
+  if (button) button.classList.add("active");
+  drawChart(chartDataForRange(range));
+}
+
+function toggleSeries(seriesKey, button) {
+  visibleSeries[seriesKey] = !visibleSeries[seriesKey];
+  button.classList.toggle("active", visibleSeries[seriesKey]);
+  if (!visibleSeries.rate30 && !visibleSeries.rate15) {
+    visibleSeries[seriesKey] = true;
+    button.classList.add("active");
+  }
+  drawChart(chartDataForRange(currentRange));
+}
+
+
+function updateOfferPreview() {
+  const loanAmount = currencyToNumber(document.getElementById("offerLoanAmount").value);
+  const offeredRate = Number(document.getElementById("offerRate").value);
+  const preview = document.getElementById("offerSavingsPreview");
+  if (!preview) return;
+
+  if (!loanAmount || !offeredRate) {
+    preview.innerHTML = "Enter a loan amount and offered rate to preview what a <strong>0.10%</strong> improvement could mean.";
+    return;
+  }
+
+  const improvedRate = Math.max(offeredRate - 0.10, 0.01);
+  const currentPayment = calculatePayment(loanAmount, offeredRate, 30);
+  const improvedPayment = calculatePayment(loanAmount, improvedRate, 30);
+  const monthlySavings = Math.max(0, currentPayment - improvedPayment);
+  const lifetimeSavings = monthlySavings * 360;
+
+  preview.innerHTML = `If DRG Mortgage improved your offer by <strong>0.10%</strong>, the estimated principal & interest savings could be about <strong>${formatMoney(monthlySavings)}/mo</strong> or <strong>${formatMoney(lifetimeSavings)}</strong> over 30 years. Actual savings depend on final pricing, fees, points, credits, and loan terms.`;
+}
+
+function getOfferSummary() {
+  const name = document.getElementById("offerName").value.trim();
+  const contact = document.getElementById("offerContact").value.trim();
+  const loanAmount = document.getElementById("offerLoanAmount").value.trim();
+  const rate = document.getElementById("offerRate").value.trim();
+  const points = document.getElementById("offerPoints").value.trim();
+  const type = document.getElementById("offerType").value;
+  const notes = document.getElementById("offerNotes").value.trim();
+  const fileInput = document.getElementById("loanEstimateFile");
+  const fileName = fileInput && fileInput.files && fileInput.files.length ? fileInput.files[0].name : "Not selected";
+
+  return `${type}
+Name: ${name || "Not provided"}
+Contact: ${contact || "Not provided"}
+Loan amount: ${loanAmount || "Not provided"}
+Current offered rate: ${rate ? rate + "%" : "Not provided"}
+Points / credits: ${points || "Not provided"}
+Loan Estimate file selected: ${fileName}
+Notes: ${notes || "Not provided"}`;
+}
+
+function submitOfferReview() {
+  const summary = getOfferSummary();
+  try { window.localStorage.setItem("drgBeatOfferSummary", summary); } catch (e) {}
+  const encoded = encodeURIComponent(summary);
+  const confirmation = document.getElementById("offerConfirmation");
+  confirmation.style.display = "block";
+  confirmation.textContent = "Great — taking you to the Get Pre-Approved form. Your offer details are attached to the link, but you can also copy/paste them into the message box if needed.";
+  window.parent.location.href = `https://www.drgmortgagellc.com/?offerReview=${encoded}#get-pre-approved`;
+}
+
+function copyOfferSummary() {
+  const summary = getOfferSummary();
+  const confirmation = document.getElementById("offerConfirmation");
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(summary).then(() => {
+      confirmation.style.display = "block";
+      confirmation.textContent = "Offer summary copied. You can paste it into the pre-approval/contact form or email it to DRG Mortgage.";
+    }).catch(() => { fallbackCopy(summary); });
+  } else {
+    fallbackCopy(summary);
+  }
+}
+
+function fallbackCopy(summary) {
+  const area = document.createElement("textarea");
+  area.value = summary;
+  document.body.appendChild(area);
+  area.select();
+  document.execCommand("copy");
+  document.body.removeChild(area);
+  const confirmation = document.getElementById("offerConfirmation");
+  confirmation.style.display = "block";
+  confirmation.textContent = "Offer summary copied. You can paste it into the pre-approval/contact form or email it to DRG Mortgage.";
+}
+
+
+function emailOfferSummary() {
+  const summary = encodeURIComponent(getOfferSummary());
+  const subject = encodeURIComponent("Please review my current mortgage offer");
+  window.parent.location.href = `mailto:?subject=${subject}&body=${summary}`;
+}
+
+function copyElementText(id) {
+  const el = document.getElementById(id);
+  const text = el ? el.textContent : "";
+  if (!text) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(showRealtorCopy).catch(() => fallbackCopyText(text));
+  } else {
+    fallbackCopyText(text);
+  }
+}
+
+function fallbackCopyText(text) {
+  const area = document.createElement("textarea");
+  area.value = text;
+  document.body.appendChild(area);
+  area.select();
+  document.execCommand("copy");
+  document.body.removeChild(area);
+  showRealtorCopy();
+}
+
+function showRealtorCopy() {
+  const box = document.getElementById("realtorCopyConfirmation");
+  if (!box) return;
+  box.style.display = "block";
+  box.textContent = "Copied to clipboard.";
+  setTimeout(() => { box.style.display = "none"; }, 2500);
+}
+
+function addInputListeners() {
+  ["offerLoanAmount", "offerRate"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("input", updateOfferPreview);
+      el.addEventListener("change", updateOfferPreview);
+    }
+  });
+
+  const loanEstimateFile = document.getElementById("loanEstimateFile");
+  if (loanEstimateFile) {
+    loanEstimateFile.addEventListener("change", event => {
+      const file = event.target.files && event.target.files.length ? event.target.files[0] : null;
+      document.getElementById("fileNote").textContent = file
+        ? `Selected: ${file.name}. Start the review, then attach or send this file when requested.`
+        : "Choose your Loan Estimate so you remember which file to send after starting the review.";
+    });
+  }
+
+  ["downPayment", "interestRate", "loanProgram"].forEach(id => {
+    document.getElementById(id).addEventListener("input", updatePayment);
+    document.getElementById(id).addEventListener("change", updatePayment);
+  });
+
+  document.getElementById("homePrice").addEventListener("blur", event => {
+    const value = currencyToNumber(event.target.value);
+    event.target.value = formatMoney(value || CONFIG.defaultHomePrice);
+    updatePayment();
+  });
+
+  document.getElementById("homePrice").addEventListener("input", updatePayment);
+  document.getElementById("offerLoanAmount").addEventListener("blur", event => {
+    const value = currencyToNumber(event.target.value);
+    if (value) event.target.value = formatMoney(value);
+  });
+
+  document.getElementById("futureRateDrop").addEventListener("change", updateBuyWait);
+  document.getElementById("homeAppreciation").addEventListener("change", updateBuyWait);
+}
+
+
+function statusChip(kind, text) {
+  return `<div class="status-chip ${kind}">${text}</div>`;
+}
+
+function setBoxState(elementOrId, kind, chipText, tooltipText) {
+  const el = typeof elementOrId === "string" ? document.getElementById(elementOrId) : elementOrId;
+  if (!el) return;
+  const box = el.closest('.rate-box, .stat-box, .history-box, .rate-advantage-box, .info-box, .payment-panel, .pulse-score');
+  if (!box) return;
+  box.classList.remove('stat-good','stat-warn','stat-caution','stat-bad','stat-info');
+  box.classList.add('stat-' + kind);
+  // Tooltips intentionally disabled for cleaner pointer behavior.
+  let old = box.querySelector('.status-chip');
+  if (old) old.remove();
+  if (chipText) box.insertAdjacentHTML('beforeend', statusChip(kind, chipText));
+}
+
+function classifyRateVsAverage(rate, avg) {
+  if (rate <= avg - 0.10) return { kind: 'good', chip: '🟢 Below avg', text: 'This rate is below the 52-week average, which is generally positive for payment-sensitive buyers.' };
+  if (rate <= avg + 0.10) return { kind: 'warn', chip: '🟡 Near avg', text: 'This rate is close to the 52-week average. Compare points, credits, and lender options.' };
+  if (rate <= avg + 0.35) return { kind: 'caution', chip: '🟠 Above avg', text: 'This rate is above the 52-week average. Strategy matters: seller credits, buydowns, and wholesale comparison can help.' };
+  return { kind: 'bad', chip: '🔴 Elevated', text: 'This rate is elevated compared with the 52-week average. Focus on total cost and future refinance flexibility.' };
+}
+
+function classifyTrend(diff) {
+  if (diff <= -0.03) return { kind: 'good', chip: '🟢 Improving', text: 'Rates moved lower, which is generally positive for payment and buying power.' };
+  if (Math.abs(diff) < 0.03) return { kind: 'warn', chip: '🟡 Stable', text: 'Rates are stable. Stability can help buyers plan and compare offers.' };
+  if (diff <= 0.15) return { kind: 'caution', chip: '🟠 Higher', text: 'Rates moved higher. Compare lender credits, points, and program options.' };
+  return { kind: 'bad', chip: '🔴 Sharp move', text: 'Rates moved higher quickly. Review affordability carefully and compare the full offer.' };
+}
+
+function updateMarketPulse(previous, last52) {
+  if (!latestData || !latestMarket || !previous) return;
+  const weeklyDiff = latestData.rate30 - previous.rate30;
+  const avgAdvantage = latestMarket.avg - latestData.rate30;
+  let score = 72;
+  score += Math.max(-18, Math.min(18, avgAdvantage * 35));
+  score += weeklyDiff < 0 ? 8 : Math.abs(weeklyDiff) < 0.03 ? 4 : -6;
+  score += latestMarket.percentile <= 0.55 ? 8 : latestMarket.percentile <= 0.85 ? 3 : -3;
+  score = Math.round(Math.max(48, Math.min(96, score)));
+
+  const number = document.getElementById('pulseNumber');
+  const label = document.getElementById('pulseLabel');
+  const fill = document.getElementById('pulseFill');
+  const summary = document.getElementById('pulseSummary');
+
+  number.textContent = score;
+  fill.style.width = score + '%';
+
+  let pulseKind = 'good';
+  let pulseLabel = 'Healthy Opportunity';
+  if (score < 60) { pulseKind = 'caution'; pulseLabel = 'Strategy Market'; }
+  else if (score < 75) { pulseKind = 'warn'; pulseLabel = 'Planning Window'; }
+  label.textContent = pulseLabel;
+  setBoxState('pulseNumber', pulseKind, pulseKind === 'good' ? '🟢 Buyer-friendly' : pulseKind === 'warn' ? '🟡 Compare carefully' : '🟠 Strategy matters', 'A simplified buyer opportunity score based on the Freddie Mac PMMS trend and 52-week context.');
+
+  const rateClass = classifyRateVsAverage(latestData.rate30, latestMarket.avg);
+  const trendClass = classifyTrend(weeklyDiff);
+  document.getElementById('pulseRatePosition').className = 'pulse-item ' + rateClass.kind;
+  document.getElementById('pulseRatePosition').textContent = `${rateClass.chip} vs 52-week avg`;
+  document.getElementById('pulseTrend').className = 'pulse-item ' + trendClass.kind;
+  document.getElementById('pulseTrend').textContent = `${trendClass.chip} week over week`;
+  document.getElementById('pulseStrategy').className = 'pulse-item good';
+  document.getElementById('pulseStrategy').textContent = '🟢 Offer comparison opportunity';
+
+  summary.textContent = `Market Pulse is ${score}/100. The simple takeaway: today’s market still has buyer opportunities, especially when you compare the full offer — rate, points, credits, closing costs, program, and payment — instead of relying only on a national average.`;
+}
+
+function updateVisualSemantics(previous, last52) {
+  if (!latestData || !latestMarket || !previous) return;
+  const rate30Class = classifyRateVsAverage(latestData.rate30, latestMarket.avg);
+  setBoxState('rate30', rate30Class.kind, rate30Class.chip, rate30Class.text);
+  const rate15Avg = averageRate(last52, 'rate15') || latestData.rate15;
+  const rate15Class = classifyRateVsAverage(latestData.rate15, rate15Avg);
+  setBoxState('rate15', rate15Class.kind, rate15Class.chip, rate15Class.text);
+
+  setBoxState('high52', 'bad', '🔴 Higher-cost reference', 'The 52-week high shows the more expensive end of the recent market. Lower current rates can mean improved buying power versus this point.');
+  setBoxState('low52', 'good', '🟢 Best recent benchmark', 'The 52-week low shows the most favorable recent reading. It helps set expectations for what a strong market looked like.');
+  const avgClass = classifyRateVsAverage(latestData.rate30, latestMarket.avg);
+  setBoxState('avg52', avgClass.kind === 'bad' ? 'warn' : avgClass.kind, avgClass.kind === 'good' ? '🟢 Current below avg' : '🟡 Benchmark', 'The 52-week average helps visitors judge today against the recent market rather than a single headline.');
+  const monthDiff = latestData.rate30 - allData[Math.max(0, allData.length - 5)].rate30;
+  const trendClass = classifyTrend(monthDiff);
+  setBoxState('trend30', trendClass.kind, trendClass.chip, trendClass.text);
+
+  setBoxState('nationalAvgRate', 'info', '🔵 PMMS benchmark', 'Freddie Mac PMMS is a national weekly average, not a personalized quote.');
+  setBoxState('drgTargetRate', 'info', '🔵 Hypothetical only', 'Illustrates what a 0.10 percentage-point benchmark difference could mean. Not a DRG quote, APR, approval, or lock.');
+  setBoxState('drgMonthlySavings', 'info', '🔵 Math illustration', 'Shows estimated principal-and-interest difference from the hypothetical benchmark change.');
+
+  setBoxState('paymentResult', 'info', '🔵 Estimate', 'Payment estimate only. Taxes, insurance, MI, HOA, and final terms can change the actual payment.');
+
+  setBoxState('histToday', rate30Class.kind, rate30Class.chip, 'Latest Freddie Mac PMMS reading.');
+  setBoxState('histLastWeek', classifyTrend(latestData.rate30 - previous.rate30).kind, classifyTrend(latestData.rate30 - previous.rate30).chip, 'Last week helps show short-term direction.');
+  setBoxState('histYearAgo', latestData.rate30 <= (closestDataToDate(new Date(latestData.date.getTime() - 365*24*60*60*1000))||latestData).rate30 ? 'good' : 'caution', latestData.rate30 <= (closestDataToDate(new Date(latestData.date.getTime() - 365*24*60*60*1000))||latestData).rate30 ? '🟢 Better than year ago' : '🟠 Higher than year ago', 'Compares today with the closest PMMS week one year prior.');
+  setBoxState('histAvg52', avgClass.kind === 'bad' ? 'warn' : avgClass.kind, avgClass.kind === 'good' ? '🟢 Below avg' : '🟡 Recent benchmark', 'Compares today with the recent 52-week average.');
+  setBoxState('histAvg5y', 'info', '🔵 Cycle context', 'Five-year average includes very different rate environments.');
+  setBoxState('histAvg10y', 'info', '🔵 Broader context', 'Ten-year average gives a broader cycle view.');
+  setBoxState('histAvgAll', 'info', '🔵 Long-run context', 'Long-term averages include very high-rate eras and may not reflect current affordability.');
+  setBoxState('histTakeaway', 'good', '🟢 Action step', 'The best takeaway is to compare your actual offer, not just read the average.');
+
+  document.querySelectorAll('.positive-box').forEach(box => {
+    if (!box.classList.contains('stat-good')) box.classList.add('stat-good');
+  });
+  const callouts = document.querySelectorAll('.callout');
+  callouts.forEach(box => {
+    if (!box.classList.contains('stat-caution')) box.classList.add('stat-caution');
+    // Tooltips intentionally disabled for cleaner pointer behavior.
+  });
+}
+
+function showError(message) {
+  const box = document.getElementById("errorBox");
+  box.style.display = "block";
+  box.textContent = message;
+}
+
+async function loadRates() {
+  try {
+    const response = await fetch(CONFIG.csvUrl);
+    const csvText = await response.text();
+    allData = getMortgageData(csvText);
+
+    if (allData.length < 2) throw new Error("No usable rate data found.");
+
+    latestData = allData[allData.length - 1];
+    const previous = allData[allData.length - 2];
+    const last52 = allData.slice(-52);
+    latestMarket = calculateMarket(latestData, last52);
+
+    document.getElementById("rate30").textContent = formatPercent(latestData.rate30);
+    document.getElementById("rate15").textContent = formatPercent(latestData.rate15);
+    document.getElementById("change30").innerHTML = formatChange(latestData.rate30, previous.rate30);
+    document.getElementById("change15").innerHTML = formatChange(latestData.rate15, previous.rate15);
+    document.getElementById("interestRate").value = latestData.rate30.toFixed(2);
+    document.getElementById("offerRate").value = latestData.rate30.toFixed(2);
+    document.getElementById("offerLoanAmount").value = formatMoney(CONFIG.defaultHomePrice * (1 - CONFIG.defaultDownPayment / 100));
+    document.getElementById("statusPill").textContent = `Updated ${formatDate(latestData.date)}`;
+
+    updateMarketMeter(latestData, latestMarket);
+    updateWeeklyChange(previous);
+    updateHistoricalComparison(previous, last52);
+    updateMarketPulse(previous, last52);
+    updateVisualSemantics(previous, last52);
+    updateGoodNews();
+    updateStats();
+    updateCommentary();
+    updatePayment();
+    updateBuyWait();
+    updateLockText();
+    updateRealtorText();
+
+    document.getElementById("sourceNote").textContent =
+      `Last updated: ${formatDate(latestData.date)}. Source: Freddie Mac Primary Mortgage Market Survey (PMMS) for national average benchmark rate data. Freddie Mac states PMMS is based on mortgage rates collected from loan applications submitted through Loan Product Advisor and is published weekly. Rates displayed on this page are benchmark averages unless expressly stated otherwise; they are not DRG Mortgage offered rates, APRs, Loan Estimates, approvals, commitments, or rate locks. Broker savings references are based on third-party research using HMDA data and are not guarantees. Hypothetical rate-difference and payment examples are illustrations only. Actual rates, APRs, payments, points, credits, fees, cash-to-close, eligibility, and terms vary based on borrower qualifications, property, loan program, occupancy, pricing, taxes, insurance, lock period, lender guidelines, and market conditions.`;
+
+    drawChart(last52);
+    addInputListeners();
+  } catch (error) {
+    console.error("Mortgage Market Center error:", error);
+    document.getElementById("rate30").textContent = "Error";
+    document.getElementById("rate15").textContent = "Error";
+    document.getElementById("statusPill").textContent = "Data unavailable";
+    showError("Mortgage market data is temporarily unavailable. Please contact DRG Mortgage for current rate information.");
+  }
+}
+
+loadRates();
+</script>
+</body>
+</html>
