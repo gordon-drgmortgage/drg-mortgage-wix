@@ -44,16 +44,16 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/loan-details?loanId=...` | `src/pages/Loan Details.dt9pl.js` | `#mortgagePortalHtml` |
 | `/knowledge-center` | `src/pages/Knowledge Center.zkhqo.js` | `#knowledgeCenterHtml`; archived at `html-embeds/knowledge-center/knowledge-center.html`; powered by `src/public/knowledgeFramework.js` |
 | `/knowledge-resources/{slug}` | `src/pages/Knowledge Resources (Item).xm9hn.js` | Dynamic item page, `#knowledgeResourceHtml` |
-| `/knowledge-center/homebuyer-basics` | `src/pages/Homebuyer Basics.jllw3.js` | `#knowledgeCategoryHtml`, powered by `src/public/knowledgeFramework.js` |
-| `/knowledge-center/mortgage-basics` | `src/pages/Mortgage Basics.wer5x.js` | `#knowledgeCategoryHtml` |
-| `/knowledge-center/loan-programs` | `src/pages/Loan Programs.zpung.js` | `#knowledgeCategoryHtml` |
-| `/knowledge-center/refinance-homeowner` | `src/pages/Refinance Homeowner.skwrn.js` | `#knowledgeCategoryHtml` |
-| `/knowledge-center/credit-qualification` | `src/pages/Credit Qualification.bal09.js` | `#knowledgeCategoryHtml` |
-| `/knowledge-center/investor-resources` | `src/pages/Investor Resources.j12kv.js` | `#knowledgeCategoryHtml` |
-| `/knowledge-center/realtor-resources` | `src/pages/Realtor Resources.e5kxd.js` | `#knowledgeCategoryHtml` |
-| `/knowledge-center/resource-library` | `src/pages/Resource Library.jk4b0.js` | `#knowledgeCategoryHtml` |
-| `/knowledge-center/flyer-library` | `src/pages/Flyer Library.x6yo9.js` | `#knowledgeCategoryHtml` |
-| `/knowledge-center/social-media-library` | `src/pages/Social Media Library.z20o0.js` | `#knowledgeCategoryHtml` |
+| `/knowledge-center/homebuyer-basics` | `src/pages/Homebuyer Basics.jllw3.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html`; powered by `src/public/knowledgeFramework.js` |
+| `/knowledge-center/mortgage-basics` | `src/pages/Mortgage Basics.wer5x.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
+| `/knowledge-center/loan-programs` | `src/pages/Loan Programs.zpung.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
+| `/knowledge-center/refinance-homeowner` | `src/pages/Refinance Homeowner.skwrn.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
+| `/knowledge-center/credit-qualification` | `src/pages/Credit Qualification.bal09.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
+| `/knowledge-center/investor-resources` | `src/pages/Investor Resources.j12kv.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
+| `/knowledge-center/realtor-resources` | `src/pages/Realtor Resources.e5kxd.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
+| `/knowledge-center/resource-library` | `src/pages/Resource Library.jk4b0.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
+| `/knowledge-center/flyer-library` | `src/pages/Flyer Library.x6yo9.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
+| `/knowledge-center/social-media-library` | `src/pages/Social Media Library.z20o0.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
 | Blog index / post pages | `src/pages/Blog.bfjwi.js`, `src/pages/Post.vwm2s.js` | Minimal/empty page Velo |
 | Member auth/profile pages | signup, login, reset, profile, account settings, notifications files | Mostly minimal/empty page Velo |
 
@@ -150,7 +150,7 @@ Page code:
 - `src/pages/Social Media Library.z20o0.js`
 
 HTML component:
-- `#knowledgeCategoryHtml`
+- `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html`
 
 HTML sends:
 - `KC_CATEGORY_READY`
