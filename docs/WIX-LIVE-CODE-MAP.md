@@ -36,7 +36,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/about` | `src/pages/About.woeq4.js` | Minimal/empty page Velo |
 | `/contact` | `src/pages/Contact.drtds.js` | Minimal/empty page Velo |
 | `/loan-products` | `src/pages/Loan Products.sz5ox.js` | Minimal/empty page Velo |
-| `/borrower-tools` | `src/pages/Borrower Tools.rp9wa.js` | `#amortizationHtml` |
+| `/borrower-tools` | `src/pages/Borrower Tools.rp9wa.js` | `#amortizationHtml`; archived at `html-embeds/amortization-calculator/borrower-tools-amortization.html` |
 | `/realtor-tools` | `src/pages/Realtor Tools.weyoj.js` | Seller net sheet uses native Wix inputs/buttons, not an HTML bridge in current Velo |
 | `/investor-tools` | `src/pages/Investor Tools.s5avu.js` | `#dscrHtml`, `#comparablesHtml`, `#fixFlipHtml` |
 | `/investor-hub` | `src/pages/Investor Hub.ffjw6.js` | `#investorHubHtml` |
