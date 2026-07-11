@@ -38,7 +38,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/loan-products` | `src/pages/Loan Products.sz5ox.js` | Minimal/empty page Velo |
 | `/borrower-tools` | `src/pages/Borrower Tools.rp9wa.js` | `#amortizationHtml`; archived at `html-embeds/amortization-calculator/borrower-tools-amortization.html` |
 | `/realtor-tools` | `src/pages/Realtor Tools.weyoj.js` | `#quickToolsHtml`; archived at `html-embeds/realtor-tools/realtor-tools-quick-tools.html`; `#sellerNetSheetHtml`; archived at `html-embeds/seller-net-sheet/realtor-tools-seller-net-sheet.html` |
-| `/investor-tools` | `src/pages/Investor Tools.s5avu.js` | `#dscrHtml`; archived at `html-embeds/dscr-calculator/investor-tools-dscr.html`; `#comparablesHtml`, `#fixFlipHtml` still pending manual archive |
+| `/investor-tools` | `src/pages/Investor Tools.s5avu.js` | `#dscrHtml`; archived at `html-embeds/dscr-calculator/investor-tools-dscr.html`; `#comparablesHtml`; archived at `html-embeds/comparables-calculator/investor-tools-comparables.html`; `#fixFlipHtml` still pending manual archive |
 | `/investor-hub` | `src/pages/Investor Hub.ffjw6.js` | `#investorHubHtml` |
 | `/my-mortgage-dashboard` | `src/pages/My Mortgage Dashboard.azs78.js` | `#dashboardHtml` |
 | `/loan-details?loanId=...` | `src/pages/Loan Details.dt9pl.js` | `#mortgagePortalHtml` |
