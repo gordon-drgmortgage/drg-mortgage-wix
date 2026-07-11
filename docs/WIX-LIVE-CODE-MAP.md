@@ -33,7 +33,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | Public area / probable URL | Wix page code file | HTML component IDs / notes |
 | --- | --- | --- |
 | `/` | `src/pages/Home.tuckg.js` | `#mortgageAdvantageHtml`; archived at `html-embeds/mortgage-advantage-center/home-mortgage-advantage.html` |
-| `/about` | `src/pages/About.woeq4.js` | Minimal/empty page Velo |
+| `/about` | `src/pages/About.woeq4.js` | `#aboutHtml`; archived at `html-embeds/about/about.html` |
 | `/contact` | `src/pages/Contact.drtds.js` | Minimal/empty page Velo |
 | `/loan-products` | `src/pages/Loan Products.sz5ox.js` | `#loanProductsHtml`; archived at `html-embeds/loan-products/loan-products.html` |
 | `/borrower-tools` | `src/pages/Borrower Tools.rp9wa.js` | `#amortizationHtml`; archived at `html-embeds/amortization-calculator/borrower-tools-amortization.html` |
