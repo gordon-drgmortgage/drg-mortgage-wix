@@ -43,7 +43,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/my-mortgage-dashboard` | `src/pages/My Mortgage Dashboard.azs78.js` | `#dashboardHtml` |
 | `/loan-details?loanId=...` | `src/pages/Loan Details.dt9pl.js` | `#mortgagePortalHtml` |
 | `/knowledge-center` | `src/pages/Knowledge Center.zkhqo.js` | `#knowledgeCenterHtml`; archived at `html-embeds/knowledge-center/knowledge-center.html`; powered by `src/public/knowledgeFramework.js` |
-| `/knowledge-resources/{slug}` | `src/pages/Knowledge Resources (Item).xm9hn.js` | Dynamic item page, `#knowledgeResourceHtml` |
+| `/knowledge-resources/{slug}` | `src/pages/Knowledge Resources (Item).xm9hn.js` | Dynamic item page, `#knowledgeResourceHtml`; archived at `html-embeds/knowledge-resource/knowledge-resource.html` |
 | `/knowledge-center/homebuyer-basics` | `src/pages/Homebuyer Basics.jllw3.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html`; powered by `src/public/knowledgeFramework.js` |
 | `/knowledge-center/mortgage-basics` | `src/pages/Mortgage Basics.wer5x.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
 | `/knowledge-center/loan-programs` | `src/pages/Loan Programs.zpung.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
@@ -170,7 +170,7 @@ Page code:
 - `src/pages/Knowledge Resources (Item).xm9hn.js`
 
 HTML component:
-- `#knowledgeResourceHtml`
+- `#knowledgeResourceHtml`; archived at `html-embeds/knowledge-resource/knowledge-resource.html`
 
 Dataset:
 - `#dynamicDataset`
