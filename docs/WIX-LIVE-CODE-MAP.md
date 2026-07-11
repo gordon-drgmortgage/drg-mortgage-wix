@@ -56,6 +56,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/knowledge-center/social-media-library` | `src/pages/Social Media Library.z20o0.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
 | Blog index / post pages | `src/pages/Blog.bfjwi.js`, `src/pages/Post.vwm2s.js` | Minimal/empty page Velo |
 | Member auth/profile pages | signup, login, reset, profile, account settings, notifications files | Mostly minimal/empty page Velo |
+| Page not documented | Unknown page code | `#helpfulLinksHtml`; archived at `html-embeds/helpful-links/helpful-links.html`; self-contained navigation link hub; page placement needs confirmation |
 
 ## Backend HTTP Endpoints
 

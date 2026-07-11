@@ -1,0 +1,355 @@
+<!--
+Wix page: Not documented
+Wix component ID: #helpfulLinksHtml
+Production status: Active
+Migrated from: User-provided Wix editor paste
+Initial archive date: 2026-07-11
+Public scrape match: No public scrape copy found in existing archive
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRG Mortgage Helpful Tools</title>
+  <style>
+    :root {
+      --navy:#061f3f;
+      --blue:#0b5cab;
+      --green:#52d273;
+      --mint:#b9f7cc;
+      --soft:#f6f9fc;
+      --softblue:#eef7ff;
+      --text:#102a43;
+      --muted:#526b83;
+      --border:#d9e2ec;
+      --white:#fff;
+      --shadow:0 18px 45px rgba(6,43,79,.11);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+    }
+
+    #drg-tools-embed {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--green);
+      margin: 0 0 16px;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 20px rgba(82,210,115,.75);
+      flex: 0 0 auto;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(30px,4vw,50px);
+      line-height: 1.05;
+      letter-spacing: -1.2px;
+      margin: 0 0 14px;
+    }
+
+    .intro {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.62;
+    }
+
+    .tools {
+      background: #fff;
+      padding: 70px 24px 86px;
+      text-align: center;
+    }
+
+    .toolgrid {
+      max-width: 1180px;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 16px;
+    }
+
+    .tool {
+      position: relative;
+      display: block;
+      height: 100%;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(6,43,79,.07);
+      padding: 20px;
+      text-align: left;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      min-width: 0;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .tool:hover,
+    .tool:focus-visible {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: var(--blue);
+      outline: none;
+    }
+
+    .tool:focus-visible {
+      box-shadow: 0 0 0 4px rgba(11,92,171,.18), var(--shadow);
+    }
+
+    .tool span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--softblue);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .tool h3 {
+      color: var(--navy);
+      margin: 12px 0 8px;
+      font-size: 18px;
+      line-height: 1.2;
+      padding-right: 18px;
+    }
+
+    .tool p {
+      color: var(--muted);
+      line-height: 1.45;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .tool:after {
+      content: "→";
+      position: absolute;
+      right: 18px;
+      top: 20px;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 20px;
+      opacity: .45;
+      transform: translateX(-3px);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .tool:hover:after,
+    .tool:focus-visible:after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media(max-width:1020px) {
+      .toolgrid { grid-template-columns: repeat(2,1fr); }
+    }
+
+    @media(max-width:680px) {
+      #drg-tools-embed { overflow: visible; }
+
+      .tools {
+        padding: 42px 14px 52px;
+        text-align: left;
+      }
+
+      .eyebrow {
+        justify-content: flex-start;
+        font-size: 11px;
+        letter-spacing: 1.25px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+      }
+
+      .section-title {
+        font-size: clamp(28px, 9vw, 38px);
+        letter-spacing: -0.9px;
+        line-height: 1.02;
+        margin-bottom: 12px;
+      }
+
+      .intro {
+        margin: 0 0 22px;
+        max-width: none;
+        font-size: 15.5px;
+        line-height: 1.55;
+      }
+
+      .toolgrid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        margin-top: 22px;
+      }
+
+      .tool {
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: 16px;
+        border-radius: 18px;
+        min-height: 112px;
+      }
+
+      .tool:hover,
+      .tool:focus-visible {
+        transform: none;
+        box-shadow: 0 12px 30px rgba(6,43,79,.07);
+      }
+
+      .tool span {
+        width: 48px;
+        height: 48px;
+        font-size: 25px;
+        grid-row: span 2;
+      }
+
+      .tool h3 {
+        margin: 2px 0 6px;
+        font-size: 17px;
+      }
+
+      .tool p {
+        font-size: 13.5px;
+        line-height: 1.42;
+      }
+
+      .tool:after {
+        top: 16px;
+        right: 16px;
+      }
+    }
+
+    @media(max-width:420px) {
+      .tools { padding: 36px 12px 46px; }
+
+      .tool {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .tool span { grid-row: auto; }
+    }
+
+    @media (hover:none) and (pointer:coarse) {
+      .tool:hover { transform: none; }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *, *:before, *:after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="drg-tools-embed">
+    <section class="tools">
+      <p class="eyebrow">Helpful Mortgage Tools</p>
+      <h2 class="section-title">Use the right tool for the next step.</h2>
+      <p class="intro">Explore calculators, market insights, investor tools, Realtor resources, loan options, and educational guides built to make mortgage decisions easier.</p>
+
+      <div class="toolgrid">
+        <a class="tool" href="/borrower-tools" target="_top" aria-label="Open Borrower Tools">
+          <span>🧮</span>
+          <div>
+            <h3>Borrower Tools</h3>
+            <p>Use the amortization calculator to estimate payments, compare payoff strategies, and review extra principal scenarios.</p>
+          </div>
+        </a>
+
+        <a class="tool" href="/realtor-tools" target="_top" aria-label="Open Realtor Tools">
+          <span>🤝</span>
+          <div>
+            <h3>Realtor Tools</h3>
+            <p>Access quick buyer and seller scenario tools, including Realtor quick tools and seller net sheet resources.</p>
+          </div>
+        </a>
+
+        <a class="tool" href="/investor-tools" target="_top" aria-label="Open Investor Tools">
+          <span>📈</span>
+          <div>
+            <h3>Investor Tools</h3>
+            <p>Evaluate DSCR scenarios, rental income, comparable properties, and fix-and-flip opportunities.</p>
+          </div>
+        </a>
+
+        <a class="tool" href="/" target="_top" aria-label="Open Mortgage Advantage Center">
+          <span>📊</span>
+          <div>
+            <h3>Mortgage Advantage Center</h3>
+            <p>Review mortgage rate trends and market health insights from the main DRG Mortgage page.</p>
+          </div>
+        </a>
+
+        <a class="tool" href="/knowledge-center" target="_top" aria-label="Open Knowledge Center">
+          <span>📚</span>
+          <div>
+            <h3>Knowledge Center</h3>
+            <p>Browse educational resources, mortgage guides, and helpful explanations for buyers, homeowners, and partners.</p>
+          </div>
+        </a>
+
+        <a class="tool" href="/loan-products" target="_top" aria-label="Open Loan Products">
+          <span>🏠</span>
+          <div>
+            <h3>Loan Products</h3>
+            <p>Explore loan options for purchases, refinances, investors, self-employed borrowers, and unique scenarios.</p>
+          </div>
+        </a>
+
+        <a class="tool" href="/faqs" target="_top" aria-label="Open Frequently Asked Questions">
+          <span>❓</span>
+          <div>
+            <h3>FAQs</h3>
+            <p>Get quick answers to common mortgage, pre-approval, refinance, down payment, and loan process questions.</p>
+          </div>
+        </a>
+
+        <a class="tool" href="/contact" target="_top" aria-label="Contact DRG Mortgage">
+          <span>📩</span>
+          <div>
+            <h3>Contact DRG Mortgage</h3>
+            <p>Reach out with questions, scenario details, referral opportunities, or next-step mortgage planning needs.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
