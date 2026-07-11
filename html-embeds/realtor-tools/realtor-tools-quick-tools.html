@@ -1,0 +1,604 @@
+<!--
+Wix page: Realtor Tools
+Wix component ID: #quickToolsHtml
+Production status: Active
+Migrated from: User-provided Wix editor paste
+Initial archive date: 2026-07-11
+Public scrape match: Matches rendered public component after removing scrape-only header
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRG Realtor Tools</title>
+  <style>
+    :root{
+      --drg-navy:#0b2341;
+      --drg-blue:#123d6d;
+      --drg-blue-2:#1c5b9b;
+      --drg-sky:#eaf4ff;
+      --drg-soft:#f5f9ff;
+      --drg-card:#ffffff;
+      --drg-border:#d9e6f5;
+      --drg-text:#132033;
+      --drg-muted:#5d6b7d;
+      --drg-green:#0d7a4f;
+      --drg-yellow:#b98500;
+      --drg-red:#b42318;
+      --shadow:0 18px 45px rgba(11,35,65,.12);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--drg-text);
+      background:transparent;
+    }
+
+    .drg-realtor-tools{
+      width:100%;
+      max-width:1180px;
+      margin:0 auto;
+      padding:26px 16px 40px;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      background:linear-gradient(135deg,var(--drg-navy),var(--drg-blue));
+      color:#fff;
+      padding:38px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero:before,
+    .hero:after{
+      content:"";
+      position:absolute;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      pointer-events:none;
+    }
+    .hero:before{width:260px;height:260px;right:-80px;top:-70px}
+    .hero:after{width:180px;height:180px;right:110px;bottom:-90px}
+
+    .hero-inner{position:relative;z-index:2;max-width:790px}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.02em;
+      margin-bottom:16px;
+    }
+    .hero h1{
+      margin:0 0 12px;
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
+    .hero p{
+      margin:0;
+      color:rgba(255,255,255,.86);
+      font-size:17px;
+      line-height:1.55;
+      max-width:720px;
+    }
+
+    .quick-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .quick-card{
+      border:1px solid var(--drg-border);
+      background:var(--drg-card);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 8px 26px rgba(11,35,65,.07);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .quick-card:hover{transform:translateY(-3px);box-shadow:0 15px 32px rgba(11,35,65,.12)}
+    .quick-icon{
+      width:38px;height:38px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      background:var(--drg-sky);
+      color:var(--drg-blue);
+      font-size:20px;
+      margin-bottom:10px;
+    }
+    .quick-card h3{margin:0 0 7px;font-size:16px;color:var(--drg-navy)}
+    .quick-card p{margin:0;font-size:13.5px;line-height:1.45;color:var(--drg-muted)}
+
+    .tool-shell{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      margin-top:22px;
+      align-items:start;
+    }
+
+    .panel{
+      background:var(--drg-card);
+      border:1px solid var(--drg-border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .panel-head{
+      padding:22px 24px;
+      background:linear-gradient(180deg,#fff,var(--drg-soft));
+      border-bottom:1px solid var(--drg-border);
+    }
+    .panel-head h2{margin:0 0 7px;font-size:24px;color:var(--drg-navy);letter-spacing:-.02em}
+    .panel-head p{margin:0;color:var(--drg-muted);font-size:14.5px;line-height:1.5}
+    .panel-body{padding:22px 24px 24px}
+
+    .tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .tab-btn{
+      border:1px solid var(--drg-border);
+      background:#fff;
+      color:var(--drg-blue);
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:800;
+      cursor:pointer;
+      transition:.2s ease;
+      font-size:13.5px;
+    }
+    .tab-btn.active,
+    .tab-btn:hover{
+      background:var(--drg-blue);
+      color:#fff;
+      border-color:var(--drg-blue);
+    }
+
+    .tool-section{display:none}
+    .tool-section.active{display:block}
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:12px;font-weight:800;color:var(--drg-navy);text-transform:uppercase;letter-spacing:.04em}
+    input,select,textarea{
+      width:100%;
+      border:1px solid var(--drg-border);
+      border-radius:14px;
+      padding:13px 13px;
+      font-size:15px;
+      color:var(--drg-text);
+      outline:none;
+      background:#fff;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus,select:focus,textarea:focus{border-color:var(--drg-blue-2);box-shadow:0 0 0 4px rgba(28,91,155,.1)}
+    textarea{min-height:92px;resize:vertical}
+
+    .button-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .primary-btn,.secondary-btn{
+      border:none;
+      border-radius:14px;
+      padding:13px 16px;
+      font-size:14px;
+      font-weight:900;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .primary-btn{background:var(--drg-blue);color:#fff;box-shadow:0 10px 22px rgba(18,61,109,.2)}
+    .primary-btn:hover{background:var(--drg-navy);transform:translateY(-1px)}
+    .secondary-btn{background:var(--drg-sky);color:var(--drg-blue)}
+    .secondary-btn:hover{background:#dcefff}
+
+    .results-card{
+      background:linear-gradient(180deg,var(--drg-navy),var(--drg-blue));
+      color:#fff;
+      border-radius:var(--radius);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .results-card:before{
+      content:"";position:absolute;right:-70px;top:-70px;width:190px;height:190px;border-radius:999px;background:rgba(255,255,255,.08)
+    }
+    .results-card h2{position:relative;margin:0 0 8px;font-size:24px;letter-spacing:-.02em}
+    .results-card p{position:relative;margin:0;color:rgba(255,255,255,.78);line-height:1.5;font-size:14.5px}
+    .metric-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+    .metric{
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:17px;
+      padding:15px;
+    }
+    .metric span{display:block;color:rgba(255,255,255,.72);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+    .metric strong{display:block;font-size:22px;letter-spacing:-.02em}
+    .insight{
+      position:relative;
+      margin-top:14px;
+      border-radius:17px;
+      padding:14px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.15);
+      color:rgba(255,255,255,.9);
+      line-height:1.45;
+      font-size:14px;
+    }
+
+    .script-box{
+      margin-top:18px;
+      background:#fff;
+      color:var(--drg-text);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 12px 30px rgba(11,35,65,.12);
+      border:1px solid var(--drg-border);
+    }
+    .script-box h3{margin:0 0 8px;color:var(--drg-navy);font-size:18px}
+    .script-box p{margin:0 0 12px;color:var(--drg-muted);font-size:14px;line-height:1.5}
+    .script-output{
+      white-space:pre-wrap;
+      background:var(--drg-soft);
+      border:1px solid var(--drg-border);
+      border-radius:15px;
+      padding:14px;
+      font-size:14px;
+      line-height:1.55;
+      color:var(--drg-text);
+      min-height:126px;
+    }
+
+    .resource-list{display:grid;gap:12px;margin-top:18px}
+    .resource{
+      display:flex;gap:12px;align-items:flex-start;
+      border:1px solid var(--drg-border);
+      border-radius:18px;
+      padding:14px;
+      background:#fff;
+      transition:.2s ease;
+    }
+    .resource:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(11,35,65,.08)}
+    .resource .badge{
+      min-width:36px;height:36px;border-radius:13px;background:var(--drg-sky);color:var(--drg-blue);
+      display:flex;align-items:center;justify-content:center;font-weight:900;
+    }
+    .resource h3{margin:0 0 4px;font-size:15.5px;color:var(--drg-navy)}
+    .resource p{margin:0;color:var(--drg-muted);font-size:13.5px;line-height:1.42}
+
+    .note{
+      margin-top:14px;
+      color:var(--drg-muted);
+      font-size:12.5px;
+      line-height:1.45;
+    }
+
+    @media (max-width:900px){
+      .quick-grid{grid-template-columns:repeat(2,1fr)}
+      .tool-shell{grid-template-columns:1fr}
+      .hero{padding:30px 24px}
+    }
+
+    @media (max-width:620px){
+      .drg-realtor-tools{padding:14px 10px 28px}
+      .hero{border-radius:22px;padding:26px 18px}
+      .hero h1{font-size:32px}
+      .hero p{font-size:15.5px}
+      .quick-grid{grid-template-columns:1fr;gap:10px}
+      .panel-head,.panel-body{padding:18px}
+      .panel-head h2,.results-card h2{font-size:21px}
+      .tabs{display:grid;grid-template-columns:1fr;gap:8px}
+      .tab-btn{width:100%;padding:12px 10px}
+      .form-grid{grid-template-columns:1fr;gap:12px}
+      .metric-grid{grid-template-columns:1fr}
+      .button-row{display:grid;grid-template-columns:1fr;width:100%}
+      .primary-btn,.secondary-btn{width:100%}
+      input,select,textarea{font-size:16px}
+      .resource{padding:13px}
+    }
+  </style>
+</head>
+<body>
+  <div class="drg-realtor-tools">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">🏡 Realtor Partner Hub</div>
+        <h1>Fast mortgage scenario tools for real estate conversations.</h1>
+        <p>Estimate buyer payment comfort, seller credit impact, and lead handoff details in one clean workspace built for realtors and referral partners.</p>
+      </div>
+    </section>
+
+    <section class="quick-grid" aria-label="Tool highlights">
+      <div class="quick-card"><div class="quick-icon">💬</div><h3>What-If Scenarios</h3><p>Compare price, rate, taxes, insurance, HOA, and seller credit ideas quickly.</p></div>
+      <div class="quick-card"><div class="quick-icon">🤝</div><h3>Lead Handoff</h3><p>Generate a clean message to send a buyer or seller financing scenario for review.</p></div>
+      <div class="quick-card"><div class="quick-icon">📊</div><h3>Listing Strategy</h3><p>Translate seller credits into monthly-payment context buyers can understand.</p></div>
+      <div class="quick-card"><div class="quick-icon">📱</div><h3>Mobile Ready</h3><p>Use it at showings, listing appointments, open houses, or client meetings.</p></div>
+    </section>
+
+    <section class="tool-shell">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Realtor Scenario Builder</h2>
+          <p>Choose the conversation you are having, enter a few numbers, and generate quick talking points.</p>
+        </div>
+        <div class="panel-body">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="buyer">Buyer Payment</button>
+            <button class="tab-btn" data-tab="seller">Seller Credit</button>
+            <button class="tab-btn" data-tab="lead">Lead Share</button>
+          </div>
+
+          <div class="tool-section active" id="buyer">
+            <div class="form-grid">
+              <div class="field"><label>Purchase Price</label><input id="buyerPrice" type="number" value="300000" min="0" /></div>
+              <div class="field"><label>Down Payment %</label><input id="buyerDown" type="number" value="5" min="0" max="100" step=".01" /></div>
+              <div class="field"><label>Interest Rate %</label><input id="buyerRate" type="number" value="6.75" min="0" step=".01" /></div>
+              <div class="field"><label>Loan Term</label><select id="buyerTerm"><option value="360">30 Years</option><option value="240">20 Years</option><option value="180">15 Years</option></select></div>
+              <div class="field"><label>Monthly Taxes</label><input id="buyerTaxes" type="number" value="350" min="0" /></div>
+              <div class="field"><label>Monthly Insurance</label><input id="buyerIns" type="number" value="125" min="0" /></div>
+              <div class="field"><label>Monthly HOA</label><input id="buyerHoa" type="number" value="0" min="0" /></div>
+              <div class="field"><label>Target Payment</label><input id="buyerTarget" type="number" value="2500" min="0" /></div>
+            </div>
+            <div class="button-row"><button class="primary-btn" onclick="calculateBuyer()">Calculate Buyer Scenario</button><button class="secondary-btn" onclick="resetBuyer()">Reset Example</button></div>
+          </div>
+
+          <div class="tool-section" id="seller">
+            <div class="form-grid">
+              <div class="field"><label>Purchase Price</label><input id="sellerPrice" type="number" value="300000" min="0" /></div>
+              <div class="field"><label>Seller Credit</label><input id="sellerCredit" type="number" value="7500" min="0" /></div>
+              <div class="field"><label>Interest Rate %</label><input id="sellerRate" type="number" value="6.75" min="0" step=".01" /></div>
+              <div class="field"><label>Estimated Rate Improvement</label><input id="sellerRateDrop" type="number" value="0.5" min="0" step=".01" /></div>
+              <div class="field"><label>Loan Amount</label><input id="sellerLoan" type="number" value="285000" min="0" /></div>
+              <div class="field"><label>Loan Term</label><select id="sellerTerm"><option value="360">30 Years</option><option value="240">20 Years</option><option value="180">15 Years</option></select></div>
+            </div>
+            <div class="button-row"><button class="primary-btn" onclick="calculateSeller()">Calculate Credit Impact</button><button class="secondary-btn" onclick="resetSeller()">Reset Example</button></div>
+          </div>
+
+          <div class="tool-section" id="lead">
+            <div class="form-grid">
+              <div class="field"><label>Client Name</label><input id="leadName" type="text" placeholder="Client name" /></div>
+              <div class="field"><label>Client Type</label><select id="leadType"><option>Buyer</option><option>Seller</option><option>Investor</option><option>Refinance</option></select></div>
+              <div class="field"><label>Price / Loan Goal</label><input id="leadGoal" type="text" placeholder="$300,000 purchase" /></div>
+              <div class="field"><label>Timing</label><select id="leadTiming"><option>ASAP</option><option>This week</option><option>30-60 days</option><option>Just exploring</option></select></div>
+              <div class="field full"><label>Notes</label><textarea id="leadNotes" placeholder="Income type, down payment, property address, concerns, or anything helpful..."></textarea></div>
+            </div>
+            <div class="button-row"><button class="primary-btn" onclick="generateLeadMessage()">Generate Handoff Message</button><button class="secondary-btn" onclick="copyScript()">Copy Message</button></div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="results-card">
+          <h2>Scenario Snapshot</h2>
+          <p id="snapshotIntro">Run a calculation or generate a lead message to see the summary here.</p>
+          <div class="metric-grid">
+            <div class="metric"><span>Main Result</span><strong id="mainMetric">—</strong></div>
+            <div class="metric"><span>Client Angle</span><strong id="angleMetric">—</strong></div>
+          </div>
+          <div class="insight" id="insightText">Use this as a conversation starter, not a loan approval or commitment to lend.</div>
+        </div>
+
+        <div class="script-box">
+          <h3>Suggested Talking Point</h3>
+          <p>Use this to explain the scenario in plain English.</p>
+          <div class="script-output" id="scriptOutput">Your generated talking point will appear here.</div>
+          <div class="button-row" style="margin-top:14px"><button class="secondary-btn" onclick="downloadScenario()">Download Scenario</button></div>
+        </div>
+
+        <div class="panel" style="margin-top:18px;box-shadow:none">
+          <div class="panel-head"><h2 style="font-size:20px">Partner Resources</h2><p>Future buttons can link to Wix pages, forms, or native site tools.</p></div>
+          <div class="panel-body">
+            <div class="resource-list">
+              <div class="resource"><div class="badge">1</div><div><h3>Share a Buyer Lead</h3><p>Add a native Wix button later to route partners to your lead form.</p></div></div>
+              <div class="resource"><div class="badge">2</div><div><h3>Buyer Affordability Help</h3><p>Point buyers toward a pre-approval conversation before writing offers.</p></div></div>
+              <div class="resource"><div class="badge">3</div><div><h3>Listing Financing Strategy</h3><p>Use seller credits as a pricing conversation, not just a concession.</p></div></div>
+            </div>
+            <div class="note">Estimates are for educational purposes only. Actual payment, rate, terms, eligibility, and costs depend on borrower qualifications, property details, market conditions, and lender guidelines.</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const money = (n) => isFinite(n) ? n.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}) : '—';
+    const money2 = (n) => isFinite(n) ? n.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}) : '—';
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tool-section').forEach(s => s.classList.remove('active'));
+        btn.classList.add('active');
+        $(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    function payment(loan, annualRate, months){
+      const r = annualRate / 100 / 12;
+      if (!loan || !months) return 0;
+      if (r === 0) return loan / months;
+      return loan * r * Math.pow(1+r, months) / (Math.pow(1+r, months)-1);
+    }
+
+    function activeToolName(){
+      const active = document.querySelector('.tab-btn.active');
+      return active ? active.textContent.trim() : 'Realtor Scenario';
+    }
+
+    function safeFileName(text){
+      return String(text || 'scenario').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60) || 'scenario';
+    }
+
+    function downloadTextFile(filename, text){
+      const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function calculateBuyer(){
+      const price = +$('buyerPrice').value || 0;
+      const downPct = +$('buyerDown').value || 0;
+      const rate = +$('buyerRate').value || 0;
+      const term = +$('buyerTerm').value || 360;
+      const taxes = +$('buyerTaxes').value || 0;
+      const ins = +$('buyerIns').value || 0;
+      const hoa = +$('buyerHoa').value || 0;
+      const target = +$('buyerTarget').value || 0;
+      const down = price * downPct / 100;
+      const loan = Math.max(price - down, 0);
+      const pi = payment(loan, rate, term);
+      const total = pi + taxes + ins + hoa;
+      const gap = target - total;
+
+      $('snapshotIntro').textContent = 'Estimated monthly payment snapshot based on the numbers entered.';
+      $('mainMetric').textContent = money(total);
+      $('angleMetric').textContent = gap >= 0 ? `${money(gap)} under target` : `${money(Math.abs(gap))} over target`;
+      $('insightText').textContent = gap >= 0
+        ? 'This scenario appears to fit within the target payment before considering items like mortgage insurance, final closing costs, or underwriting changes.'
+        : 'This scenario is above the target payment. Consider price, down payment, taxes, insurance, HOA, or available seller credit strategies.';
+      $('scriptOutput').textContent = `Estimated payment: ${money2(total)} per month. That includes estimated principal and interest of ${money2(pi)}, plus taxes, insurance, and HOA entered here. Compared with the target payment of ${money2(target)}, this is ${gap >= 0 ? money2(gap) + ' under' : money2(Math.abs(gap)) + ' over'} the target. This is a helpful starting point before a full pre-approval review.`;
+    }
+
+    function calculateSeller(){
+      const loan = +$('sellerLoan').value || 0;
+      const rate = +$('sellerRate').value || 0;
+      const drop = +$('sellerRateDrop').value || 0;
+      const term = +$('sellerTerm').value || 360;
+      const credit = +$('sellerCredit').value || 0;
+      const currentPI = payment(loan, rate, term);
+      const improvedPI = payment(loan, Math.max(rate - drop, 0), term);
+      const savings = currentPI - improvedPI;
+      const annual = savings * 12;
+
+      $('snapshotIntro').textContent = 'Seller credit strategy estimate based on the numbers entered.';
+      $('mainMetric').textContent = `${money(savings)}/mo`;
+      $('angleMetric').textContent = `${money(annual)}/yr`;
+      $('insightText').textContent = 'A seller credit may help make the monthly payment feel more manageable without necessarily reducing the list price by the same amount.';
+      $('scriptOutput').textContent = `A seller credit of ${money(credit)} could potentially be used to help with buyer costs or payment strategy, depending on loan program limits and final approval. In this example, improving the rate by about ${drop.toFixed(2)}% changes estimated principal and interest by roughly ${money2(savings)} per month, or ${money2(annual)} per year.`;
+    }
+
+    function generateLeadMessage(){
+      const name = $('leadName').value.trim() || 'Client';
+      const type = $('leadType').value;
+      const goal = $('leadGoal').value.trim() || 'their financing scenario';
+      const timing = $('leadTiming').value;
+      const notes = $('leadNotes').value.trim() || 'No additional notes yet.';
+      const msg = `Hi Gordon — I have a ${type.toLowerCase()} lead I would like you to review.\n\nClient: ${name}\nScenario: ${goal}\nTiming: ${timing}\nNotes: ${notes}\n\nCan you help them understand their options and next steps?`;
+      $('snapshotIntro').textContent = 'Lead handoff message generated.';
+      $('mainMetric').textContent = type;
+      $('angleMetric').textContent = timing;
+      $('insightText').textContent = 'This gives you a clean handoff format realtors can copy, text, or send through your site once native buttons are added.';
+      $('scriptOutput').textContent = msg;
+    }
+
+    async function copyScript(){
+      const text = $('scriptOutput').textContent;
+      try{
+        await navigator.clipboard.writeText(text);
+        $('insightText').textContent = 'Copied. You can paste this into a text, email, or CRM note.';
+      }catch(e){
+        $('insightText').textContent = 'Copy was blocked by the browser. Highlight the message and copy it manually.';
+      }
+    }
+
+    function buildScenarioDownload(){
+      const title = activeToolName();
+      const date = new Date().toLocaleDateString('en-US');
+      const main = $('mainMetric').textContent || '—';
+      const angle = $('angleMetric').textContent || '—';
+      const insight = $('insightText').textContent || '';
+      const talkingPoint = $('scriptOutput').textContent || '';
+      let inputs = '';
+
+      if(document.querySelector('#buyer.tool-section.active')){
+        inputs = `Purchase Price: ${money(+$('buyerPrice').value || 0)}
+Down Payment: ${$('buyerDown').value || 0}%
+Interest Rate: ${$('buyerRate').value || 0}%
+Loan Term: ${$('buyerTerm').options[$('buyerTerm').selectedIndex].text}
+Monthly Taxes: ${money(+$('buyerTaxes').value || 0)}
+Monthly Insurance: ${money(+$('buyerIns').value || 0)}
+Monthly HOA: ${money(+$('buyerHoa').value || 0)}
+Target Payment: ${money(+$('buyerTarget').value || 0)}`;
+      } else if(document.querySelector('#seller.tool-section.active')){
+        inputs = `Purchase Price: ${money(+$('sellerPrice').value || 0)}
+Seller Credit: ${money(+$('sellerCredit').value || 0)}
+Loan Amount: ${money(+$('sellerLoan').value || 0)}
+Interest Rate: ${$('sellerRate').value || 0}%
+Estimated Rate Improvement: ${$('sellerRateDrop').value || 0}%
+Loan Term: ${$('sellerTerm').options[$('sellerTerm').selectedIndex].text}`;
+      } else {
+        inputs = `Client Name: ${$('leadName').value || 'Client'}
+Client Type: ${$('leadType').value}
+Price / Loan Goal: ${$('leadGoal').value || 'Not entered'}
+Timing: ${$('leadTiming').value}
+Notes: ${$('leadNotes').value || 'No additional notes entered.'}`;
+      }
+
+      return `DRG Mortgage Realtor Scenario
+${title}
+Generated: ${date}
+
+INPUTS
+${inputs}
+
+SNAPSHOT
+Main Result: ${main}
+Client Angle: ${angle}
+Insight: ${insight}
+
+TALKING POINT
+${talkingPoint}
+
+DRG Mortgage LLC | NMLS 2751302
+This is for educational planning only. It is not a loan approval, loan estimate, commitment to lend, or guarantee of rate, payment, terms, eligibility, or closing costs.`;
+    }
+
+    function downloadScenario(){
+      if(($('scriptOutput').textContent || '').includes('Your generated talking point')){
+        if(document.querySelector('#buyer.tool-section.active')) calculateBuyer();
+        else if(document.querySelector('#seller.tool-section.active')) calculateSeller();
+        else generateLeadMessage();
+      }
+      const fileName = `drg-${safeFileName(activeToolName())}-scenario.txt`;
+      downloadTextFile(fileName, buildScenarioDownload());
+    }
+
+    function resetBuyer(){
+      $('buyerPrice').value = 300000; $('buyerDown').value = 5; $('buyerRate').value = 6.75; $('buyerTerm').value = 360;
+      $('buyerTaxes').value = 350; $('buyerIns').value = 125; $('buyerHoa').value = 0; $('buyerTarget').value = 2500;
+      calculateBuyer();
+    }
+    function resetSeller(){
+      $('sellerPrice').value = 300000; $('sellerCredit').value = 7500; $('sellerRate').value = 6.75; $('sellerRateDrop').value = .5;
+      $('sellerLoan').value = 285000; $('sellerTerm').value = 360;
+      calculateSeller();
+    }
+
+    calculateBuyer();
+  </script>
+</body>
+</html>
