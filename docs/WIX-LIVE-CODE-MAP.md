@@ -42,7 +42,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/investor-hub` | `src/pages/Investor Hub.ffjw6.js` | `#investorHubHtml` |
 | `/my-mortgage-dashboard` | `src/pages/My Mortgage Dashboard.azs78.js` | `#dashboardHtml` |
 | `/loan-details?loanId=...` | `src/pages/Loan Details.dt9pl.js` | `#mortgagePortalHtml` |
-| `/knowledge-center` | `src/pages/Knowledge Center.zkhqo.js` | `#knowledgeCenterHtml`, powered by `src/public/knowledgeFramework.js` |
+| `/knowledge-center` | `src/pages/Knowledge Center.zkhqo.js` | `#knowledgeCenterHtml`; archived at `html-embeds/knowledge-center/knowledge-center.html`; powered by `src/public/knowledgeFramework.js` |
 | `/knowledge-resources/{slug}` | `src/pages/Knowledge Resources (Item).xm9hn.js` | Dynamic item page, `#knowledgeResourceHtml` |
 | `/knowledge-center/homebuyer-basics` | `src/pages/Homebuyer Basics.jllw3.js` | `#knowledgeCategoryHtml`, powered by `src/public/knowledgeFramework.js` |
 | `/knowledge-center/mortgage-basics` | `src/pages/Mortgage Basics.wer5x.js` | `#knowledgeCategoryHtml` |
