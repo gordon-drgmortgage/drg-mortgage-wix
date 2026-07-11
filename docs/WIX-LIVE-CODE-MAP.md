@@ -41,7 +41,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/investor-tools` | `src/pages/Investor Tools.s5avu.js` | `#dscrHtml`; archived at `html-embeds/dscr-calculator/investor-tools-dscr.html`; `#comparablesHtml`; archived at `html-embeds/comparables-calculator/investor-tools-comparables.html`; `#fixFlipHtml`; archived at `html-embeds/fix-and-flip-analyzer/investor-tools-fix-flip.html` |
 | `/investor-hub` | `src/pages/Investor Hub.ffjw6.js` | `#investorHubHtml` |
 | `/my-mortgage-dashboard` | `src/pages/My Mortgage Dashboard.azs78.js` | `#myMortgageDashboardHtml`; archived at `html-embeds/member-pages/my-mortgage-dashboard.html` |
-| `/loan-details?loanId=...` | `src/pages/Loan Details.dt9pl.js` | `#mortgagePortalHtml` |
+| `/loan-details?loanId=...` | `src/pages/Loan Details.dt9pl.js` | `#mortgagePortalHtml`; archived at `html-embeds/member-pages/mortgage-portal.html` |
 | `/knowledge-center` | `src/pages/Knowledge Center.zkhqo.js` | `#knowledgeCenterHtml`; archived at `html-embeds/knowledge-center/knowledge-center.html`; powered by `src/public/knowledgeFramework.js` |
 | `/knowledge-resources/{slug}` | `src/pages/Knowledge Resources (Item).xm9hn.js` | Dynamic item page, `#knowledgeResourceHtml`; archived at `html-embeds/knowledge-resource/knowledge-resource.html` |
 | `/knowledge-center/homebuyer-basics` | `src/pages/Homebuyer Basics.jllw3.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html`; powered by `src/public/knowledgeFramework.js` |
@@ -238,7 +238,7 @@ Page code:
 - `src/pages/Loan Details.dt9pl.js`
 
 HTML component:
-- `#mortgagePortalHtml`
+- `#mortgagePortalHtml`; archived at `html-embeds/member-pages/mortgage-portal.html`
 
 HTML sends:
 - `LOAD_PORTAL_LOAN`
