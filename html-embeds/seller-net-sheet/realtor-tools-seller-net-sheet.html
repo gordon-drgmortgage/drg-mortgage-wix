@@ -1,0 +1,673 @@
+<!--
+Wix page: Realtor Tools
+Wix component ID: #sellerNetSheetHtml
+User-provided label: #sellerNetSheetSection
+Production status: Active
+Migrated from: User-provided Wix editor paste
+Initial archive date: 2026-07-11
+Public scrape match: Matches rendered public component after removing scrape-only header
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRG Seller Net Sheet Calculator</title>
+  <style>
+    :root{
+      --drg-navy:#0b2748;
+      --drg-blue:#174f86;
+      --drg-sky:#eaf4ff;
+      --drg-light:#f6f9fc;
+      --drg-border:#dbe7f3;
+      --drg-text:#172033;
+      --drg-muted:#64748b;
+      --drg-green:#137a46;
+      --drg-green-bg:#e8f7ef;
+      --drg-yellow:#9a6500;
+      --drg-yellow-bg:#fff6dc;
+      --drg-red:#b42318;
+      --drg-red-bg:#fff0ed;
+      --shadow:0 18px 45px rgba(11,39,72,.12);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:transparent;
+      color:var(--drg-text);
+    }
+
+    .drg-wrap{
+      width:100%;
+      max-width:1180px;
+      margin:0 auto;
+      padding:22px;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,var(--drg-navy),#103d70 58%,#1f6fae);
+      color:#fff;
+      border-radius:28px;
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero:before,
+    .hero:after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      opacity:.16;
+      background:#fff;
+      pointer-events:none;
+    }
+    .hero:before{width:260px;height:260px;right:-80px;top:-80px}
+    .hero:after{width:160px;height:160px;right:100px;bottom:-70px}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:700;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.24);
+      padding:8px 12px;
+      border-radius:999px;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.02;
+      max-width:800px;
+    }
+
+    .hero p{
+      margin:16px 0 0;
+      font-size:17px;
+      line-height:1.55;
+      max-width:760px;
+      color:rgba(255,255,255,.9);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      margin-top:22px;
+      align-items:start;
+    }
+
+    .panel{
+      background:#fff;
+      border:1px solid var(--drg-border);
+      border-radius:var(--radius);
+      box-shadow:0 14px 35px rgba(11,39,72,.08);
+      overflow:hidden;
+    }
+
+    .panel-head{
+      padding:22px 22px 16px;
+      border-bottom:1px solid var(--drg-border);
+      background:linear-gradient(180deg,#fff,var(--drg-light));
+    }
+
+    .panel-head h2{
+      margin:0;
+      font-size:22px;
+      color:var(--drg-navy);
+    }
+
+    .panel-head p{
+      margin:8px 0 0;
+      color:var(--drg-muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .panel-body{padding:22px}
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin:20px 0 12px;
+      padding-top:18px;
+      border-top:1px dashed var(--drg-border);
+      color:var(--drg-navy);
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+    .section-title:first-child{margin-top:0;padding-top:0;border-top:0}
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+
+    label{
+      display:block;
+      font-size:13px;
+      color:#334155;
+      font-weight:700;
+      margin-bottom:7px;
+    }
+
+    .field input,
+    .field select{
+      width:100%;
+      border:1px solid var(--drg-border);
+      border-radius:14px;
+      padding:13px 13px;
+      font-size:15px;
+      color:var(--drg-text);
+      background:#fff;
+      outline:none;
+      transition:.18s ease;
+    }
+
+    .field input:focus,
+    .field select:focus{
+      border-color:#69a7df;
+      box-shadow:0 0 0 4px rgba(105,167,223,.18);
+    }
+
+    .hint{
+      margin-top:6px;
+      font-size:12px;
+      color:var(--drg-muted);
+      line-height:1.35;
+    }
+
+    .range-wrap{
+      margin-top:8px;
+      padding:14px;
+      background:var(--drg-light);
+      border:1px solid var(--drg-border);
+      border-radius:16px;
+    }
+
+    input[type="range"]{width:100%}
+
+    .scenario-row{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    button{
+      appearance:none;
+      border:0;
+      cursor:pointer;
+      border-radius:999px;
+      padding:12px 16px;
+      font-weight:800;
+      font-size:14px;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .btn-primary{background:var(--drg-blue);color:#fff;box-shadow:0 10px 20px rgba(23,79,134,.2)}
+    .btn-secondary{background:var(--drg-sky);color:var(--drg-navy);border:1px solid #cce3fa}
+    .btn-light{background:#fff;color:var(--drg-blue);border:1px solid var(--drg-border)}
+    button:hover{transform:translateY(-1px);filter:brightness(.98)}
+
+    .results{
+      position:sticky;
+      top:12px;
+    }
+
+    .net-card{
+      background:linear-gradient(135deg,var(--drg-navy),#174f86);
+      color:#fff;
+      border-radius:24px;
+      padding:24px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .net-card:after{
+      content:"";
+      position:absolute;
+      width:190px;height:190px;
+      right:-70px;bottom:-70px;
+      border-radius:50%;
+      background:rgba(255,255,255,.12);
+    }
+    .net-label{font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:rgba(255,255,255,.76)}
+    .net-amount{font-size:clamp(34px,5vw,54px);font-weight:900;line-height:1;margin-top:10px;position:relative;z-index:1}
+    .net-sub{margin-top:12px;color:rgba(255,255,255,.86);font-size:14px;line-height:1.45;position:relative;z-index:1}
+
+    .summary-list{margin-top:16px;display:grid;gap:10px}
+    .summary-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      padding:14px;
+      background:#fff;
+      border:1px solid var(--drg-border);
+      border-radius:16px;
+    }
+    .summary-item span:first-child{color:var(--drg-muted);font-size:13px;font-weight:700}
+    .summary-item span:last-child{font-weight:900;color:var(--drg-navy);text-align:right}
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:14px;
+    }
+    .metric{
+      padding:14px;
+      border-radius:16px;
+      background:var(--drg-light);
+      border:1px solid var(--drg-border);
+    }
+    .metric .k{font-size:12px;color:var(--drg-muted);font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+    .metric .v{margin-top:7px;color:var(--drg-navy);font-size:20px;font-weight:900}
+
+    .offer-box{
+      margin-top:16px;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--drg-border);
+      background:#fff;
+    }
+    .offer-box h3{margin:0 0 10px;color:var(--drg-navy);font-size:18px}
+    .offer-line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #edf3f8;font-size:14px}
+    .offer-line:first-of-type{border-top:0}
+    .offer-line b{color:var(--drg-navy)}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      margin-top:10px;
+    }
+    .badge.good{background:var(--drg-green-bg);color:var(--drg-green)}
+    .badge.warn{background:var(--drg-yellow-bg);color:var(--drg-yellow)}
+    .badge.bad{background:var(--drg-red-bg);color:var(--drg-red)}
+
+    .note{
+      margin-top:16px;
+      padding:14px;
+      background:var(--drg-sky);
+      border:1px solid #cfe6fb;
+      border-radius:16px;
+      color:#22415f;
+      font-size:13px;
+      line-height:1.45;
+    }
+
+    .footer-note{
+      margin-top:18px;
+      color:var(--drg-muted);
+      font-size:12px;
+      line-height:1.5;
+      text-align:center;
+    }
+
+    .print-only{display:none}
+
+    @media (max-width:900px){
+      .drg-wrap{padding:16px}
+      .hero{padding:26px 20px;border-radius:22px}
+      .grid{grid-template-columns:1fr}
+      .results{position:static}
+      .panel-body{padding:18px}
+    }
+
+    @media (max-width:640px){
+      .drg-wrap{padding:12px}
+      .hero{padding:24px 18px}
+      .hero p{font-size:15px}
+      .form-grid{grid-template-columns:1fr;gap:12px}
+      .mini-grid{grid-template-columns:1fr}
+      .scenario-row{display:grid;grid-template-columns:1fr}
+      button{width:100%;padding:13px 14px}
+      .summary-item{align-items:flex-start;flex-direction:column;gap:5px}
+      .summary-item span:last-child{text-align:left;font-size:18px}
+      .net-card{padding:20px;border-radius:20px}
+      .panel{border-radius:20px}
+      .panel-head{padding:19px 18px 14px}
+      .panel-head h2{font-size:20px}
+    }
+
+    @media print{
+      body{background:#fff}
+      .drg-wrap{max-width:900px;padding:0}
+      .hero, .panel, .net-card{box-shadow:none}
+      .scenario-row, .range-wrap, button{display:none!important}
+      .grid{grid-template-columns:1fr 1fr}
+      .results{position:static}
+      .print-only{display:block}
+    }
+  </style>
+</head>
+<body>
+  <div class="drg-wrap">
+    <section class="hero">
+      <div class="eyebrow">🏡 Realtor Listing Tool</div>
+      <h1>Seller Net Sheet Calculator</h1>
+      <p>Estimate what a seller may walk away with after mortgage payoffs, commissions, concessions, taxes, fees, and other closing costs. Great for listing appointments, price changes, and offer conversations.</p>
+    </section>
+
+    <div class="grid">
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Seller Scenario</h2>
+          <p>Enter the listing or offer details below. Numbers update instantly as you make changes.</p>
+        </div>
+        <div class="panel-body">
+          <div class="section-title">Property & Price</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="propertyAddress">Property Address</label>
+              <input id="propertyAddress" type="text" placeholder="Optional" />
+            </div>
+            <div class="field">
+              <label for="salePrice">Estimated Sale Price</label>
+              <input id="salePrice" type="text" inputmode="decimal" value="$400,000" />
+            </div>
+          </div>
+          <div class="range-wrap">
+            <label for="priceRange">Quick Sale Price Slider</label>
+            <input id="priceRange" type="range" min="100000" max="1500000" step="5000" value="400000" />
+            <div class="hint">Drag to quickly test price reductions, increases, or competing offers.</div>
+          </div>
+
+          <div class="section-title">Mortgage Payoffs</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="firstMortgage">First Mortgage Payoff</label>
+              <input id="firstMortgage" type="text" inputmode="decimal" value="$275,000" />
+            </div>
+            <div class="field">
+              <label for="secondMortgage">Second Mortgage / HELOC</label>
+              <input id="secondMortgage" type="text" inputmode="decimal" value="$0" />
+            </div>
+          </div>
+
+          <div class="section-title">Commissions</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="listingCommission">Listing Side Commission %</label>
+              <input id="listingCommission" type="number" step="0.01" value="3.00" />
+            </div>
+            <div class="field">
+              <label for="buyerCommission">Buyer Side Commission %</label>
+              <input id="buyerCommission" type="number" step="0.01" value="3.00" />
+            </div>
+          </div>
+
+          <div class="section-title">Seller Credits & Costs</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="sellerConcessions">Seller Concessions / Closing Cost Credit</label>
+              <input id="sellerConcessions" type="text" inputmode="decimal" value="$0" />
+            </div>
+            <div class="field">
+              <label for="repairCredits">Repair Credit</label>
+              <input id="repairCredits" type="text" inputmode="decimal" value="$0" />
+            </div>
+            <div class="field">
+              <label for="homeWarranty">Home Warranty</label>
+              <input id="homeWarranty" type="text" inputmode="decimal" value="$650" />
+            </div>
+            <div class="field">
+              <label for="miscCosts">Miscellaneous Seller Costs</label>
+              <input id="miscCosts" type="text" inputmode="decimal" value="$0" />
+            </div>
+          </div>
+
+          <div class="section-title">Taxes, Title & Closing Fees</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="taxProration">Property Tax Proration</label>
+              <input id="taxProration" type="text" inputmode="decimal" value="$2,500" />
+              <div class="hint">Use a positive number for seller cost.</div>
+            </div>
+            <div class="field">
+              <label for="transferTax">Transfer / Conveyance Tax</label>
+              <input id="transferTax" type="text" inputmode="decimal" value="$1,600" />
+            </div>
+            <div class="field">
+              <label for="titleFees">Title / Settlement Fees</label>
+              <input id="titleFees" type="text" inputmode="decimal" value="$1,200" />
+            </div>
+            <div class="field">
+              <label for="recordingFees">Recording / Release Fees</label>
+              <input id="recordingFees" type="text" inputmode="decimal" value="$250" />
+            </div>
+            <div class="field">
+              <label for="hoaProration">HOA / Condo Proration</label>
+              <input id="hoaProration" type="text" inputmode="decimal" value="$0" />
+            </div>
+            <div class="field">
+              <label for="attorneyFees">Attorney / Additional Closing Fees</label>
+              <input id="attorneyFees" type="text" inputmode="decimal" value="$0" />
+            </div>
+          </div>
+
+          <div class="section-title">Escrow & Other Adjustments</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="escrowRefund">Estimated Escrow Refund</label>
+              <input id="escrowRefund" type="text" inputmode="decimal" value="$0" />
+              <div class="hint">Use this when the seller expects a tax/insurance escrow refund after payoff.</div>
+            </div>
+            <div class="field">
+              <label for="otherCredits">Other Seller Credits</label>
+              <input id="otherCredits" type="text" inputmode="decimal" value="$0" />
+              <div class="hint">Positive amount increases seller proceeds.</div>
+            </div>
+          </div>
+
+          <div class="scenario-row">
+            <button class="btn-primary" id="printBtn" type="button">Print / Save as PDF</button>
+            <button class="btn-secondary" id="downloadBtn" type="button">Download Net Sheet</button>
+            <button class="btn-secondary" id="copyBtn" type="button">Copy Summary</button>
+            <button class="btn-light" id="resetBtn" type="button">Reset Example</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="results">
+        <div class="net-card">
+          <div class="net-label">Estimated Cash to Seller</div>
+          <div class="net-amount" id="netProceeds">$0</div>
+          <div class="net-sub" id="netSub">After estimated payoff, commissions, seller credits, and closing costs.</div>
+        </div>
+
+        <div class="summary-list">
+          <div class="summary-item"><span>Sale Price</span><span id="outSalePrice">$0</span></div>
+          <div class="summary-item"><span>Total Loan Payoffs</span><span id="outPayoffs">$0</span></div>
+          <div class="summary-item"><span>Total Commission</span><span id="outCommission">$0</span></div>
+          <div class="summary-item"><span>Seller Credits & Concessions</span><span id="outCreditsCosts">$0</span></div>
+          <div class="summary-item"><span>Taxes, Title & Closing Fees</span><span id="outClosingCosts">$0</span></div>
+          <div class="summary-item"><span>Escrow / Other Credits</span><span id="outOtherCredits">$0</span></div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="metric"><div class="k">Net % of Sale</div><div class="v" id="netPct">0%</div></div>
+          <div class="metric"><div class="k">Cost % of Sale</div><div class="v" id="costPct">0%</div></div>
+        </div>
+
+        <div class="offer-box">
+          <h3>Offer Conversation Insight</h3>
+          <div class="offer-line"><span>Every $5,000 price change moves net by roughly</span><b id="priceMove">$0</b></div>
+          <div class="offer-line"><span>Every $5,000 seller concession moves net by</span><b>-$5,000</b></div>
+          <div class="offer-line"><span>Commission estimate at current price</span><b id="commissionRateOut">0%</b></div>
+          <div id="healthBadge" class="badge good">Strong estimated seller proceeds</div>
+        </div>
+
+        <div class="note">
+          This is an estimate only. Final figures should be verified with the title company, settlement agent, payoff statements, tax records, purchase contract, and any applicable state or local fees.
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer-note">
+      DRG Mortgage LLC | NMLS 2751302 | Seller net proceeds are estimates and may vary based on final contract terms, payoff amounts, title fees, taxes, credits, prorations, and local requirements.
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const moneyFields = [
+      'salePrice','firstMortgage','secondMortgage','sellerConcessions','repairCredits','homeWarranty','miscCosts',
+      'taxProration','transferTax','titleFees','recordingFees','hoaProration','attorneyFees','escrowRefund','otherCredits'
+    ];
+
+    function parseMoney(value){
+      if(value === null || value === undefined) return 0;
+      const cleaned = String(value).replace(/[^0-9.-]/g,'');
+      const n = parseFloat(cleaned);
+      return isNaN(n) ? 0 : n;
+    }
+
+    function fmt(n){
+      const sign = n < 0 ? '-' : '';
+      const abs = Math.abs(Math.round(n));
+      return sign + '$' + abs.toLocaleString();
+    }
+
+    function fmtPct(n){
+      if(!isFinite(n)) return '0%';
+      return n.toFixed(1) + '%';
+    }
+
+    function formatMoneyInput(el){
+      const value = parseMoney(el.value);
+      el.value = fmt(value);
+    }
+
+    function values(){
+      const salePrice = parseMoney($('salePrice').value);
+      const listingCommissionPct = parseFloat($('listingCommission').value) || 0;
+      const buyerCommissionPct = parseFloat($('buyerCommission').value) || 0;
+      const payoffs = parseMoney($('firstMortgage').value) + parseMoney($('secondMortgage').value);
+      const commission = salePrice * ((listingCommissionPct + buyerCommissionPct) / 100);
+      const creditsCosts = parseMoney($('sellerConcessions').value) + parseMoney($('repairCredits').value) + parseMoney($('homeWarranty').value) + parseMoney($('miscCosts').value);
+      const closingCosts = parseMoney($('taxProration').value) + parseMoney($('transferTax').value) + parseMoney($('titleFees').value) + parseMoney($('recordingFees').value) + parseMoney($('hoaProration').value) + parseMoney($('attorneyFees').value);
+      const otherCredits = parseMoney($('escrowRefund').value) + parseMoney($('otherCredits').value);
+      const totalCosts = payoffs + commission + creditsCosts + closingCosts;
+      const net = salePrice - totalCosts + otherCredits;
+      return {salePrice, listingCommissionPct, buyerCommissionPct, payoffs, commission, creditsCosts, closingCosts, otherCredits, totalCosts, net};
+    }
+
+    function calculate(){
+      const v = values();
+      $('netProceeds').textContent = fmt(v.net);
+      $('outSalePrice').textContent = fmt(v.salePrice);
+      $('outPayoffs').textContent = fmt(v.payoffs);
+      $('outCommission').textContent = fmt(v.commission);
+      $('outCreditsCosts').textContent = fmt(v.creditsCosts);
+      $('outClosingCosts').textContent = fmt(v.closingCosts);
+      $('outOtherCredits').textContent = fmt(v.otherCredits);
+      $('netPct').textContent = fmtPct(v.salePrice ? (v.net / v.salePrice) * 100 : 0);
+      $('costPct').textContent = fmtPct(v.salePrice ? ((v.totalCosts - v.payoffs) / v.salePrice) * 100 : 0);
+      $('priceMove').textContent = fmt(5000 * (1 - ((v.listingCommissionPct + v.buyerCommissionPct) / 100)));
+      $('commissionRateOut').textContent = (v.listingCommissionPct + v.buyerCommissionPct).toFixed(2) + '%';
+      $('priceRange').value = Math.max(parseInt($('priceRange').min), Math.min(parseInt($('priceRange').max), v.salePrice || 0));
+
+      const badge = $('healthBadge');
+      badge.className = 'badge good';
+      if(v.net < 0){
+        badge.textContent = 'Potential shortfall — review payoff/costs';
+        badge.className = 'badge bad';
+      } else if(v.salePrice && (v.net / v.salePrice) < .08){
+        badge.textContent = 'Thin proceeds — review offer terms carefully';
+        badge.className = 'badge warn';
+      } else {
+        badge.textContent = 'Strong estimated seller proceeds';
+      }
+
+      $('netSub').textContent = v.net < 0
+        ? 'Estimated costs and payoffs exceed the sale price. Verify payoff and fee assumptions.'
+        : 'After estimated payoff, commissions, seller credits, and closing costs.';
+    }
+
+    function copySummary(){
+      const v = values();
+      const address = $('propertyAddress').value.trim() || 'Seller Net Sheet Scenario';
+      const text = `${address}\nEstimated Sale Price: ${fmt(v.salePrice)}\nEstimated Cash to Seller: ${fmt(v.net)}\nLoan Payoffs: ${fmt(v.payoffs)}\nCommission: ${fmt(v.commission)}\nSeller Credits/Concessions: ${fmt(v.creditsCosts)}\nTaxes, Title & Closing Fees: ${fmt(v.closingCosts)}\nEscrow/Other Credits: ${fmt(v.otherCredits)}\n\nEstimate only. Final numbers should be verified with title/settlement.`;
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(() => alert('Summary copied.'));
+      } else {
+        const temp = document.createElement('textarea');
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+        alert('Summary copied.');
+      }
+    }
+
+    function resetExample(){
+      $('propertyAddress').value = '';
+      $('salePrice').value = '$400,000';
+      $('priceRange').value = 400000;
+      $('firstMortgage').value = '$275,000';
+      $('secondMortgage').value = '$0';
+      $('listingCommission').value = '3.00';
+      $('buyerCommission').value = '3.00';
+      $('sellerConcessions').value = '$0';
+      $('repairCredits').value = '$0';
+      $('homeWarranty').value = '$650';
+      $('miscCosts').value = '$0';
+      $('taxProration').value = '$2,500';
+      $('transferTax').value = '$1,600';
+      $('titleFees').value = '$1,200';
+      $('recordingFees').value = '$250';
+      $('hoaProration').value = '$0';
+      $('attorneyFees').value = '$0';
+      $('escrowRefund').value = '$0';
+      $('otherCredits').value = '$0';
+      calculate();
+    }
+
+    moneyFields.forEach(id => {
+      const el = $(id);
+      el.addEventListener('input', () => {
+        if(id === 'salePrice') $('priceRange').value = parseMoney(el.value);
+        calculate();
+      });
+      el.addEventListener('blur', () => { formatMoneyInput(el); calculate(); });
+    });
+
+    ['listingCommission','buyerCommission','propertyAddress'].forEach(id => {
+      $(id).addEventListener('input', calculate);
+    });
+
+    $('priceRange').addEventListener('input', (e) => {
+      $('salePrice').value = fmt(parseMoney(e.target.value));
+      calculate();
+    });
+
+    $('printBtn').addEventListener('click', () => window.print());
+    $('downloadBtn').addEventListener('click', downloadNetSheet);
+    $('copyBtn').addEventListener('click', copySummary);
+    $('resetBtn').addEventListener('click', resetExample);
+
+    calculate();
+  </script>
+</body>
+</html>
