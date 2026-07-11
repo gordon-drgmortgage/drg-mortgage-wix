@@ -40,7 +40,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/realtor-tools` | `src/pages/Realtor Tools.weyoj.js` | `#quickToolsHtml`; archived at `html-embeds/realtor-tools/realtor-tools-quick-tools.html`; `#sellerNetSheetHtml`; archived at `html-embeds/seller-net-sheet/realtor-tools-seller-net-sheet.html` |
 | `/investor-tools` | `src/pages/Investor Tools.s5avu.js` | `#dscrHtml`; archived at `html-embeds/dscr-calculator/investor-tools-dscr.html`; `#comparablesHtml`; archived at `html-embeds/comparables-calculator/investor-tools-comparables.html`; `#fixFlipHtml`; archived at `html-embeds/fix-and-flip-analyzer/investor-tools-fix-flip.html` |
 | `/investor-hub` | `src/pages/Investor Hub.ffjw6.js` | `#investorHubHtml` |
-| `/my-mortgage-dashboard` | `src/pages/My Mortgage Dashboard.azs78.js` | `#dashboardHtml` |
+| `/my-mortgage-dashboard` | `src/pages/My Mortgage Dashboard.azs78.js` | `#myMortgageDashboardHtml`; archived at `html-embeds/member-pages/my-mortgage-dashboard.html` |
 | `/loan-details?loanId=...` | `src/pages/Loan Details.dt9pl.js` | `#mortgagePortalHtml` |
 | `/knowledge-center` | `src/pages/Knowledge Center.zkhqo.js` | `#knowledgeCenterHtml`; archived at `html-embeds/knowledge-center/knowledge-center.html`; powered by `src/public/knowledgeFramework.js` |
 | `/knowledge-resources/{slug}` | `src/pages/Knowledge Resources (Item).xm9hn.js` | Dynamic item page, `#knowledgeResourceHtml`; archived at `html-embeds/knowledge-resource/knowledge-resource.html` |
@@ -216,7 +216,7 @@ Page code:
 - `src/pages/My Mortgage Dashboard.azs78.js`
 
 HTML component:
-- `#dashboardHtml`
+- `#myMortgageDashboardHtml`; archived at `html-embeds/member-pages/my-mortgage-dashboard.html`
 
 HTML sends:
 - `LOAD_DASHBOARD_LOANS`
