@@ -3,6 +3,7 @@
  * Production status: Active
  * Migrated from: User-provided Wix code attachment
  * Initial archive date: 2026-07-10
+ * Last verified from Wix: 2026-07-11
  */
 
 import wixData from "wix-data";
