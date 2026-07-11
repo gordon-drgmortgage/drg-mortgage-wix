@@ -1,0 +1,1713 @@
+<!--
+Wix page: Investor Tools
+Wix component ID: #fixFlipHtml
+Production status: Active
+Migrated from: User-provided Wix editor paste
+Initial archive date: 2026-07-11
+Public scrape match: Matches rendered public component after removing scrape-only header
+Security note: Google Maps browser key redacted in GitHub archive; production Wix source contained the live key.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix & Flip Deal Analyzer V4</title>
+<style>
+:root{
+  --navy:#0F2744;
+  --blue:#1E4E79;
+  --soft:#f6f8fb;
+  --panel:#f8fbff;
+  --line:#ddeaf7;
+  --green:#2E8B57;
+  --gold:#E6A23C;
+  --red:#D9534F;
+  --muted:#52677f;
+  --shadow:0 12px 30px rgba(0,0,0,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;padding:20px;background:var(--soft);font-family:Arial,sans-serif;color:var(--navy)}
+.tool{max-width:1240px;margin:auto;background:white;border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.header{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:30px}
+.hero-grid{display:grid;grid-template-columns:1.45fr .55fr;gap:22px;align-items:center}
+.kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:bold;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}
+.header h2{margin:0;font-size:34px;line-height:1.1}
+.header p{margin:10px 0 0;opacity:.92;font-size:16px;line-height:1.45;max-width:780px}
+.hero-cards{display:grid;gap:10px}
+.hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);border-radius:16px;padding:12px}
+.hero-card strong{display:block;font-size:14px}
+.hero-card span{display:block;font-size:12px;opacity:.82;margin-top:3px}
+.actionbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+button{background:var(--blue);color:white;border:none;border-radius:12px;padding:14px 16px;font-size:15px;font-weight:bold;cursor:pointer}
+button:hover{background:var(--navy)}
+.header button{background:white;color:var(--navy)}
+.header button:hover{background:#eef5fc}
+.secondary-btn{background:white;color:var(--blue);border:2px solid var(--blue)}
+.secondary-btn:hover{background:#eef5fc}
+.danger-btn{background:var(--red)}
+.danger-btn:hover{background:#a83c38}
+.ghost-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.32);color:white}
+.ghost-btn:hover{background:rgba(255,255,255,.20)}
+.locked-save-btn{background:#eef5fc!important;color:var(--blue)!important;border:2px solid var(--line)!important;box-shadow:none!important}
+.locked-save-btn:hover{background:#e4effa!important;color:var(--navy)!important}
+.member-lock-note{display:none;margin-top:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:12px;font-size:13px;line-height:1.4;max-width:760px}
+.member-lock-note strong{display:block;margin-bottom:3px}
+.content{display:grid;grid-template-columns:1.18fr .82fr;gap:24px;padding:24px}
+.section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:18px}
+.section h3{margin:0 0 14px;color:var(--blue)}
+.subhead{font-weight:bold;margin:16px 0 10px;color:var(--navy)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.input-group label{display:block;font-weight:bold;font-size:14px;margin-bottom:6px}
+input,select,textarea{width:100%;box-sizing:border-box;padding:12px;border:1px solid #cbd8e6;border-radius:10px;font-size:15px;font-family:Arial,sans-serif;background:white;color:var(--navy)}
+textarea{min-height:85px}
+.readonly{background:#eef5fc;font-weight:bold}select.locked-select,select[disabled]{appearance:none;-webkit-appearance:none;-moz-appearance:none;background:#eef5fc!important;color:#0F2744;border-style:dashed;pointer-events:none;padding-right:12px}select.locked-select::-ms-expand,select[disabled]::-ms-expand{display:none}
+.helper{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
+.location-card{grid-column:1/-1;background:white;border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:4px}
+.location-status{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:bold;color:var(--muted);margin-top:8px}
+.location-status .dot{width:10px;height:10px;border-radius:999px;background:var(--gold);display:inline-block;flex:0 0 auto}
+.location-status.confirmed{color:var(--green)}
+.location-status.confirmed .dot{background:var(--green)}
+.location-status.warning{color:var(--gold)}
+.location-status.warning .dot{background:var(--gold)}
+.location-status.error{color:var(--red)}
+.location-status.error .dot{background:var(--red)}
+.location-small{font-size:12px;color:var(--muted);line-height:1.35;margin-top:4px}
+
+.results{background:var(--navy);color:white;border-radius:20px;padding:24px;position:sticky;top:10px}
+.score-label{font-size:14px;opacity:.85;text-transform:uppercase}
+.score-value{font-size:54px;font-weight:bold;margin:8px 0}
+.status{font-size:22px;font-weight:bold;margin-bottom:18px}
+.meter{height:22px;background:rgba(255,255,255,.25);border-radius:20px;overflow:hidden;margin-bottom:18px}
+.meter-fill{height:100%;width:0%;border-radius:20px;transition:.5s ease}
+.result-line{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.2);padding:10px 0;gap:12px}
+.notes{margin-top:18px;background:rgba(255,255,255,.10);border-radius:14px;padding:14px;font-size:14px;line-height:1.45}
+.notes ul{padding-left:20px;margin-bottom:0}
+.disclaimer{font-size:12px;opacity:.75;margin-top:18px;line-height:1.4}
+.success-message{display:none;background:#DDEAF7;color:#0F2744;border-radius:12px;padding:12px;margin-top:12px;font-weight:bold;text-align:center}
+.save-message{display:none;background:rgba(46,139,87,.16);border:1px solid rgba(46,139,87,.35);color:white;border-radius:12px;padding:12px;margin-top:14px;font-weight:bold;text-align:center}
+.mini-status{font-size:12px;opacity:.78;margin-top:10px}
+.budget-row{display:grid;grid-template-columns:1fr 1.25fr .9fr .9fr 1fr .9fr auto;gap:10px;align-items:end;background:white;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:10px}
+.budget-row button{padding:10px 12px;margin:0}
+.row-total{font-weight:bold;color:var(--blue)}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.tab{border:1px solid var(--line);background:white;color:var(--blue);padding:10px 12px;border-radius:999px;font-weight:bold;cursor:pointer}
+.tab.active{background:var(--blue);color:white}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(15,39,68,.62);z-index:9999;padding:20px;align-items:center;justify-content:center}
+.modal{background:white;color:var(--navy);border-radius:22px;width:min(900px,100%);max-height:88vh;overflow:auto;box-shadow:0 18px 60px rgba(0,0,0,.28)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line)}
+.modal-head h3{margin:0;color:var(--blue)}
+.modal-body{padding:20px}
+.saved-card{border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px;background:var(--panel)}
+.saved-card h4{margin:0 0 8px;color:var(--blue)}
+.saved-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted);margin-bottom:10px}
+.saved-meta span{background:white;border:1px solid var(--line);border-radius:999px;padding:5px 8px}
+.saved-actions{display:flex;gap:8px;flex-wrap:wrap}
+.saved-actions button{width:auto;padding:10px 12px;font-size:13px}
+.toolbar-note{font-size:13px;opacity:.9;margin-top:8px}
+.drg-place-wrap{position:relative}.drg-place-suggestions{display:none;position:absolute;left:0;right:0;top:100%;background:white;border:1px solid #cbd8e6;border-radius:0 0 12px 12px;box-shadow:0 10px 24px rgba(15,39,68,.18);z-index:10000;max-height:260px;overflow:auto}.drg-place-option{display:block;width:100%;padding:10px 12px;border:0;border-bottom:1px solid #edf2f7;background:white;color:#0F2744;text-align:left;font-size:14px;line-height:1.35;cursor:pointer}.drg-place-option:hover,.drg-place-option:focus{background:#f2f7fd}.drg-place-option small{display:block;color:#52677f;font-size:12px;margin-top:2px}.drg-place-message{padding:10px 12px;color:#52677f;font-size:13px;background:#fbfdff}
+
+/* DRG mobile + Fix & Flip Intelligence Panel upgrade */
+.content{
+  align-items:stretch;
+}
+.results{
+  overflow:hidden;
+  isolation:isolate;
+  align-self:stretch;
+  height:100%;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(10px, 1.1vw, 16px);
+}
+.results::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.20;
+  background:
+    radial-gradient(circle at 82% 10%, rgba(255,255,255,.18), transparent 28%),
+    radial-gradient(circle at 12% 82%, rgba(82,210,115,.16), transparent 26%),
+    linear-gradient(135deg, transparent 0 48%, rgba(255,255,255,.045) 49% 50%, transparent 51% 100%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 34px);
+  z-index:-2;
+}
+.results::after{
+  content:"REHAB ANALYSIS";
+  position:absolute;
+  right:-34px;
+  top:48%;
+  transform:rotate(90deg);
+  font-size:44px;
+  font-weight:950;
+  letter-spacing:.14em;
+  color:rgba(255,255,255,.045);
+  pointer-events:none;
+  z-index:-1;
+}
+.intel-panel-head{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:16px;
+  align-items:center;
+  margin-bottom:2px;
+}
+.intel-title{
+  margin:0;
+  color:white;
+  font-size:13px;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  opacity:.86;
+}
+.deal-pulse{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.deal-pulse i{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#52d273;
+  box-shadow:0 0 14px rgba(82,210,115,.75);
+  animation:drgPulse 1.7s ease-in-out infinite;
+}
+.deal-pulse i:nth-child(2){animation-delay:.18s}
+.deal-pulse i:nth-child(3){animation-delay:.36s}
+.deal-pulse i:nth-child(4){animation-delay:.54s}
+.deal-pulse i:nth-child(5){animation-delay:.72s}
+.score-stage{
+  display:grid;
+  justify-items:center;
+  gap:12px;
+  padding:14px 12px 15px;
+  border-radius:22px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.score-orb{
+  width:132px;
+  height:132px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  position:relative;
+  background:conic-gradient(#52d273 var(--score-angle,0deg), rgba(255,255,255,.16) 0deg);
+  box-shadow:0 22px 55px rgba(0,0,0,.20), inset 0 0 0 1px rgba(255,255,255,.18);
+}
+.score-orb::before{
+  content:"";
+  position:absolute;
+  inset:10px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#0F2744,#18385d);
+  border:1px solid rgba(255,255,255,.18);
+}
+.score-orb-inner{
+  position:relative;
+  z-index:1;
+  text-align:center;
+}
+.score-orb-inner .score-value{
+  font-size:34px;
+  margin:0;
+  line-height:.9;
+}
+.score-orb-inner .score-label{
+  font-size:11px;
+  margin-top:8px;
+  display:block;
+  opacity:.74;
+}
+.deal-status-pill{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:34px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(82,210,115,.15);
+  color:#dfffea;
+  border:1px solid rgba(82,210,115,.30);
+  font-weight:950;
+  text-align:center;
+}
+.intel-map{
+  min-height:108px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.16);
+  background:
+    radial-gradient(circle at 22% 30%, rgba(82,210,115,.18), transparent 10%),
+    radial-gradient(circle at 68% 58%, rgba(230,162,60,.16), transparent 12%),
+    linear-gradient(90deg, transparent 0 33%, rgba(255,255,255,.08) 33% 34%, transparent 34% 65%, rgba(255,255,255,.06) 65% 66%, transparent 66%),
+    linear-gradient(0deg, transparent 0 42%, rgba(255,255,255,.08) 42% 43%, transparent 43% 74%, rgba(255,255,255,.06) 74% 75%, transparent 75%),
+    rgba(255,255,255,.065);
+  position:relative;
+  overflow:hidden;
+}
+.intel-map::before{
+  content:"";
+  position:absolute;
+  width:62px;
+  height:42px;
+  left:22px;
+  top:28px;
+  border:2px solid rgba(255,255,255,.20);
+  border-radius:8px;
+  transform:rotate(-8deg);
+}
+.intel-map::after{
+  content:"";
+  position:absolute;
+  right:18px;
+  bottom:14px;
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:inset 0 0 0 18px rgba(255,255,255,.035), inset 0 0 0 34px rgba(255,255,255,.025);
+}
+.map-pin{
+  position:absolute;
+  left:48%;
+  top:38%;
+  width:22px;
+  height:22px;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  background:#52d273;
+  box-shadow:0 0 0 8px rgba(82,210,115,.13), 0 14px 28px rgba(0,0,0,.20);
+}
+.map-pin::after{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border-radius:50%;
+  background:white;
+}
+.map-caption{
+  position:absolute;
+  left:14px;
+  bottom:12px;
+  display:grid;
+  gap:4px;
+  color:rgba(255,255,255,.86);
+  font-size:12px;
+  font-weight:850;
+}
+.intel-micro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.intel-metric{
+  min-height:72px;
+  padding:11px;
+  border-radius:16px;
+  background:rgba(255,255,255,.085);
+  border:1px solid rgba(255,255,255,.14);
+}
+.intel-metric span{
+  display:block;
+  opacity:.70;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.intel-metric strong{
+  display:block;
+  margin-top:5px;
+  font-size:17px;
+  line-height:1.05;
+  color:white;
+}
+.intel-metric small{
+  display:block;
+  margin-top:4px;
+  font-size:10.5px;
+  line-height:1.22;
+  opacity:.68;
+}
+.quality-panel,.why-panel,.strategy-panel,.brand-panel{
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.075);
+  padding:12px;
+}
+.quality-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+  margin-bottom:7px;
+  font-size:12px;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.quality-bar{
+  height:14px;
+  border-radius:999px;
+  overflow:hidden;
+  background:rgba(255,255,255,.18);
+}
+.quality-fill{
+  height:100%;
+  width:0%;
+  border-radius:999px;
+  background:linear-gradient(90deg,#D9534F,#E6A23C,#52d273);
+  transition:width .35s ease;
+}
+.why-panel strong,.strategy-panel strong,.brand-panel strong{
+  display:block;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:7px;
+}
+.why-list{
+  display:grid;
+  gap:8px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  font-size:13px;
+  line-height:1.35;
+  color:rgba(255,255,255,.82);
+}
+.why-list li{
+  display:grid;
+  grid-template-columns:18px 1fr;
+  gap:8px;
+}
+.why-list li::before{
+  content:"✓";
+  color:#52d273;
+  font-weight:950;
+}
+.strategy-panel p{
+  margin:0;
+  font-size:13px;
+  line-height:1.45;
+  color:rgba(255,255,255,.82);
+}
+.brand-panel{
+  margin-top:auto;
+  text-align:center;
+  padding:18px 14px;
+}
+.brand-panel span{
+  display:block;
+  color:rgba(255,255,255,.58);
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.brand-panel strong{
+  margin:5px 0 0;
+  font-size:15px;
+  color:white;
+  letter-spacing:.03em;
+}
+.result-line{
+  min-height:36px;
+  align-items:center;
+}
+#savePanelBtn,#savedProjectsBtn{
+  width:100%;
+  margin-top:0;
+}
+.results .notes{
+  min-height:0;
+  max-height:170px;
+  overflow:auto;
+}
+@keyframes drgPulse{
+  0%,100%{opacity:.35;transform:scale(.82)}
+  50%{opacity:1;transform:scale(1.1)}
+}
+
+/* Mobile optimization layer */
+
+@media(min-width:981px){
+  .results{
+    position:sticky;
+    top:10px;
+    max-height:none;
+  }
+  .why-panel{
+    max-height:154px;
+    overflow:auto;
+  }
+  .strategy-panel{
+    max-height:118px;
+    overflow:auto;
+  }
+  .results .notes{
+    max-height:168px;
+    overflow:auto;
+  }
+  .brand-panel{
+    margin-top:0;
+    padding:12px;
+  }
+}
+
+@media(max-width:760px){
+  body{padding:10px;background:#fff}
+  .tool{border-radius:18px;box-shadow:0 10px 26px rgba(0,0,0,.08)}
+  .header{padding:24px 18px}
+  .hero-grid{gap:18px}
+  .header h2{font-size:30px;letter-spacing:-.02em}
+  .header p{font-size:14.5px}
+  .hero-cards{grid-template-columns:1fr}
+  .hero-card{padding:13px}
+  .content{padding:14px;gap:16px}
+  .section{padding:16px;border-radius:16px;margin-bottom:14px}
+  .section h3{font-size:18px}
+  input,select,textarea{min-height:46px;font-size:16px}
+  button,.secondary-btn{width:100%;min-height:46px}
+  .actionbar{gap:9px}
+  .budget-row{gap:12px;padding:14px}
+  .modal-backdrop{padding:10px}
+  .modal{border-radius:18px;max-height:92vh}
+  .modal-head,.modal-body{padding:16px}
+  .saved-actions button{width:100%}
+  .results{
+    position:static;
+    min-height:auto;
+    padding:18px;
+    border-radius:16px;
+    gap:16px;
+  }
+  .results::after{display:none}
+  .intel-panel-head{grid-template-columns:1fr;gap:10px}
+  .deal-pulse{justify-content:center}
+  .score-orb{width:140px;height:140px}
+  .score-orb-inner .score-value{font-size:36px}
+  .intel-map{min-height:126px}
+  .intel-micro-grid{grid-template-columns:1fr}
+  .result-line{font-size:14px;align-items:flex-start}
+  .notes{font-size:13.5px}
+}
+@media(max-width:420px){
+  .header h2{font-size:27px}
+  .content{padding:12px}
+  .section{padding:14px}
+  .score-orb{width:128px;height:128px}
+  .score-orb-inner .score-value{font-size:32px}
+}
+
+@media(max-width:980px){
+  .hero-grid,.content{grid-template-columns:1fr}
+  .results{position:static}
+}
+
+@media(min-width:981px){
+  .results{
+    position:sticky;
+    top:10px;
+    max-height:none;
+  }
+  .why-panel{
+    max-height:154px;
+    overflow:auto;
+  }
+  .strategy-panel{
+    max-height:118px;
+    overflow:auto;
+  }
+  .results .notes{
+    max-height:168px;
+    overflow:auto;
+  }
+  .brand-panel{
+    margin-top:0;
+    padding:12px;
+  }
+}
+
+@media(max-width:760px){
+  body{padding:12px}
+  .grid,.budget-row{grid-template-columns:1fr}
+  .header h2{font-size:28px}
+  .score-value{font-size:42px}
+  .actionbar button{width:100%}
+}
+@media print{
+  body{background:white;padding:0}
+  .tool{box-shadow:none;border-radius:0}
+  .actionbar,.secondary-btn,.danger-btn,.modal-backdrop,#savedProjectsBtn,#duplicateBtn,#exportBtn,#saveProjectBtn,#loadSavedBtn,.budget-row button{display:none!important}
+  .content{grid-template-columns:1fr}
+  .results{position:static;background:#0F2744!important;color:white!important}
+}
+</style>
+</head>
+
+<body>
+<div class="tool">
+  <div class="header">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">Investor Workspace</div>
+        <h2>Fix & Flip Deal Analyzer</h2>
+        <p>Analyze acquisition price, rehab budget, ARV support, leverage, cash needed, and project strength. Save flip projects to your investor workspace, track detailed rehab line items, duplicate scenarios, and reopen saved deals later.</p>
+        <div class="actionbar">
+          <button id="saveProjectBtn" class="locked-save-btn" onclick="saveProject()">🔒 Sign In to Save This Project</button>
+          <button id="loadSavedBtn" class="locked-save-btn" onclick="requestSavedProjects()">🔒 Sign In to View Saved Projects</button>
+          <button id="duplicateBtn" onclick="duplicateProject()">Duplicate</button>
+          <button id="exportBtn" onclick="exportProject()">Export / Print</button>
+        </div>
+        <div class="toolbar-note" id="memberStatus">Checking member login...</div>
+        <div class="member-lock-note" id="memberLockNote">
+          <strong>🔒 Sign in to save this project</strong>
+          Save fix & flip projects, track rehab line items, compare returns, and reopen your saved investor records from any device.
+        </div>
+      </div>
+      <div class="hero-cards">
+        <div class="hero-card"><strong>Deal Strength</strong><span>Score rehab feasibility, liquidity, leverage, and ARV support.</span></div>
+        <div class="hero-card"><strong>Detailed Budget</strong><span>Save estimated and actual rehab line items by category.</span></div>
+        <div class="hero-card"><strong>Investor Records</strong><span>Reopen projects, compare deals, and build a project history.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div>
+      <div class="section">
+        <h3>Project Details</h3>
+        <div class="grid">
+          <div class="input-group">
+            <label>Project Name</label>
+            <input type="text" id="projectName" value="New Fix & Flip Project">
+          </div>
+          <div class="input-group">
+            <label>Project Status</label>
+            <select id="projectStatus">
+              <option>Saved</option>
+              <option>Researching</option>
+              <option>Under Contract</option>
+              <option>Funded</option>
+              <option>In Rehab</option>
+              <option>Listed</option>
+              <option>Sold</option>
+              <option>Passed</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Purchase Closing Date</label>
+            <input type="date" id="purchaseCloseDate">
+          </div>
+          <div class="input-group">
+            <label>Target Sale Date</label>
+            <input type="date" id="targetSaleDate">
+          </div>
+        </div>
+        <div class="helper">These fields map to your saved fix-and-flip project record.</div>
+      </div>
+
+      <div class="section">
+        <h3>Investor Experience</h3>
+        <div class="grid">
+          <div class="input-group">
+            <label>Credit Score</label>
+            <input type="number" id="fico" value="700">
+          </div>
+          <div class="input-group">
+            <label>Completed Fix-and-Flips Where You Held Title - Last 3 Years</label>
+            <input type="number" id="heldTitleFlips" value="0">
+          </div>
+          <div class="input-group">
+            <label>Contractor Experience?</label>
+            <select id="contractorExp">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Liquidity Available</label>
+            <input type="number" id="liquidity" value="50000">
+          </div>
+          <div class="input-group">
+            <label>Borrower / Vesting Type</label>
+            <select id="vesting">
+              <option>Individual</option>
+              <option>LLC</option>
+              <option>Corporation</option>
+              <option>Trust</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Property Location</h3>
+        <div class="location-card">
+          <div class="input-group"><label>Property Address</label><input type="text" id="street" placeholder="Start typing the property address"></div>
+          <div class="location-status warning" id="propertyLocationStatus"><span class="dot"></span><span>Choose a property address to confirm the location.</span></div>
+          <div class="location-small">A confirmed location helps keep saved projects cleaner and makes the deal easier to review later.</div>
+        </div>
+        <div class="grid">
+          <div class="input-group"><label>Apt / Unit</label><input type="text" id="unit" placeholder="Optional"></div>
+          <div class="input-group"><label>City</label><input type="text" id="city"></div>
+          <div class="input-group"><label>State</label><input type="text" id="state" placeholder="Example: OH"></div>
+          <div class="input-group"><label>ZIP Code</label><input type="text" id="zip"></div>
+          <div class="input-group"><label>County</label><input type="text" id="county" placeholder="Optional"></div>
+          <div class="input-group">
+            <label>Property Type</label>
+            <select id="propertyType">
+              <option>Single Family</option>
+              <option>Duplex</option>
+              <option>Triplex</option>
+              <option>Fourplex</option>
+              <option>Townhome</option>
+              <option>Condo</option>
+              <option>Mixed Use</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+          <div class="input-group"><label>Number of Units</label><input type="number" id="units" value="1"></div>
+          <div class="input-group"><label>Purchase Price / As-Is Value</label><input type="number" id="purchasePrice" value="150000"></div>
+          <div class="input-group"><label>Rehab Budget</label><input type="number" id="rehabBudget" value="40000"></div>
+          <div class="input-group"><label>Projected ARV</label><input type="number" id="arv" value="250000"></div>
+          <div class="input-group"><label>Local Median Home Value</label><input type="number" id="medianValue" placeholder="Optional"></div>
+        </div>
+        <div class="helper">Tip: choose the property from the address suggestions first, then adjust the unit, county, or project details as needed.</div>
+      </div>
+
+      <div class="section">
+        <h3>Comparable Sales Support</h3>
+        <div class="grid">
+          <div class="input-group"><label>Average Comp Value</label><input type="number" id="avgCompValue" placeholder="Optional"></div>
+          <div class="input-group">
+            <label>Do you have 3 recent nearby comps?</label>
+            <select id="hasThreeComps"><option>Not sure</option><option>Yes</option><option>No</option></select>
+          </div>
+          <div class="input-group"><label>Comp Link #1</label><input type="text" id="comp1" placeholder="Zillow / MLS / listing link"></div>
+          <div class="input-group"><label>Comp Link #2</label><input type="text" id="comp2" placeholder="Zillow / MLS / listing link"></div>
+          <div class="input-group"><label>Comp Link #3</label><input type="text" id="comp3" placeholder="Zillow / MLS / listing link"></div>
+          <div class="input-group"><label>Comp Link #4</label><input type="text" id="comp4" placeholder="Optional"></div>
+          <div class="input-group"><label>Comp Link #5</label><input type="text" id="comp5" placeholder="Optional"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Loan Structure</h3>
+        <div class="grid">
+          <div class="input-group">
+            <label>Loan Type</label>
+            <select id="loanType">
+              <option>Fix and Flip Purchase</option>
+              <option>Cash-Out Refinance</option>
+              <option>Delayed Purchase</option>
+              <option>Bridge / Short-Term</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Rehab Type</label>
+            <select id="rehabType">
+              <option value="stabilized">Stabilized</option>
+              <option value="light">Light</option>
+              <option value="moderate">Moderate</option>
+              <option value="heavy">Heavy</option>
+              <option value="guc">Ground-Up Construction</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Desired Loan Term</label>
+            <select id="term"><option>12 Months</option><option>18 Months</option><option>24 Months</option></select>
+          </div>
+          <div class="input-group">
+            <label>Deferred Payments / Interest Reserve Desired?</label>
+            <select id="deferredPayments"><option>No</option><option>Yes</option><option>Not sure</option></select>
+          </div>
+          <div class="input-group"><label>Requested Initial Advance</label><input type="number" id="requestedInitial" placeholder="Optional"></div>
+          <div class="input-group"><label>Requested Rehab Funding</label><input type="number" id="requestedRehab" placeholder="Optional"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Detailed Rehab Budget</h3>
+        <div class="helper">These rows save into the Fix & Flip Line Items collection and reference the saved project.</div>
+        <div id="budgetRows"></div>
+        <button class="secondary-btn" onclick="addBudgetRow()">Add Rehab Line Item</button>
+      </div>
+
+      <div class="section">
+        <h3>Have Gordon Review This Deal</h3>
+        <div class="grid">
+          <div class="input-group"><label>Name</label><input type="text" id="leadName"></div>
+          <div class="input-group"><label>Email</label><input type="email" id="leadEmail"></div>
+          <div class="input-group"><label>Phone</label><input type="tel" id="leadPhone"></div>
+          <div class="input-group">
+            <label>Closing Timeline</label>
+            <select id="timeline"><option>ASAP</option><option>Within 30 days</option><option>30-60 days</option><option>60+ days</option><option>Just researching</option></select>
+          </div>
+        </div>
+        <div class="input-group" style="margin-top:14px;">
+          <label>Notes About The Deal</label>
+          <textarea id="dealNotes" placeholder="Include anything useful: seller concessions, current mortgage balance, rehab scope, contractor relationship, exit plan, rental backup plan, etc."></textarea>
+        </div>
+        <button class="secondary-btn" onclick="copyScenario()">Copy Scenario</button>
+        <button onclick="emailScenario()">Have Gordon Review This Deal</button>
+        <div class="success-message" id="copyMessage">Scenario copied.</div>
+      </div>
+    </div>
+
+    <div class="results">
+      <div class="intel-panel-head">
+        <p class="intel-title">Fix & Flip Intelligence Panel</p>
+        <div class="deal-pulse" aria-label="deal pulse">
+          <i></i><i></i><i></i><i></i><i></i>
+          <span id="dealPulseText">Live Scenario</span>
+        </div>
+      </div>
+
+      <div class="score-stage">
+        <div class="score-orb" id="scoreOrb">
+          <div class="score-orb-inner">
+            <div class="score-value" id="scoreValue">--</div>
+            <span class="score-label">Deal Strength</span>
+          </div>
+        </div>
+        <div class="deal-status-pill" id="statusText">Enter scenario</div>
+        <div class="meter" style="width:100%;"><div class="meter-fill" id="meterFill"></div></div>
+      </div>
+
+      <div class="intel-map" aria-hidden="true">
+        <div class="map-pin"></div>
+        <div class="map-caption">
+          <span>Property + Rehab Scope</span>
+          <span id="mapCaptionText">Location review pending</span>
+        </div>
+      </div>
+
+      <div class="intel-micro-grid">
+        <div class="intel-metric">
+          <span>Profit Spread</span>
+          <strong id="intelProfit">--</strong>
+          <small>After estimated holding, selling, and financing costs.</small>
+        </div>
+        <div class="intel-metric">
+          <span>Capital Needed</span>
+          <strong id="intelCash">--</strong>
+          <small>Estimated borrower cash needed before reserves.</small>
+        </div>
+        <div class="intel-metric">
+          <span>Leverage Check</span>
+          <strong id="intelLeverage">--</strong>
+          <small>Estimated LTC / AR-LTV relationship.</small>
+        </div>
+        <div class="intel-metric">
+          <span>ARV Support</span>
+          <strong id="intelArv">--</strong>
+          <small>Based on the average comp value fields.</small>
+        </div>
+      </div>
+
+      <div class="quality-panel">
+        <div class="quality-top">
+          <span>Deal Quality Score</span>
+          <span id="qualityScoreText">--</span>
+        </div>
+        <div class="quality-bar"><div class="quality-fill" id="qualityFill"></div></div>
+      </div>
+
+      <div class="why-panel">
+        <strong>What Drives This Score</strong>
+        <ul class="why-list" id="dealDriversList">
+          <li>Complete the project details to generate deal drivers.</li>
+        </ul>
+      </div>
+
+      <div class="strategy-panel">
+        <strong>Investor Readout</strong>
+        <p id="investorReadout">Enter the acquisition price, rehab budget, ARV, liquidity, and comp support to see a cleaner deal readout.</p>
+      </div>
+
+      <div class="result-line"><span>Max Initial Advance</span><strong id="initialResult">--</strong></div>
+      <div class="result-line"><span>Estimated Rehab Funding</span><strong id="rehabResult">--</strong></div>
+      <div class="result-line"><span>Estimated Max Total Loan</span><strong id="totalLoanResult">--</strong></div>
+      <div class="result-line"><span>Total Project Cost</span><strong id="totalCostResult">--</strong></div>
+      <div class="result-line"><span>Projected Profit</span><strong id="profitResult">--</strong></div>
+      <div class="result-line"><span>Projected ROI</span><strong id="roiResult">--</strong></div>
+      <div class="result-line"><span>Max Allowable Offer</span><strong id="maoResult">--</strong></div>
+      <div class="result-line"><span>LTC</span><strong id="ltcResult">--</strong></div>
+      <div class="result-line"><span>AR-LTV</span><strong id="arltvResult">--</strong></div>
+      <div class="result-line"><span>Estimated Cash Needed</span><strong id="cashNeededResult">--</strong></div>
+      <div class="result-line"><span>ARV Confidence</span><strong id="arvConfidenceResult">--</strong></div>
+
+      <button id="savePanelBtn" class="locked-save-btn" onclick="saveProject()">🔒 Sign In to Save This Project</button>
+      <button class="ghost-btn locked-save-btn" id="savedProjectsBtn" onclick="requestSavedProjects()">🔒 Sign In to View Saved Projects</button>
+      <div class="save-message" id="saveMessage">Project saved.</div>
+      <div class="mini-status" id="saveStatus">Unsaved changes</div>
+
+      <div class="notes">
+        <strong>Scenario Indicators</strong>
+        <ul id="notesList"><li>Complete the fields to review fundability.</li></ul>
+      </div>
+      <div class="notes">
+        <strong>Ways To Improve</strong>
+        <ul id="improvementList"><li>Complete the fields to see suggestions.</li></ul>
+      </div>
+
+      <div class="brand-panel">
+        <span>Powered by</span>
+        <strong>DRG Mortgage Investor Analytics</strong>
+      </div>
+
+      <div class="disclaimer">
+        This tool is for educational purposes only and is not a loan approval or commitment to lend. Final terms depend on lender guidelines, appraisal, ARV support, experience, credit, liquidity, property type, market conditions, title, and underwriting.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="savedModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Saved Fix & Flip Projects</h3>
+      <button class="secondary-btn" style="width:auto;margin:0" onclick="closeSavedModal()">Close</button>
+    </div>
+    <div class="modal-body" id="savedProjectList">
+      <p>No saved projects loaded yet.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const GOOGLE_MAPS_API_KEY="REDACTED_GOOGLE_MAPS_BROWSER_KEY";
+let lastScenarioText = "";
+let currentScenario = null;
+let savedProjects = [];
+let budgetIndex = 0;
+let hasUnsavedChanges = true;
+let loggedIn = false;
+let confirmedPropertyLocation = null;
+let propertyAddressDirty = false;
+
+function val(id){const el=document.getElementById(id);return el ? (el.value || "") : "";}
+function setVal(id,value){const el=document.getElementById(id);if(el){el.value = value == null ? "" : value;}}
+function num(id){return parseFloat(val(id)) || 0;}
+function money(n){return "$" + Math.round(Number(n)||0).toLocaleString();}
+function pct(n){return (Number(n)||0).toFixed(1) + "%";}
+function textDate(d){if(!d)return ""; try{return new Date(d).toLocaleDateString();}catch(e){return "";}}
+function safeHtml(str){return String(str||"").replace(/[&<>"']/g,function(m){return({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"})[m];});}
+
+function getExperienceBucket(flips){
+  if(flips >= 5) return "5+";
+  if(flips >= 1) return "1-4";
+  return "0";
+}
+
+function getMatrix(rehabType, bucket){
+  const matrix = {
+    stabilized: {"0":{ai:75,iltc:75,ar:null,tltc:null},"1-4":{ai:75,iltc:75,ar:null,tltc:null},"5+":{ai:80,iltc:80,ar:null,tltc:null}},
+    light: {"0":{ai:null,iltc:85,ar:70,tltc:90},"1-4":{ai:null,iltc:90,ar:75,tltc:95},"5+":{ai:null,iltc:95,ar:75,tltc:100}},
+    moderate: {"0":{ai:null,iltc:85,ar:70,tltc:90},"1-4":{ai:null,iltc:90,ar:72.5,tltc:92.5},"5+":{ai:null,iltc:92.5,ar:75,tltc:95}},
+    heavy: {"0":{ai:70,iltc:70,ar:60,tltc:80},"1-4":{ai:80,iltc:80,ar:65,tltc:87.5},"5+":{ai:85,iltc:85,ar:70,tltc:90}},
+    guc: {"0":{ai:70,iltc:70,ar:65,tltc:85},"1-4":{ai:75,iltc:75,ar:70,tltc:85},"5+":{ai:75,iltc:80,ar:75,tltc:90}}
+  };
+  return matrix[rehabType][bucket];
+}
+
+function ficoAdjustment(fico){
+  if(fico < 650) return {allowed:false, adj:0, note:"Credit score below 650 may not be permitted."};
+  if(fico < 680) return {allowed:true, adj:-10, note:"Credit score between 650-679 may reduce leverage."};
+  if(fico < 700) return {allowed:true, adj:-5, note:"Credit score between 680-699 may reduce leverage."};
+  return {allowed:true, adj:0, note:"Credit score is 700 or higher."};
+}
+
+function clampPct(x){ if(x === null || isNaN(x)) return null; return Math.max(0, x); }
+
+function fullAddress(){
+  let parts = [];
+  if(val("street")) parts.push(val("street"));
+  if(val("unit")) parts.push("Unit " + val("unit"));
+  if(val("city")) parts.push(val("city"));
+  if(val("state")) parts.push(val("state"));
+  if(val("zip")) parts.push(val("zip"));
+  return parts.join(", ");
+}
+
+function hasCoordinates(loc){return loc&&loc.latitude!==null&&loc.latitude!==undefined&&loc.longitude!==null&&loc.longitude!==undefined;}
+
+function propertyLocationObject(){
+  const latitude = confirmedPropertyLocation ? confirmedPropertyLocation.lat : null;
+  const longitude = confirmedPropertyLocation ? confirmedPropertyLocation.lng : null;
+  return {
+    formattedAddress: confirmedPropertyLocation && confirmedPropertyLocation.formatted ? confirmedPropertyLocation.formatted : fullAddress(),
+    street: val("street"),
+    unit: val("unit"),
+    city: val("city"),
+    county: val("county") || (confirmedPropertyLocation ? confirmedPropertyLocation.county || "" : ""),
+    state: val("state"),
+    zip: val("zip"),
+    country: "US",
+    latitude: latitude,
+    longitude: longitude,
+    placeId: confirmedPropertyLocation ? confirmedPropertyLocation.placeId || "" : "",
+    confirmed: !!confirmedPropertyLocation && !propertyAddressDirty
+  };
+}
+
+function addressObject(){
+  const loc = propertyLocationObject();
+  if(!loc.formattedAddress)return undefined;
+  const obj = {
+    formatted: loc.formattedAddress,
+    streetAddress: { name: loc.street, number: "", apt: loc.unit },
+    city: loc.city,
+    subdivision: loc.state,
+    postalCode: loc.zip,
+    country: "US"
+  };
+  if(hasCoordinates(loc)){
+    obj.location = { latitude: loc.latitude, longitude: loc.longitude };
+  }
+  return obj;
+}
+
+function setPropertyLocationStatus(status, message){
+  const box = document.getElementById("propertyLocationStatus");
+  if(!box)return;
+  box.className = "location-status " + (status || "warning");
+  box.innerHTML = "<span class='dot'></span><span>" + safeHtml(message || "Choose a property address to confirm the location.") + "</span>";
+}
+
+function setConfirmedPropertyLocation(data){
+  confirmedPropertyLocation = data || null;
+  propertyAddressDirty = false;
+  if(data && data.formatted){
+    setPropertyLocationStatus("confirmed", "Property location confirmed.");
+  }else{
+    setPropertyLocationStatus("warning", "Choose a property address to confirm the location.");
+  }
+}
+
+function markPropertyAddressNeedsCheck(){
+  if(!confirmedPropertyLocation)return;
+  propertyAddressDirty = true;
+  confirmedPropertyLocation = null;
+  setPropertyLocationStatus("warning", "Address changed. Choose the property again to confirm the location.");
+}
+
+function componentValue(components, type, useShort){
+  const match = (components || []).find(function(c){return (c.types || []).indexOf(type) > -1;});
+  if(!match)return "";
+  return useShort ? (match.short_name || match.long_name || "") : (match.long_name || match.short_name || "");
+}
+
+function applySelectedPropertyPlace(place){
+  if(!place || !place.address_components){
+    setPropertyLocationStatus("error", "Address not found. Please check the property address.");
+    return;
+  }
+  const comps = place.address_components;
+  const streetNumber = componentValue(comps, "street_number", false);
+  const route = componentValue(comps, "route", false);
+  const city = componentValue(comps, "locality", false) || componentValue(comps, "postal_town", false) || componentValue(comps, "sublocality", false);
+  const state = componentValue(comps, "administrative_area_level_1", true);
+  const zip = componentValue(comps, "postal_code", false);
+  const county = componentValue(comps, "administrative_area_level_2", false).replace(/ County$/i, "");
+
+  if(streetNumber || route)setVal("street", (streetNumber + " " + route).trim());
+  if(city)setVal("city", city);
+  if(state)setVal("state", state);
+  if(zip)setVal("zip", zip);
+  if(county)setVal("county", county);
+
+  let lat = null, lng = null;
+  if(place.geometry && place.geometry.location){
+    lat = typeof place.geometry.location.lat === "function" ? place.geometry.location.lat() : place.geometry.location.lat;
+    lng = typeof place.geometry.location.lng === "function" ? place.geometry.location.lng() : place.geometry.location.lng;
+  }
+
+  setConfirmedPropertyLocation({
+    formatted: place.formatted_address || fullAddress(),
+    placeId: place.place_id || "",
+    county: county,
+    lat: lat,
+    lng: lng
+  });
+  markChangedAndCalculate();
+}
+
+
+function normalizeNewPlaceDetails(details){details=details||{};const comps=(details.addressComponents||details.address_components||[]).map(function(c){return{long_name:c.longText||c.long_name||"",short_name:c.shortText||c.short_name||c.longText||c.long_name||"",types:c.types||[]}});const lat=details.location&&(details.location.latitude!==undefined?details.location.latitude:details.location.lat);const lng=details.location&&(details.location.longitude!==undefined?details.location.longitude:details.location.lng);return{address_components:comps,formatted_address:details.formattedAddress||details.formatted_address||"",place_id:details.id||details.placeId||details.place_id||"",geometry:{location:{lat:function(){return Number(lat)||0},lng:function(){return Number(lng)||0}}}}}
+function ensurePlacesNewStyles(input){const parent=input.parentElement;if(parent&&!parent.classList.contains("drg-place-wrap")){parent.classList.add("drg-place-wrap")}}
+function setupPlacesNewAutocomplete(input,onSelect,onDirty,onStatus){if(!input)return;if(!GOOGLE_MAPS_API_KEY||GOOGLE_MAPS_API_KEY.indexOf("PASTE_")===0){if(onStatus)onStatus("check","Address lookup not connected","Add your website key in the HTML to turn on address suggestions.");return}if(input.dataset.placesNewReady==="yes")return;input.dataset.placesNewReady="yes";input.setAttribute("autocomplete","off");ensurePlacesNewStyles(input);let box=document.createElement("div");box.className="drg-place-suggestions";input.parentElement.appendChild(box);let timer=null,requestId=0,sessionToken=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now()+Math.random());function hide(){box.style.display="none"}function showMessage(msg){box.innerHTML='<div class="drg-place-message">'+safeHtml(msg)+'</div>';box.style.display="block"}function labelFor(pred){return (pred&&pred.text&&pred.text.text)||"Property address"}async function getPredictions(q){const res=await fetch("https://places.googleapis.com/v1/places:autocomplete",{method:"POST",headers:{"Content-Type":"application/json","X-Goog-Api-Key":GOOGLE_MAPS_API_KEY,"X-Goog-FieldMask":"suggestions.placePrediction.place,suggestions.placePrediction.placeId,suggestions.placePrediction.text,suggestions.placePrediction.structuredFormat"},body:JSON.stringify({input:q,includedRegionCodes:["us"],sessionToken:sessionToken})});if(!res.ok)throw new Error("Address suggestions unavailable");const data=await res.json();return (data.suggestions||[]).map(function(s){return s.placePrediction}).filter(Boolean)}async function getDetails(pred){const resource=pred.place||("places/"+encodeURIComponent(pred.placeId));const url="https://places.googleapis.com/v1/"+resource+"?fields=id,formattedAddress,location,addressComponents";const res=await fetch(url,{headers:{"X-Goog-Api-Key":GOOGLE_MAPS_API_KEY}});if(!res.ok)throw new Error("Address details unavailable");return normalizeNewPlaceDetails(await res.json())}input.addEventListener("input",function(){if(input.dataset.justSelected==="yes"){input.dataset.justSelected="no";return}if(onDirty)onDirty();clearTimeout(timer);const q=input.value.trim();if(q.length<3){hide();return}timer=setTimeout(async function(){const thisRequest=++requestId;try{const preds=await getPredictions(q);if(thisRequest!==requestId)return;if(!preds.length){showMessage("No matching property addresses found yet.");return}box.innerHTML=preds.slice(0,6).map(function(pred,i){const main=(pred.structuredFormat&&pred.structuredFormat.mainText&&pred.structuredFormat.mainText.text)||labelFor(pred);const secondary=(pred.structuredFormat&&pred.structuredFormat.secondaryText&&pred.structuredFormat.secondaryText.text)||"";return '<button type="button" class="drg-place-option" data-idx="'+i+'"><span>'+safeHtml(main)+'</span>'+(secondary?'<small>'+safeHtml(secondary)+'</small>':'')+'</button>'}).join("");box.style.display="block";Array.from(box.querySelectorAll(".drg-place-option")).forEach(function(btn){btn.addEventListener("mousedown",function(e){e.preventDefault()});btn.addEventListener("click",async function(){const pred=preds[Number(btn.dataset.idx)];showMessage("Confirming property location...");try{const place=await getDetails(pred);input.dataset.justSelected="yes";hide();sessionToken=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now()+Math.random());onSelect(place)}catch(err){if(onStatus)onStatus("error","Address lookup unavailable","Please try again or enter the address manually.")}})})}catch(err){showMessage("Address suggestions are unavailable right now.")}},280)});input.addEventListener("blur",function(){setTimeout(hide,180)})}
+
+function initFixFlipPropertyLookup(){const input=document.getElementById("street");setupPlacesNewAutocomplete(input,applySelectedPropertyPlace,function(){markPropertyAddressNeedsCheck();},function(mode,title,msg){setPropertyLocationStatus(mode==="confirmed"?"confirmed":(mode==="error"?"error":"warning"),(title?title+". ":"")+(msg||""));});setPropertyLocationStatus("warning","Start typing and choose the matching property location when it appears.")}
+
+function addBudgetRow(data){
+  budgetIndex++;
+  const row=document.createElement("div");
+  row.className="budget-row";
+  row.dataset.index=budgetIndex;
+  row.innerHTML =
+    "<div><label>Category</label><select class='budgetCategory'><option>Exterior</option><option>Interior</option><option>Kitchen</option><option>Bathrooms</option><option>Roof</option><option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Permits</option><option>Labor</option><option>Other</option></select></div>"+
+    "<div><label>Item Name</label><input type='text' class='budgetItemName' placeholder='Example: Kitchen cabinets'></div>"+
+    "<div><label>Estimated Cost</label><input type='number' class='budgetEstimated' value='0'></div>"+
+    "<div><label>Actual Cost</label><input type='number' class='budgetActual' value='0'></div>"+
+    "<div><label>Vendor</label><input type='text' class='budgetVendor' placeholder='Optional'></div>"+
+    "<div><label>Status</label><select class='budgetStatus'><option>Planned</option><option>Quoted</option><option>Scheduled</option><option>In Progress</option><option>Complete</option><option>Over Budget</option></select></div>"+
+    "<button class='danger-btn' onclick='removeBudgetRow(this)'>X</button>";
+  document.getElementById("budgetRows").appendChild(row);
+
+  if(data){
+    row.querySelector(".budgetCategory").value = data.category || "Other";
+    row.querySelector(".budgetItemName").value = data.itemName || "";
+    row.querySelector(".budgetEstimated").value = data.estimatedCost || 0;
+    row.querySelector(".budgetActual").value = data.actualCost || 0;
+    row.querySelector(".budgetVendor").value = data.vendor || "";
+    row.querySelector(".budgetStatus").value = data.status || "Planned";
+  }
+
+  row.querySelectorAll("input,select").forEach(function(el){
+    el.addEventListener("input", markChangedAndCalculate);
+    el.addEventListener("change", markChangedAndCalculate);
+  });
+
+  calculate();
+}
+
+function removeBudgetRow(btn){
+  btn.closest(".budget-row").remove();
+  markChangedAndCalculate();
+}
+
+function getLineItems(){
+  return Array.from(document.querySelectorAll(".budget-row")).map(function(row){
+    return {
+      category: row.querySelector(".budgetCategory").value,
+      itemName: row.querySelector(".budgetItemName").value,
+      estimatedCost: parseFloat(row.querySelector(".budgetEstimated").value) || 0,
+      actualCost: parseFloat(row.querySelector(".budgetActual").value) || 0,
+      vendor: row.querySelector(".budgetVendor").value,
+      status: row.querySelector(".budgetStatus").value,
+      notes: ""
+    };
+  }).filter(function(item){
+    return item.itemName || item.estimatedCost || item.actualCost || item.vendor;
+  });
+}
+
+function calculate(){
+  const fico = num("fico");
+  const flips = num("heldTitleFlips");
+  const contractorExp = val("contractorExp");
+  const liquidity = num("liquidity");
+  const purchase = num("purchasePrice");
+  const rehabInput = num("rehabBudget");
+  const lineItems = getLineItems();
+  const lineItemEstimated = lineItems.reduce(function(sum,item){return sum + (Number(item.estimatedCost)||0);},0);
+  const rehab = lineItemEstimated > 0 ? lineItemEstimated : rehabInput;
+  const arv = num("arv");
+  const median = num("medianValue");
+  const avgComp = num("avgCompValue");
+  const rehabType = val("rehabType");
+  const bucket = getExperienceBucket(flips);
+  const base = getMatrix(rehabType, bucket);
+  const ficoAdj = ficoAdjustment(fico);
+
+  let ai = base.ai, iltc = base.iltc, ar = base.ar, tltc = base.tltc;
+  let notes = [], improvements = [], score = 0;
+
+  if(!ficoAdj.allowed){score -= 40; notes.push(ficoAdj.note); improvements.push("Review credit score before relying on hard money leverage.");}
+  else {score += 15; notes.push(ficoAdj.note);}
+
+  ai = clampPct(ai === null ? null : ai + ficoAdj.adj);
+  iltc = clampPct(iltc === null ? null : iltc + ficoAdj.adj);
+  ar = clampPct(ar === null ? null : ar + ficoAdj.adj);
+  tltc = clampPct(tltc === null ? null : tltc + ficoAdj.adj);
+
+  if(median > 0 && arv > median * 2){
+    score -= 15;
+    notes.push("Projected ARV appears more than 2x the local median value. This may reduce leverage.");
+    improvements.push("Provide strong comparable sales or consider a more conservative ARV.");
+    if(ai !== null) ai = clampPct(ai - 10);
+    if(iltc !== null) iltc = clampPct(iltc - 10);
+    if(ar !== null) ar = clampPct(ar - 10);
+    if(tltc !== null) tltc = clampPct(tltc - 10);
+  }
+
+  const holdingCosts = Math.round((purchase + rehab) * 0.03);
+  const sellingCosts = Math.round(arv * 0.08);
+  const financingCosts = Math.round((purchase + rehab) * 0.04);
+  const totalCost = purchase + rehab + holdingCosts + sellingCosts + financingCosts;
+
+  let maxInitial = ai === null ? 0 : purchase * (ai / 100);
+  let projectCostForLoan = purchase + rehab;
+  let maxTotalByLTC = tltc === null ? projectCostForLoan : projectCostForLoan * (tltc / 100);
+  let maxTotalByARV = ar === null ? projectCostForLoan : arv * (ar / 100);
+  let maxTotalLoan = Math.min(maxTotalByLTC, maxTotalByARV);
+  let rehabFunding = Math.max(0, Math.min(rehab, maxTotalLoan - maxInitial));
+  let cashNeeded = Math.max(0, projectCostForLoan - maxTotalLoan);
+
+  const ltc = projectCostForLoan > 0 ? (maxTotalLoan / projectCostForLoan) * 100 : 0;
+  const arltv = arv > 0 ? (maxTotalLoan / arv) * 100 : 0;
+  const projectedProfit = arv - totalCost;
+  const projectedROI = cashNeeded > 0 ? (projectedProfit / cashNeeded) * 100 : 0;
+  const maxAllowableOffer = Math.max(0, (arv * .70) - rehab - holdingCosts - sellingCosts - financingCosts);
+
+  if(flips >= 5){score += 25; notes.push("Experienced investor bucket: 5+ title-held flips.");}
+  else if(flips >= 1){score += 15; notes.push("Intermediate investor bucket: 1-4 title-held flips.");}
+  else {score += 5; notes.push("No title-held flip history entered. Leverage may be lower."); if(contractorExp === "Yes"){notes.push("Contractor experience may help the story, but title-held flip experience is stronger.");} improvements.push("Provide proof of prior projects, contractor experience, scope of work, and exit strategy.");}
+
+  if(ltc >= 85) score += 20; else if(ltc >= 75) score += 12; else score += 4;
+
+  if(liquidity >= cashNeeded && cashNeeded > 0){score += 20; notes.push("Liquidity appears sufficient for estimated cash needed.");}
+  else if(cashNeeded > 0){score -= 10; notes.push("Liquidity may be short based on estimated cash needed."); improvements.push("Increase liquidity, reduce purchase price, reduce rehab budget, or request seller concessions.");}
+
+  let arvConfidence = "Needs Review";
+  if(avgComp > 0){
+    const ratio = arv / avgComp;
+    if(ratio <= 1.10){arvConfidence = "Strong"; score += 20; notes.push("ARV appears well-supported by average comp value.");}
+    else if(ratio <= 1.25){arvConfidence = "Caution"; score += 8; notes.push("ARV is above average comp value and may need stronger support."); improvements.push("Provide multiple nearby, recent, same-property-type comps.");}
+    else {arvConfidence = "Weak"; score -= 20; notes.push("ARV appears aggressive compared with average comp value."); improvements.push("Use a more conservative ARV or provide better comps.");}
+  } else {notes.push("Average comp value not entered."); improvements.push("Add average comp value and up to five comp links to improve review quality.");}
+
+  if(val("hasThreeComps") === "Yes"){score += 10; notes.push("Three recent comps indicated.");}
+  else if(val("hasThreeComps") === "No"){score -= 10; notes.push("Three recent comps not available. ARV may be harder to support."); improvements.push("Find at least three recent comparable sales in the immediate area.");}
+  else {notes.push("Comp support is unknown.");}
+
+  if(val("deferredPayments") === "Yes"){notes.push("Deferred payments or interest reserve requested. This may affect structure and liquidity.");}
+
+  const requestedInitial = num("requestedInitial");
+  const requestedRehab = num("requestedRehab");
+  if(requestedInitial > 0 && requestedInitial > maxInitial){score -= 10; notes.push("Requested initial advance exceeds estimated max initial advance.");}
+  if(requestedRehab > 0 && requestedRehab > rehabFunding){score -= 10; notes.push("Requested rehab funding exceeds estimated available rehab funding.");}
+
+  if(projectedProfit > 0){score += projectedROI >= 30 ? 10 : 4; notes.push("Projected profit is positive after estimated holding, selling, and financing costs.");}
+  else {score -= 15; notes.push("Projected profit is negative after estimated costs."); improvements.push("Lower acquisition price, reduce rehab scope, or confirm a stronger ARV.");}
+
+  score = Math.max(0, Math.min(100, Math.round(score)));
+
+  document.getElementById("scoreValue").innerText = score + "/100";
+  document.getElementById("initialResult").innerText = money(maxInitial);
+  document.getElementById("rehabResult").innerText = money(rehabFunding);
+  document.getElementById("totalLoanResult").innerText = money(maxTotalLoan);
+  document.getElementById("totalCostResult").innerText = money(totalCost);
+  document.getElementById("profitResult").innerText = money(projectedProfit);
+  document.getElementById("roiResult").innerText = pct(projectedROI);
+  document.getElementById("maoResult").innerText = money(maxAllowableOffer);
+  document.getElementById("cashNeededResult").innerText = money(cashNeeded);
+  document.getElementById("ltcResult").innerText = pct(ltc);
+  document.getElementById("arltvResult").innerText = pct(arltv);
+  document.getElementById("arvConfidenceResult").innerText = arvConfidence;
+
+  const meter = document.getElementById("meterFill");
+  const status = document.getElementById("statusText");
+  meter.style.width = score + "%";
+  if(score >= 75){meter.style.background = "#2E8B57"; status.innerText = "Strong Scenario";}
+  else if(score >= 50){meter.style.background = "#E6A23C"; status.innerText = "Possible - Needs Review";}
+  else {meter.style.background = "#D9534F"; status.innerText = "Weak Scenario";}
+
+  updateFixFlipIntelligencePanel({
+    score,
+    projectedProfit,
+    projectedROI,
+    cashNeeded,
+    ltc,
+    arltv,
+    arvConfidence,
+    notes,
+    improvements,
+    purchase,
+    rehab,
+    arv,
+    avgComp,
+    lineItems
+  });
+
+  if(improvements.length === 0){improvements.push("Scenario appears strong. Submit for full review.");}
+
+  document.getElementById("notesList").innerHTML = notes.map(function(n){return "<li>" + safeHtml(n) + "</li>";}).join("");
+  document.getElementById("improvementList").innerHTML = improvements.map(function(n){return "<li>" + safeHtml(n) + "</li>";}).join("");
+
+  currentScenario = {
+    score, maxInitial, rehabFunding, maxTotalLoan, cashNeeded, ltc, arltv, arvConfidence,
+    totalCost, holdingCosts, sellingCosts, financingCosts, projectedProfit, projectedROI, maxAllowableOffer,
+    notes, improvements, lineItems, rehab
+  };
+  lastScenarioText = buildScenarioText(currentScenario);
+  return currentScenario;
+}
+
+
+function updateFixFlipIntelligencePanel(data){
+  data = data || {};
+  const score = Number(data.score || 0);
+  const scoreOrb = document.getElementById("scoreOrb");
+  if(scoreOrb){
+    scoreOrb.style.setProperty("--score-angle", Math.max(0, Math.min(100, score)) * 3.6 + "deg");
+  }
+
+  const qualityFill = document.getElementById("qualityFill");
+  if(qualityFill) qualityFill.style.width = Math.max(0, Math.min(100, score)) + "%";
+
+  const qualityScoreText = document.getElementById("qualityScoreText");
+  if(qualityScoreText) qualityScoreText.innerText = score ? score + "%" : "--";
+
+  const pulse = document.getElementById("dealPulseText");
+  if(pulse){
+    pulse.innerText = score >= 75 ? "Strong Deal Pulse" : (score >= 50 ? "Review Pulse" : "Caution Pulse");
+  }
+
+  const mapCaption = document.getElementById("mapCaptionText");
+  if(mapCaption){
+    const status = confirmedPropertyLocation && !propertyAddressDirty ? "Location confirmed" : "Location review pending";
+    const scope = data.rehab ? " • Rehab " + money(data.rehab) : "";
+    mapCaption.innerText = status + scope;
+  }
+
+  const setText = function(id, value){
+    const el = document.getElementById(id);
+    if(el) el.innerText = value;
+  };
+
+  setText("intelProfit", money(data.projectedProfit || 0));
+  setText("intelCash", money(data.cashNeeded || 0));
+  setText("intelLeverage", pct(data.ltc || 0) + " / " + pct(data.arltv || 0));
+  setText("intelArv", data.arvConfidence || "--");
+
+  const drivers = [];
+  if(Number(data.projectedProfit || 0) > 0) drivers.push("Projected profit is positive after estimated costs.");
+  else drivers.push("Projected profit needs work before relying on the scenario.");
+
+  if(Number(data.cashNeeded || 0) > 0 && num("liquidity") >= Number(data.cashNeeded || 0)) drivers.push("Liquidity appears to cover estimated cash needed.");
+  else if(Number(data.cashNeeded || 0) > 0) drivers.push("Liquidity may be short for the estimated cash needed.");
+
+  if((data.arvConfidence || "") === "Strong") drivers.push("ARV appears supported by the average comp value entered.");
+  else if(data.avgComp) drivers.push("ARV support needs review against the average comp value.");
+  else drivers.push("Add average comp value and comp links to strengthen ARV support.");
+
+  if((data.lineItems || []).length) drivers.push((data.lineItems || []).length + " detailed rehab line item(s) included.");
+  else drivers.push("Detailed rehab line items can improve the project review.");
+
+  const driverList = document.getElementById("dealDriversList");
+  if(driverList){
+    driverList.innerHTML = drivers.slice(0,4).map(function(item){
+      return "<li>" + safeHtml(item) + "</li>";
+    }).join("");
+  }
+
+  const readout = document.getElementById("investorReadout");
+  if(readout){
+    let copy = "This scenario needs more data before it can be read clearly.";
+    if(score >= 75){
+      copy = "This looks like a stronger flip scenario. The next step is validating ARV support, rehab scope, title-held experience, and liquidity against actual lender guidelines.";
+    }else if(score >= 50){
+      copy = "This may be workable, but the file needs cleaner support. Focus on comp strength, liquidity, rehab detail, requested leverage, and a realistic exit plan.";
+    }else{
+      copy = "This scenario is currently weak or incomplete. Improve it by tightening purchase price, rehab budget, ARV support, liquidity, and comparable sales documentation.";
+    }
+    readout.innerText = copy;
+  }
+}
+
+
+function buildProjectPayload(){
+  const s = calculate();
+  return {
+    projectName: val("projectName") || "Saved Fix & Flip Project",
+    propertyAddress: addressObject() || fullAddress(),
+    propertyLocation: propertyLocationObject(),
+    city: val("city"),
+    state: val("state"),
+    zip: val("zip"),
+    propertyType: val("propertyType"),
+    purchasePrice: num("purchasePrice"),
+    currentPropertyValue: num("purchasePrice"),
+    estimatedARV: num("arv"),
+    rehabBudget: s.rehab,
+    holdingCosts: s.holdingCosts,
+    sellingCosts: s.sellingCosts,
+    financingCosts: s.financingCosts,
+    totalProjectCost: s.totalCost,
+    projectedProfit: s.projectedProfit,
+    projectedROI: Number(s.projectedROI.toFixed(2)),
+    maxAllowableOffer: Math.round(s.maxAllowableOffer),
+    loanAmount: Math.round(s.maxTotalLoan),
+    ltv: Number(s.arltv.toFixed(2)),
+    ltc: Number(s.ltc.toFixed(2)),
+    purchaseCloseDate: val("purchaseCloseDate"),
+    targetSaleDate: val("targetSaleDate"),
+    projectStatus: val("projectStatus") || "Saved",
+    calculatorState: JSON.stringify(buildCalculatorState()),
+    notes: buildNotesHtml(s),
+    lineItems: s.lineItems
+  };
+}
+
+function buildCalculatorState(){
+  const ids=["projectName","projectStatus","purchaseCloseDate","targetSaleDate","fico","heldTitleFlips","contractorExp","liquidity","vesting","street","unit","city","state","zip","county","propertyType","units","purchasePrice","rehabBudget","arv","medianValue","avgCompValue","hasThreeComps","comp1","comp2","comp3","comp4","comp5","loanType","rehabType","term","deferredPayments","requestedInitial","requestedRehab","leadName","leadEmail","leadPhone","timeline","dealNotes"];
+  const state={};
+  ids.forEach(function(id){state[id]=val(id);});
+  state.lineItems=getLineItems();
+  state.confirmedPropertyLocation = confirmedPropertyLocation || null;
+  state.propertyAddressConfirmed = !!confirmedPropertyLocation && !propertyAddressDirty;
+  return state;
+}
+
+function buildNotesHtml(s){
+  return "<strong>Scenario Indicators</strong><ul>" + s.notes.map(function(n){return "<li>"+safeHtml(n)+"</li>";}).join("") + "</ul><strong>Ways To Improve</strong><ul>" + s.improvements.map(function(n){return "<li>"+safeHtml(n)+"</li>";}).join("") + "</ul>";
+}
+
+function postToWix(message){
+  window.parent.postMessage(message, "*");
+}
+
+function requestMemberLogin(){
+  document.getElementById("memberStatus").innerText = "Please sign in to save fix & flip projects.";
+  document.getElementById("saveStatus").innerText = "Sign in required to save";
+  postToWix({type:"INVESTOR_REQUEST_LOGIN", source:"fixFlipHtml"});
+}
+
+function setMemberSaveState(isLoggedIn){
+  loggedIn = !!isLoggedIn;
+
+  const saveButtons = [
+    document.getElementById("saveProjectBtn"),
+    document.getElementById("savePanelBtn")
+  ].filter(Boolean);
+
+  const loadButtons = [
+    document.getElementById("loadSavedBtn"),
+    document.getElementById("savedProjectsBtn")
+  ].filter(Boolean);
+
+  saveButtons.forEach(function(btn){
+    btn.classList.toggle("locked-save-btn", !loggedIn);
+    btn.innerText = loggedIn ? "💾 Save Project" : "🔒 Sign In to Save This Project";
+  });
+
+  loadButtons.forEach(function(btn){
+    btn.classList.toggle("locked-save-btn", !loggedIn);
+    btn.innerText = loggedIn ? "View Saved Projects" : "🔒 Sign In to View Saved Projects";
+  });
+
+  const lockNote = document.getElementById("memberLockNote");
+  if(lockNote){
+    lockNote.style.display = loggedIn ? "none" : "block";
+  }
+
+  document.getElementById("memberStatus").innerText = loggedIn
+    ? "Logged in - you can save fix & flip projects."
+    : "Sign in to save projects.";
+
+  document.getElementById("saveStatus").innerText = loggedIn
+    ? "Unsaved changes"
+    : "Sign in to save projects";
+}
+
+function saveProject(){
+  if(!loggedIn){
+    requestMemberLogin();
+    return;
+  }
+
+  const payload = buildProjectPayload();
+  postToWix({type:"INVESTOR_SAVE_FIX_FLIP", payload: payload});
+  document.getElementById("saveStatus").innerText = "Saving...";
+}
+
+function requestSavedProjects(){
+  if(!loggedIn){
+    requestMemberLogin();
+    return;
+  }
+
+  postToWix({type:"INVESTOR_LOAD_SAVED"});
+  openSavedModal();
+}
+
+function duplicateProject(){
+  const base = val("projectName") || "Fix & Flip Project";
+  setVal("projectName", base.includes("Copy") ? base : base + " Copy");
+  hasUnsavedChanges = true;
+  document.getElementById("saveStatus").innerText = "Duplicated - unsaved changes";
+  calculate();
+}
+
+function exportProject(){
+  calculate();
+  window.print();
+}
+
+function markChangedAndCalculate(){
+  hasUnsavedChanges = true;
+  document.getElementById("saveStatus").innerText = loggedIn ? "Unsaved changes" : "Sign in to save projects";
+  calculate();
+}
+
+function openSavedModal(){document.getElementById("savedModal").style.display="flex";}
+function closeSavedModal(){document.getElementById("savedModal").style.display="none";}
+
+function renderSavedProjects(items){
+  savedProjects = Array.isArray(items) ? items : [];
+  const wrap=document.getElementById("savedProjectList");
+  if(!savedProjects.length){
+    wrap.innerHTML="<p>No saved fix & flip projects yet.</p>";
+    return;
+  }
+  wrap.innerHTML=savedProjects.map(function(item,idx){
+    return "<div class='saved-card'>"+
+      "<h4>"+safeHtml(item.projectName || "Saved Fix & Flip Project")+"</h4>"+
+      "<div class='saved-meta'>"+
+        "<span>ARV: "+money(item.estimatedARV)+"</span>"+
+        "<span>Profit: "+money(item.projectedProfit)+"</span>"+
+        "<span>ROI: "+(item.projectedROI || 0)+"%</span>"+
+        "<span>Status: "+safeHtml(item.projectStatus || "Saved")+"</span>"+
+        "<span>Saved: "+safeHtml(textDate(item._updatedDate || item._createdDate))+"</span>"+
+      "</div>"+
+      "<div class='saved-actions'>"+
+        "<button onclick='loadSavedProject("+idx+")'>Load</button>"+
+        "<button class='secondary-btn' onclick='duplicateSavedProject("+idx+")'>Duplicate</button>"+
+        "<button class='danger-btn' onclick='deleteSavedProject(\""+safeHtml(item._id)+"\")'>Delete</button>"+
+      "</div>"+
+    "</div>";
+  }).join("");
+}
+
+function loadSavedProject(idx){
+  const item=savedProjects[idx];
+  if(!item)return;
+  loadProjectIntoForm(item, false);
+  closeSavedModal();
+}
+
+function duplicateSavedProject(idx){
+  const item=savedProjects[idx];
+  if(!item)return;
+  loadProjectIntoForm(item, true);
+  closeSavedModal();
+}
+
+function deleteSavedProject(id){
+  if(!id)return;
+  if(!loggedIn){
+    requestMemberLogin();
+    return;
+  }
+  postToWix({type:"INVESTOR_DELETE_FIX_FLIP", itemId:id});
+}
+
+function loadProjectIntoForm(item, duplicate){
+  let state={};
+  if(item.calculatorState){
+    try{state=typeof item.calculatorState==="string" ? JSON.parse(item.calculatorState) : item.calculatorState;}catch(e){state={};}
+  }
+  Object.keys(state).forEach(function(id){
+    if(id==="lineItems")return;
+    if(document.getElementById(id))setVal(id,state[id]);
+  });
+
+  if(state.confirmedPropertyLocation || item.propertyLocation){
+    const loc = state.confirmedPropertyLocation || item.propertyLocation;
+    setConfirmedPropertyLocation({formatted:loc.formatted||loc.formattedAddress||fullAddress(),placeId:loc.placeId||"",county:loc.county||val("county"),lat:loc.lat||loc.latitude||null,lng:loc.lng||loc.longitude||null});
+  }else{
+    confirmedPropertyLocation = null;
+    propertyAddressDirty = false;
+    setPropertyLocationStatus(fullAddress() ? "warning" : "warning", fullAddress() ? "Choose the property address again to confirm the location." : "Choose a property address to confirm the location.");
+  }
+
+  if(!Object.keys(state).length){
+    setVal("projectName", item.projectName || "");
+    setVal("city", item.city || "");
+    setVal("state", item.state || "");
+    setVal("zip", item.zip || "");
+    setVal("propertyType", item.propertyType || "Single Family");
+    setVal("purchasePrice", item.purchasePrice || 0);
+    setVal("rehabBudget", item.rehabBudget || 0);
+    setVal("arv", item.estimatedARV || 0);
+    setVal("projectStatus", item.projectStatus || "Saved");
+    setVal("purchaseCloseDate", item.purchaseCloseDate ? String(item.purchaseCloseDate).slice(0,10) : "");
+    setVal("targetSaleDate", item.targetSaleDate ? String(item.targetSaleDate).slice(0,10) : "");
+  }
+
+  document.getElementById("budgetRows").innerHTML="";
+  const lines = state.lineItems || item.lineItems || [];
+  if(lines.length){lines.forEach(function(line){addBudgetRow(line);});}
+  else {addBudgetRow({category:"Other",itemName:"Initial Rehab Budget",estimatedCost:item.rehabBudget||0,status:"Planned"});}
+
+  if(duplicate){
+    setVal("projectName", (val("projectName") || item.projectName || "Saved Fix & Flip Project") + " Copy");
+    document.getElementById("saveStatus").innerText="Loaded as duplicate - unsaved changes";
+  }else{
+    document.getElementById("saveStatus").innerText="Loaded saved project";
+  }
+  calculate();
+}
+
+function buildScenarioText(s){
+return `Fix and Flip Deal Review Request
+
+PROJECT
+Project Name: ${val("projectName")}
+Project Status: ${val("projectStatus")}
+Purchase Closing Date: ${val("purchaseCloseDate")}
+Target Sale Date: ${val("targetSaleDate")}
+
+CONTACT
+Name: ${val("leadName")}
+Email: ${val("leadEmail")}
+Phone: ${val("leadPhone")}
+Timeline: ${val("timeline")}
+
+INVESTOR
+Credit Score: ${val("fico")}
+Completed Fix-and-Flips Where Borrower Held Title - Last 3 Years: ${val("heldTitleFlips")}
+Contractor Experience: ${val("contractorExp")}
+Liquidity Available: ${money(num("liquidity"))}
+Borrower / Vesting Type: ${val("vesting")}
+
+PROPERTY
+Address: ${fullAddress()}
+Location Status: ${confirmedPropertyLocation && !propertyAddressDirty ? "Confirmed" : "Needs check"}
+Property Type: ${val("propertyType")}
+Units: ${val("units")}
+Purchase Price / As-Is Value: ${money(num("purchasePrice"))}
+Rehab Budget: ${money(s.rehab)}
+Projected ARV: ${money(num("arv"))}
+Local Median Value: ${money(num("medianValue"))}
+
+COMPS
+Average Comp Value: ${money(num("avgCompValue"))}
+Has 3 Recent Nearby Comps: ${val("hasThreeComps")}
+Comp 1: ${val("comp1")}
+Comp 2: ${val("comp2")}
+Comp 3: ${val("comp3")}
+Comp 4: ${val("comp4")}
+Comp 5: ${val("comp5")}
+
+LOAN STRUCTURE
+Loan Type: ${val("loanType")}
+Rehab Type: ${val("rehabType")}
+Desired Term: ${val("term")}
+Deferred Payments / Interest Reserve Desired: ${val("deferredPayments")}
+Requested Initial Advance: ${money(num("requestedInitial"))}
+Requested Rehab Funding: ${money(num("requestedRehab"))}
+
+RESULTS
+Fundability Score: ${s.score}/100
+Estimated Max Initial Advance: ${money(s.maxInitial)}
+Estimated Rehab Funding: ${money(s.rehabFunding)}
+Estimated Max Total Loan: ${money(s.maxTotalLoan)}
+Total Project Cost: ${money(s.totalCost)}
+Projected Profit: ${money(s.projectedProfit)}
+Projected ROI: ${pct(s.projectedROI)}
+Maximum Allowable Offer: ${money(s.maxAllowableOffer)}
+Estimated Cash Needed: ${money(s.cashNeeded)}
+Estimated LTC: ${pct(s.ltc)}
+Estimated AR-LTV: ${pct(s.arltv)}
+ARV Confidence: ${s.arvConfidence}
+
+REHAB LINE ITEMS
+${s.lineItems.length ? s.lineItems.map(function(i){return "- "+i.category+" | "+i.itemName+" | Est: "+money(i.estimatedCost)+" | Actual: "+money(i.actualCost)+" | "+i.status;}).join("\n") : "- No detailed line items entered."}
+
+INDICATORS
+${s.notes.map(function(n){return "- " + n;}).join("\n")}
+
+WAYS TO IMPROVE
+${s.improvements.map(function(n){return "- " + n;}).join("\n")}
+
+NOTES
+${val("dealNotes")}`;
+}
+
+function copyScenario(){
+  calculate();
+  navigator.clipboard.writeText(lastScenarioText).then(function(){
+    const msg = document.getElementById("copyMessage");
+    msg.style.display = "block";
+    setTimeout(function(){msg.style.display = "none";},2500);
+  });
+}
+
+function emailScenario(){
+  calculate();
+  const subject = encodeURIComponent("Fix and Flip Deal Review Request");
+  const body = encodeURIComponent(lastScenarioText);
+  window.location.href = "mailto:?subject=" + subject + "&body=" + body;
+}
+
+window.addEventListener("message", function(event){
+  const data = event.data || {};
+  if(data.type === "INVESTOR_FIX_FLIP_LIST"){
+    renderSavedProjects(data.items || []);
+  }
+  if(data.type === "INVESTOR_FIX_FLIP_SAVED"){
+    hasUnsavedChanges = false;
+    document.getElementById("saveStatus").innerText = "Last saved just now";
+
+    document.getElementById("saveProjectBtn").innerText = "✓ Project Saved";
+    document.getElementById("savePanelBtn").innerText = "✓ Project Saved";
+
+    const msg=document.getElementById("saveMessage");
+    msg.style.display="block";
+    msg.innerText=data.message || "Project saved.";
+    setTimeout(function(){msg.style.display="none";},3000);
+
+    setTimeout(function(){
+      if(loggedIn){
+        document.getElementById("saveProjectBtn").innerText = "💾 Save Project";
+        document.getElementById("savePanelBtn").innerText = "💾 Save Project";
+      }
+    },2200);
+
+    postToWix({type:"INVESTOR_LOAD_SAVED"});
+  }
+  if(data.type === "INVESTOR_LOGIN_REQUIRED"){
+    setMemberSaveState(false);
+    document.getElementById("memberStatus").innerText = data.message || "Please log in to save projects.";
+    document.getElementById("saveStatus").innerText = "Login required to save";
+  }
+  if(data.type === "INVESTOR_MEMBER_STATUS" || data.type === "INVESTOR_HUB_READY"){
+    setMemberSaveState(!!data.loggedIn);
+  }
+  if(data.type === "INVESTOR_ERROR"){
+    document.getElementById("saveStatus").innerText = data.message || "Something went wrong.";
+  }
+});
+
+document.querySelectorAll("input, select, textarea").forEach(function(el){
+  el.addEventListener("input", markChangedAndCalculate);
+  el.addEventListener("change", markChangedAndCalculate);
+});
+
+const streetInput = document.getElementById("street");
+if(streetInput){
+  streetInput.addEventListener("input", function(){ markPropertyAddressNeedsCheck(); });
+}
+
+addBudgetRow({category:"Kitchen",itemName:"Kitchen updates",estimatedCost:12000,status:"Planned"});
+addBudgetRow({category:"Bathrooms",itemName:"Bathroom updates",estimatedCost:8000,status:"Planned"});
+addBudgetRow({category:"Other",itemName:"Contingency",estimatedCost:5000,status:"Planned"});
+calculate();
+setMemberSaveState(false);
+window.parent.postMessage({type:"FIX_FLIP_HTML_READY",htmlId:"fixFlipHtml",version:"v6-places-new"},"*");
+/* Velo will send INVESTOR_MEMBER_STATUS after the page loads.
+   Saved projects are requested only after login so signed-out visitors do not trigger member-only loads. */
+</script>
+
+<script>initFixFlipPropertyLookup();</script>
+</body>
+</html>
