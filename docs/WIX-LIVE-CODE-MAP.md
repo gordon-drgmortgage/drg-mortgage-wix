@@ -32,7 +32,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 
 | Public area / probable URL | Wix page code file | HTML component IDs / notes |
 | --- | --- | --- |
-| `/` | `src/pages/Home.tuckg.js` | Minimal/empty page Velo in Git export |
+| `/` | `src/pages/Home.tuckg.js` | `#mortgageAdvantageHtml`; archived at `html-embeds/mortgage-advantage-center/home-mortgage-advantage.html` |
 | `/about` | `src/pages/About.woeq4.js` | Minimal/empty page Velo |
 | `/contact` | `src/pages/Contact.drtds.js` | Minimal/empty page Velo |
 | `/loan-products` | `src/pages/Loan Products.sz5ox.js` | Minimal/empty page Velo |
