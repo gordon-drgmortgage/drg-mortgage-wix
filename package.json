@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "prepare:wix-html": "node scripts/prepare-wix-html.js"
+  }
+}
+

@@ -1,0 +1,6 @@
+.env.local
+.env.*.local
+secrets.local.json
+dist/
+wix-ready/
+
