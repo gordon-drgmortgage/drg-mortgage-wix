@@ -35,7 +35,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/` | `src/pages/Home.tuckg.js` | `#mortgageAdvantageHtml`; archived at `html-embeds/mortgage-advantage-center/home-mortgage-advantage.html` |
 | `/about` | `src/pages/About.woeq4.js` | Minimal/empty page Velo |
 | `/contact` | `src/pages/Contact.drtds.js` | Minimal/empty page Velo |
-| `/loan-products` | `src/pages/Loan Products.sz5ox.js` | Minimal/empty page Velo |
+| `/loan-products` | `src/pages/Loan Products.sz5ox.js` | `#loanProductsHtml`; archived at `html-embeds/loan-products/loan-products.html` |
 | `/borrower-tools` | `src/pages/Borrower Tools.rp9wa.js` | `#amortizationHtml`; archived at `html-embeds/amortization-calculator/borrower-tools-amortization.html` |
 | `/realtor-tools` | `src/pages/Realtor Tools.weyoj.js` | `#quickToolsHtml`; archived at `html-embeds/realtor-tools/realtor-tools-quick-tools.html`; `#sellerNetSheetHtml`; archived at `html-embeds/seller-net-sheet/realtor-tools-seller-net-sheet.html` |
 | `/investor-tools` | `src/pages/Investor Tools.s5avu.js` | `#dscrHtml`; archived at `html-embeds/dscr-calculator/investor-tools-dscr.html`; `#comparablesHtml`; archived at `html-embeds/comparables-calculator/investor-tools-comparables.html`; `#fixFlipHtml`; archived at `html-embeds/fix-and-flip-analyzer/investor-tools-fix-flip.html` |

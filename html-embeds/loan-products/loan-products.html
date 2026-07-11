@@ -1,0 +1,551 @@
+<!--
+Wix page: Loan Products
+Wix component ID: #loanProductsHtml
+Production status: Active
+Migrated from: User-provided Wix editor paste
+Initial archive date: 2026-07-11
+Public scrape match: No public scrape copy found in existing archive
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRG Mortgage Loan Options v4</title>
+  <style>
+    :root{
+      --navy:#061f3f;--navy2:#082f5f;--blue:#0b5cab;--blue2:#2374d1;--green:#52d273;
+      --mint:#b9f7cc;--soft:#f6f9fc;--softblue:#eef7ff;--text:#102a43;--muted:#526b83;
+      --border:#d9e2ec;--white:#fff;--gold:#f7c948;--red:#e12d39;--orange:#f9703e;
+      --shadow:0 18px 45px rgba(6,43,79,.11);--hover:0 26px 68px rgba(6,43,79,.22)
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff}
+    #drg-v4{font-family:Arial,Helvetica,sans-serif;color:var(--text);overflow:hidden;background:#fff}
+    #drg-v4 button{font-family:inherit}
+
+    .hero{position:relative;min-height:680px;display:flex;align-items:center;padding:86px 24px;color:#fff;isolation:isolate;
+      background:radial-gradient(circle at 12% 15%,rgba(82,210,115,.34),transparent 28%),
+      radial-gradient(circle at 78% 18%,rgba(35,116,209,.44),transparent 31%),
+      radial-gradient(circle at 70% 86%,rgba(255,255,255,.18),transparent 28%),
+      linear-gradient(135deg,#041a33 0%,#062b4f 45%,#0b5cab 100%)}
+    .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at center,#000,transparent 72%);opacity:.55;z-index:-2}
+    .hero:after{content:"";position:absolute;width:680px;height:680px;border-radius:999px;right:-280px;top:-210px;background:conic-gradient(from 130deg,rgba(82,210,115,.22),rgba(35,116,209,.34),rgba(255,255,255,.12),rgba(82,210,115,.22));filter:blur(12px);animation:spin 18s linear infinite;z-index:-1;opacity:.72}
+    .wrap{width:100%;max-width:1180px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:1.8px;font-size:13px;font-weight:900;color:var(--mint);margin:0 0 16px}
+    .eyebrow:before{content:"";width:9px;height:9px;border-radius:999px;background:var(--green);box-shadow:0 0 20px rgba(82,210,115,.95)}
+    h1{font-size:clamp(42px,6vw,78px);line-height:.97;letter-spacing:-2.6px;margin:0 0 24px}h1 span{color:var(--mint)}
+    .sub{max-width:680px;font-size:clamp(17px,2vw,21px);line-height:1.62;color:#e6f0fa;margin:0 0 32px}
+    .actions{display:flex;flex-wrap:wrap;gap:14px}.primary,.secondary{border:0;cursor:pointer;min-height:50px;border-radius:999px;padding:14px 24px;font-size:15.5px;font-weight:900;transition:.24s}
+    .primary{background:var(--green);color:var(--navy);box-shadow:0 16px 36px rgba(82,210,115,.22)}.primary:after{content:" ↓"}
+    .secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.32);backdrop-filter:blur(10px)}
+    .primary:hover,.secondary:hover,.primary:focus,.secondary:focus{transform:translateY(-3px);outline:0}.primary:hover{background:#fff}.secondary:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.58)}
+    .visual{position:relative;min-height:470px;animation:fadeIn 1s ease both .1s}.orbit{position:absolute;inset:20px;border:1px solid rgba(255,255,255,.16);border-radius:34px;transform:rotate(-4deg);background:rgba(255,255,255,.045);backdrop-filter:blur(10px)}
+    .panel{position:absolute;inset:62px 28px auto 28px;min-height:315px;border:1px solid rgba(255,255,255,.22);border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.08));box-shadow:0 28px 80px rgba(0,0,0,.24);backdrop-filter:blur(18px);padding:26px}
+    .paneltop{display:flex;justify-content:space-between;gap:14px;margin-bottom:24px}.paneltitle{margin:0;font-weight:900}.status{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;background:rgba(82,210,115,.16);color:var(--mint);font-size:12px;font-weight:900;white-space:nowrap}.status:before{content:"";width:8px;height:8px;border-radius:99px;background:var(--green)}
+    .metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.metric{border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:16px;background:rgba(255,255,255,.11);min-height:112px}.metric small{display:block;color:rgba(255,255,255,.72);font-weight:800;margin-bottom:10px}.metric strong{font-size:24px;letter-spacing:-.7px}.line{height:44px;margin-top:12px;border-radius:12px;background:linear-gradient(135deg,transparent 0 42%,rgba(82,210,115,.95) 43% 47%,transparent 48%),linear-gradient(25deg,transparent 0 35%,rgba(255,255,255,.58) 36% 39%,transparent 40%);opacity:.9}
+    .float{position:absolute;border-radius:20px;border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.15);backdrop-filter:blur(14px);box-shadow:0 20px 50px rgba(0,0,0,.18);padding:14px 16px;display:flex;gap:12px;align-items:center;animation:float 6s ease-in-out infinite}.float span{width:38px;height:38px;display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.16);font-size:20px}.float b{display:block;color:#fff;font-size:14px}.float small{color:rgba(255,255,255,.72);font-size:12px;font-weight:700}.a{left:-6px;bottom:78px}.b{right:-10px;top:26px;animation-delay:.9s}.c{right:18px;bottom:20px;animation-delay:1.6s}
+
+    .ribbon{background:#041f3a;color:#fff;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+    .track{display:flex;width:max-content;animation:marquee 28s linear infinite}.item{padding:15px 28px;white-space:nowrap;font-weight:900;color:#e6f0fa}.item span{color:var(--green);margin-right:8px}
+
+    .quiz{padding:68px 20px 38px;background:#fff;text-align:center}.quiz h2,.section-title{color:var(--navy);font-size:clamp(30px,4vw,50px);line-height:1.05;letter-spacing:-1.2px;margin:0 0 14px}.quiz p,.intro{max-width:780px;margin:0 auto 30px;color:var(--muted);font-size:17px;line-height:1.62}
+    .quizbox{max-width:980px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow);padding:26px;text-align:left}.qtop{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:18px}.qtop h3{margin:0;color:var(--navy);font-size:24px}.step{font-weight:900;color:var(--blue);background:var(--softblue);border-radius:999px;padding:8px 12px}
+    .choices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.choice{border:1px solid var(--border);background:#fff;border-radius:18px;padding:16px;text-align:left;cursor:pointer;font-weight:900;color:var(--navy);transition:.24s}.choice:hover,.choice.active{border-color:var(--blue);background:var(--softblue);transform:translateY(-2px)}
+    .rec{margin-top:18px;display:none;background:#f8fbff;border:1px solid #dbeafe;border-radius:20px;padding:18px}.rec.show{display:block}.rec strong{color:var(--navy)}.rec-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.rec-pill{background:#eaf7ee;color:#17663b;border:1px solid #bfe7ca;padding:8px 10px;border-radius:999px;font-size:13px;font-weight:900}
+
+    .finder{padding:34px 20px 36px;background:#fff;text-align:center}.filters{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}.filter{border:1px solid #bcccdc;background:#fff;color:var(--navy);padding:13px 18px;border-radius:999px;cursor:pointer;font-weight:900;transition:.25s}.filter:hover,.filter.active{background:var(--navy);color:#fff;border-color:var(--navy);transform:translateY(-2px);box-shadow:0 12px 28px rgba(6,43,79,.14)}
+    .note{max-width:890px;margin:26px auto 0;background:var(--softblue);border:1px solid #cfe8ff;border-radius:20px;padding:16px 18px;color:#243b53;line-height:1.5;font-size:15.5px}
+
+    .products{background:radial-gradient(circle at top left,rgba(11,92,171,.08),transparent 30%),linear-gradient(180deg,#fff 0%,#f6f9fc 100%);padding:34px 24px 82px}.grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{position:relative;background:rgba(255,255,255,.97);border:1px solid var(--border);border-radius:26px;padding:28px;box-shadow:var(--shadow);transition:.3s;cursor:pointer;overflow:hidden;animation:fadeUp .5s ease both}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(11,92,171,.09),transparent 36%);opacity:0;transition:.3s;pointer-events:none}.card:hover{transform:translateY(-8px);box-shadow:var(--hover);border-color:var(--blue)}.card:hover:before,.card.open:before{opacity:1}.card.featured{border:2px solid var(--blue);background:radial-gradient(circle at top right,rgba(82,210,115,.14),transparent 34%),linear-gradient(180deg,#fff 0%,#eef7ff 100%)}.card.hide{display:none}
+    .top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}.icon{width:60px;height:60px;display:grid;place-items:center;border-radius:19px;background:#e6f0fa;font-size:34px}.label{margin:0;background:var(--softblue);color:var(--blue);font-size:12px;font-weight:900;padding:8px 12px;border-radius:999px;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
+    .card h3{position:relative;z-index:1;color:var(--navy);font-size:24px;line-height:1.15;letter-spacing:-.4px;margin:0 0 12px}.summary{position:relative;z-index:1;color:var(--muted);line-height:1.55;margin:0 0 18px;font-size:15.5px}
+    .fit{position:relative;z-index:1;margin:0 0 18px}.fitrow{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:900;color:var(--navy);margin-bottom:8px}.bar{height:10px;border-radius:999px;background:#e5edf5;overflow:hidden}.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--green),#9be7b0);width:80%}
+    .tags,.badges{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px}.tags span{background:#f0f4f8;color:#243b53;padding:8px 10px;border-radius:999px;font-size:13px;font-weight:800}.badge{background:#eaf7ee;color:#17663b;border:1px solid #bfe7ca;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    .more{position:relative;z-index:1;max-height:0;overflow:hidden;opacity:0;margin-top:0;transition:max-height .35s ease,opacity .25s ease,margin-top .25s ease}.card.open .more{max-height:880px;opacity:1;margin-top:18px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tab{border:1px solid var(--border);background:#fff;color:var(--navy);border-radius:999px;padding:8px 10px;font-size:12px;font-weight:900;cursor:pointer}.tab.active{background:var(--navy);color:#fff}
+    .tabpane{display:none;color:#334e68;line-height:1.56;font-size:15px}.tabpane.active{display:block}
+    .qualifiers{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.qual{background:#f8fbff;border:1px solid #e1edf8;border-radius:14px;padding:11px 12px}.qual small{display:block;color:#627d98;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.55px;margin-bottom:5px}.qual strong{display:block;color:var(--navy);font-size:14px}
+    .disclaimer{margin-top:14px;font-size:12.5px;line-height:1.45;color:#627d98;font-style:italic}.cardbtn{position:relative;z-index:1;border:0;margin-top:20px;width:100%;background:var(--navy);color:#fff;padding:13px 18px;border-radius:999px;cursor:pointer;font-weight:900;transition:.25s}.cardbtn:hover{background:var(--blue);transform:translateY(-2px)}.card.open .cardbtn:after{content:" ▲"}.card:not(.open) .cardbtn:after{content:" ▼"}
+
+    .compare{background:var(--soft);padding:0 24px 82px}.comparebox{max-width:1180px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow);padding:28px;overflow:auto}.compare table{width:100%;border-collapse:collapse;min-width:760px}.compare th,.compare td{text-align:left;border-bottom:1px solid #e6eef6;padding:14px;color:#243b53}.compare th{color:var(--navy);font-size:13px;text-transform:uppercase;letter-spacing:.6px}.compare h2{margin-top:0}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes float{0%,100%{transform:translateY(0) translateX(0)}50%{transform:translateY(-16px) translateX(8px)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @media(max-width:1020px){.wrap{grid-template-columns:1fr}.visual{min-height:390px}.grid{grid-template-columns:repeat(2,1fr)}.choices{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){.hero{min-height:auto;padding:58px 18px 64px}h1{letter-spacing:-1.4px}.actions,.primary,.secondary{width:100%}.visual{min-height:430px}.panel{inset:58px 0 auto 0;padding:20px}.metrics,.grid,.choices,.qualifiers{grid-template-columns:1fr}.products,.compare{padding-left:16px;padding-right:16px}.label{white-space:normal;text-align:right}.float{max-width:230px}.a{left:0}.b,.c{right:0}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+    /* DRG mobile optimization layer for Wix embedded HTML */
+    @media (max-width: 820px) {
+      #drg-v4 {
+        overflow-x: hidden;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 46px 16px 50px;
+      }
+
+      .wrap {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 12vw, 54px);
+        line-height: 0.98;
+        letter-spacing: -1.35px;
+        margin-bottom: 18px;
+      }
+
+      .sub {
+        font-size: 16.5px;
+        line-height: 1.55;
+        margin-bottom: 24px;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .primary,
+      .secondary {
+        width: 100%;
+        min-height: 52px;
+        padding: 14px 18px;
+      }
+
+      .visual {
+        min-height: 360px;
+        margin-top: 2px;
+      }
+
+      .orbit {
+        inset: 10px;
+        border-radius: 24px;
+        transform: rotate(-2deg);
+      }
+
+      .panel {
+        inset: 42px 0 auto 0;
+        min-height: auto;
+        padding: 18px;
+        border-radius: 24px;
+      }
+
+      .paneltop {
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      .paneltitle {
+        font-size: 15px;
+      }
+
+      .status {
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .metric {
+        min-height: 92px;
+        padding: 13px;
+        border-radius: 16px;
+      }
+
+      .metric strong {
+        font-size: 19px;
+      }
+
+      .line {
+        height: 28px;
+      }
+
+      .float {
+        display: none;
+      }
+
+      .track {
+        animation-duration: 34s;
+      }
+
+      .item {
+        padding: 13px 18px;
+        font-size: 13px;
+      }
+
+      .quiz {
+        padding: 48px 16px 30px;
+      }
+
+      .quiz h2,
+      .section-title,
+      .finder h2 {
+        font-size: clamp(28px, 9vw, 38px);
+        letter-spacing: -0.8px;
+      }
+
+      .quiz p,
+      .intro {
+        font-size: 15.5px;
+        line-height: 1.55;
+        margin-bottom: 22px;
+      }
+
+      .quizbox {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .qtop {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .qtop h3 {
+        font-size: 20px;
+      }
+
+      .step {
+        width: 100%;
+        text-align: center;
+      }
+
+      .choices {
+        grid-template-columns: 1fr;
+      }
+
+      .choice {
+        min-height: 52px;
+        padding: 14px 15px;
+      }
+
+      .finder {
+        padding: 30px 16px;
+      }
+
+      .filters {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .filter {
+        width: 100%;
+        min-height: 50px;
+        padding: 13px 16px;
+      }
+
+      .note {
+        margin-top: 18px;
+        font-size: 14px;
+        border-radius: 16px;
+      }
+
+      .products {
+        padding: 28px 16px 58px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .card {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .card:hover {
+        transform: none;
+      }
+
+      .top {
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .icon {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        border-radius: 16px;
+        font-size: 28px;
+      }
+
+      .label {
+        max-width: 150px;
+        white-space: normal;
+        text-align: right;
+        line-height: 1.2;
+      }
+
+      .card h3 {
+        font-size: 22px;
+      }
+
+      .summary {
+        font-size: 14.5px;
+      }
+
+      .tags span {
+        font-size: 12.5px;
+        padding: 7px 9px;
+      }
+
+      .more {
+        transition: max-height .35s ease, opacity .25s ease, margin-top .25s ease;
+      }
+
+      .card.open .more {
+        max-height: 1200px;
+      }
+
+      .tabs {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .tab {
+        min-height: 42px;
+      }
+
+      .qualifiers {
+        grid-template-columns: 1fr;
+      }
+
+      .cardbtn {
+        min-height: 50px;
+      }
+
+      .compare {
+        padding: 0 16px 58px;
+      }
+
+      .comparebox {
+        padding: 18px;
+        border-radius: 22px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .comparebox::before {
+        content: "Swipe table sideways to compare all columns.";
+        display: block;
+        margin-bottom: 10px;
+        color: var(--muted);
+        font-size: 12.5px;
+        font-weight: 800;
+      }
+
+      .compare table {
+        min-width: 720px;
+      }
+
+      .compare th,
+      .compare td {
+        padding: 12px 10px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 38px 14px 44px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 13vw, 46px);
+      }
+
+      .eyebrow {
+        font-size: 11.5px;
+        letter-spacing: 1.1px;
+      }
+
+      .visual {
+        min-height: 330px;
+      }
+
+      .panel {
+        inset: 34px 0 auto 0;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .metric {
+        min-height: auto;
+      }
+
+      .ribbon {
+        display: none;
+      }
+
+      .quiz,
+      .finder,
+      .products {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .top {
+        flex-direction: row;
+      }
+
+      .label {
+        font-size: 11px;
+      }
+
+      .fitrow {
+        font-size: 12.5px;
+      }
+
+      .rec-list,
+      .tags,
+      .badges {
+        gap: 7px;
+      }
+
+      .compare {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div id="drg-v4">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">DRG Mortgage Loan Options</p>
+        <h1>Mortgage paths for <span>real-life</span> goals.</h1>
+        <p class="sub">Whether you're buying a home, refinancing, investing in real estate, or self-employed, explore loan options designed to fit your unique financial goals.</p>
+        <div class="actions">
+          <button class="primary" id="scrollQuiz">Find My Loan Fit</button>
+          <button class="secondary" id="scrollCards">View All Options</button>
+        </div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <div class="orbit"></div>
+        <div class="panel">
+          <div class="paneltop"><p class="paneltitle">Loan Strategy Dashboard</p><span class="status">Scenario Ready</span></div>
+          <div class="metrics">
+            <div class="metric"><small>Goal</small><strong>Buy</strong><div class="line"></div></div>
+            <div class="metric"><small>Goal</small><strong>Refinance</strong><div class="line"></div></div>
+            <div class="metric"><small>Goal</small><strong>Invest</strong><div class="line"></div></div>
+            <div class="metric"><small>Goal</small><strong>Qualify</strong><div class="line"></div></div>
+          </div>
+        </div>
+        <div class="float a"><span>🏡</span><div><b>Homebuyer</b><small>Purchase options</small></div></div>
+        <div class="float b"><span>📈</span><div><b>Investor</b><small>Rental strategy</small></div></div>
+        <div class="float c"><span>💼</span><div><b>Self-Employed</b><small>Flexible documentation</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon"><div class="track">
+    <div class="item"><span>🏡</span>Low Down Payment Options</div><div class="item"><span>💰</span>Investment Property Financing</div><div class="item"><span>📈</span>Flexible Income Documentation</div><div class="item"><span>🔄</span>Refinance Solutions</div><div class="item"><span>⭐</span>First-Time Buyer Paths</div><div class="item"><span>🚀</span>Pre-Approval Strategy</div>
+    <div class="item"><span>🏡</span>Low Down Payment Options</div><div class="item"><span>💰</span>Investment Property Financing</div><div class="item"><span>📈</span>Flexible Income Documentation</div><div class="item"><span>🔄</span>Refinance Solutions</div><div class="item"><span>⭐</span>First-Time Buyer Paths</div><div class="item"><span>🚀</span>Pre-Approval Strategy</div>
+  </div></div>
+
+  <section class="quiz" id="quiz">
+    <p class="eyebrow">Quick Loan Match</p>
+    <h2>Start with your goal.</h2>
+    <p>Answer one quick question to highlight likely loan categories. This is not a pre-approval, but it helps point you in the right direction.</p>
+    <div class="quizbox">
+      <div class="qtop"><h3>What best describes your situation?</h3><span class="step">Step 1 of 1</span></div>
+      <div class="choices">
+        <button class="choice" data-rec="homebuyer">I want to buy a home</button>
+        <button class="choice" data-rec="refinance">I want to refinance</button>
+        <button class="choice" data-rec="investor">I’m buying investment property</button>
+        <button class="choice" data-rec="selfemployed">I’m self-employed</button>
+        <button class="choice" data-rec="realtor">I’m helping a buyer</button>
+        <button class="choice" data-rec="all">I want to compare everything</button>
+      </div>
+      <div class="rec" id="recBox"><strong>Recommended categories:</strong><div class="rec-list" id="recList"></div></div>
+    </div>
+  </section>
+
+  <section class="finder" id="finder">
+    <p class="eyebrow">Interactive Loan Finder</p>
+    <h2>Filter loan options.</h2>
+    <p class="intro">Use the buttons below to narrow the loan categories, then click a card to see typical qualifiers and details.</p>
+    <div class="filters">
+      <button class="filter" data-filter="homebuyer">Buy a Home</button><button class="filter" data-filter="refinance">Refinance</button><button class="filter" data-filter="investor">Invest in Real Estate</button><button class="filter" data-filter="selfemployed">I’m Self-Employed</button><button class="filter" data-filter="realtor">Help a Buyer Qualify</button><button class="filter active" data-filter="all">Show All</button>
+    </div>
+    <div class="note" id="note">Showing all loan categories. Click any card to expand details.</div>
+  </section>
+
+  <section class="products" id="cards">
+    <div class="grid" id="cardGrid"></div>
+  </section>
+
+  <section class="compare">
+    <div class="comparebox">
+      <h2 class="section-title">Compare loan categories</h2>
+      <table>
+        <thead><tr><th>Category</th><th>Best For</th><th>Typical Credit</th><th>Typical Max DTI</th><th>Typical Down Payment / Equity</th></tr></thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+ const loans=[
+  {id:"homebuyer",cat:"homebuyer",icon:"🏡",label:"Homebuyer",title:"Buy a Home",summary:"For buyers looking for primary residence financing, low down payment options, or first-time buyer solutions.",tags:["Conventional","FHA","VA","USDA"],fit:92,best:"Buyers purchasing a primary home.",uses:"First home, move-up purchase, low down payment purchase, eligible rural property, or military borrower scenarios.",qual:[["Typical Credit","600–660+ typical"],["Typical Max DTI","43%–50% typical"],["Typical Down Payment","0%–5%+ options"],["Occupancy","Primary home"]],badges:["Purchase","Primary Residence","Gift Funds May Be Allowed"],disc:"Qualification depends on the full file. Credit ranges are intentionally shown with a buffer to avoid false expectations."},
+  {id:"refinance",cat:"refinance",icon:"🔁",label:"Refinance",title:"Lower Your Payment or Access Equity",summary:"Review options to adjust your rate, term, payment, mortgage insurance, or access home equity.",tags:["Cash-Out","Rate/Term","Debt Consolidation"],fit:82,best:"Homeowners who want to restructure their current mortgage.",uses:"Lower payment goals, term changes, equity access, debt consolidation, removing mortgage insurance, or refinancing an investment property.",qual:[["Typical Credit","600–660+ typical"],["Typical Max DTI","43%–50% typical"],["Equity Needed","Varies by goal"],["Use Case","Rate, term, cash-out"]],badges:["Refinance","Cash-Out","Debt Consolidation"],disc:"A refinance should be reviewed against long-term goals, not just monthly payment."},
+  {id:"investor",cat:"investor",icon:"📈",label:"Investor",title:"Real Estate Investor Financing",summary:"Financing for rental properties, short-term rentals, fix-and-flip projects, and portfolio growth.",tags:["DSCR","Bridge","Fix & Flip","Cash-Out"],fit:88,best:"Real estate investors buying, refinancing, renovating, or expanding a portfolio.",uses:"Long-term rental purchase, short-term rental purchase, renovation/resale project, equity extraction, or bridge-style transition financing.",qual:[["Typical Credit","680+ preferred"],["DTI","Often property-focused"],["Typical Down Payment","15%–25%+ typical"],["Property Type","Rental / investment"]],badges:["Investor","Rental Property","Property Cash Flow"],disc:"Some investor options may focus more on property cash flow than traditional personal income."},
+  {id:"selfemployed",cat:"selfemployed",icon:"💼",label:"Self-Employed",title:"Self-Employed & Alternative Income",summary:"Flexible documentation options for business owners, contractors, freelancers, and entrepreneurs.",tags:["Bank Statements","1099","P&L","Assets"],fit:84,best:"Borrowers whose tax returns do not show the full picture.",uses:"Business owners, independent contractors, commission-heavy borrowers, freelancers, and borrowers with strong assets but non-traditional income documentation.",qual:[["Typical Credit","680+ preferred"],["Typical Max DTI","43%–50% typical"],["Documentation","Alternative income"],["Typical Down Payment","10%–20%+ typical"]],badges:["Alternative Income","Business Owner","Flexible Documentation"],disc:"Documentation options depend on the full borrower profile, loan purpose, reserves, occupancy, and property type."},
+  {id:"specialty",cat:"homebuyer selfemployed",icon:"🧩",label:"Specialty",title:"Unique Borrower Solutions",summary:"For borrowers or properties that may not fit standard mortgage guidelines.",tags:["Non-QM","ITIN","Foreign National"],fit:74,best:"Unique borrower scenarios or non-traditional qualification paths.",uses:"Recent credit events, non-traditional income, unique occupancy scenarios, foreign national borrowers, ITIN borrowers, or complex property scenarios.",qual:[["Typical Credit","660+ preferred"],["Typical Max DTI","Scenario-based"],["Documentation","Flexible options"],["Review Type","Case by case"]],badges:["Specialty","Case-by-Case","Flexible Path"],disc:"Specialty options are reviewed case by case and may require stronger compensating factors."},
+  {id:"realtor",cat:"realtor investor homebuyer",icon:"🤝",label:"Realtor Partner",title:"Tools for Realtors & Their Clients",summary:"Help buyers explore options, solve financing challenges, and structure stronger offers.",tags:["Buyer Support","DPA","Investor","Bridge"],fit:86,best:"Realtors who want more financing tools for buyers and investors.",uses:"Buyer qualification strategy, investor financing, low down payment options, down payment assistance, bridge-style solutions, and deal-structure problem solving.",qual:[["Buyer Credit","600–680+ typical"],["Typical Max DTI","Scenario-based"],["Use Case","Pre-approval strategy"],["Best Timing","Before showing homes"]],badges:["Realtor Resource","Buyer Strategy","Offer Support"],disc:"Early loan strategy can help avoid issues later in the transaction. Qualification varies by borrower and loan type."}
+ ];
+ const notes={all:"Showing all loan categories. Click any card to expand details.",homebuyer:"Showing options commonly used by homebuyers and borrowers purchasing a primary residence.",refinance:"Showing refinance options for rate, term, payment, equity, or debt consolidation goals.",investor:"Showing investor options for rental properties, short-term rentals, fix-and-flip projects, and portfolio growth.",selfemployed:"Showing options that may help self-employed borrowers or alternative income documentation scenarios.",realtor:"Showing categories that may help Realtors solve buyer qualification or deal-structure challenges."};
+ const recs={homebuyer:["Buy a Home","Unique Borrower Solutions"],refinance:["Lower Your Payment or Access Equity"],investor:["Real Estate Investor Financing","Tools for Realtors & Their Clients"],selfemployed:["Self-Employed & Alternative Income","Unique Borrower Solutions"],realtor:["Tools for Realtors & Their Clients","Buy a Home","Real Estate Investor Financing"],all:["Buy a Home","Lower Your Payment or Access Equity","Real Estate Investor Financing","Self-Employed & Alternative Income","Unique Borrower Solutions"]};
+ const grid=document.getElementById("cardGrid"), compare=document.getElementById("compareBody"), note=document.getElementById("note");
+ function cardHTML(l){return `<article class="card ${l.id==="investor"?"featured":""}" data-category="${l.cat}" tabindex="0">
+ <div class="top"><span class="icon">${l.icon}</span><p class="label">${l.label}</p></div><h3>${l.title}</h3><p class="summary">${l.summary}</p>
+ <div class="fit"><div class="fitrow"><span>Good Fit Potential</span><span>${l.fit}%</span></div><div class="bar"><div class="fill" style="width:${l.fit}%"></div></div></div>
+ <div class="tags">${l.tags.map(t=>`<span>${t}</span>`).join("")}</div>
+ <div class="more"><div class="tabs"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="requirements">Requirements</button><button class="tab" data-tab="best">Best For</button></div>
+ <div class="tabpane active" data-pane="overview"><strong>Common uses:</strong> ${l.uses}<div class="badges">${l.badges.map(b=>`<span class="badge">${b}</span>`).join("")}</div></div>
+ <div class="tabpane" data-pane="requirements"><div class="qualifiers">${l.qual.map(q=>`<div class="qual"><small>${q[0]}</small><strong>${q[1]}</strong></div>`).join("")}</div><div class="disclaimer">${l.disc}</div></div>
+ <div class="tabpane" data-pane="best"><strong>Best for:</strong> ${l.best}<div class="disclaimer">This is general guidance only. The right option depends on the complete borrower and property profile.</div></div></div>
+ <button class="cardbtn" type="button">View Details</button></article>`}
+ grid.innerHTML=loans.map(cardHTML).join("");
+ compare.innerHTML=loans.map(l=>`<tr><td><strong>${l.title}</strong></td><td>${l.best}</td><td>${(l.qual.find(q=>q[0].includes("Credit"))||l.qual[0])[1]}</td><td>${(l.qual.find(q=>q[0].includes("DTI"))||["","Scenario-based"])[1]}</td><td>${(l.qual.find(q=>q[0].includes("Down Payment")||q[0].includes("Equity"))||["","Varies"])[1]}</td></tr>`).join("");
+ const cards=[...document.querySelectorAll(".card")], filters=[...document.querySelectorAll(".filter")];
+ function setText(c){let b=c.querySelector(".cardbtn");if(b)b.textContent=c.classList.contains("open")?"Hide Details":"View Details"}
+ function setFilter(f){filters.forEach(btn=>btn.classList.toggle("active",btn.dataset.filter===f));cards.forEach(c=>{let show=f==="all"||c.dataset.category.includes(f);c.classList.toggle("hide",!show);if(!show){c.classList.remove("open");setText(c)}});if(note)note.textContent=notes[f]||notes.all}
+ filters.forEach(b=>b.addEventListener("click",()=>setFilter(b.dataset.filter)));
+ cards.forEach(c=>{c.addEventListener("click",()=>{c.classList.toggle("open");setText(c)});c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();c.classList.toggle("open");setText(c)}})});
+ document.querySelectorAll(".cardbtn").forEach(b=>b.addEventListener("click",e=>{e.stopPropagation();let c=b.closest(".card");c.classList.toggle("open");setText(c)}));
+ document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",e=>{e.stopPropagation();let more=t.closest(".more");more.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));more.querySelectorAll(".tabpane").forEach(x=>x.classList.remove("active"));t.classList.add("active");more.querySelector(`[data-pane="${t.dataset.tab}"]`).classList.add("active")}));
+ document.querySelectorAll(".choice").forEach(ch=>ch.addEventListener("click",()=>{document.querySelectorAll(".choice").forEach(x=>x.classList.remove("active"));ch.classList.add("active");setFilter(ch.dataset.rec);document.getElementById("recBox").classList.add("show");document.getElementById("recList").innerHTML=(recs[ch.dataset.rec]||recs.all).map(x=>`<span class="rec-pill">${x}</span>`).join("");document.getElementById("finder").scrollIntoView({behavior:"smooth",block:"start"});}));
+ document.getElementById("scrollQuiz").addEventListener("click",()=>document.getElementById("quiz").scrollIntoView({behavior:"smooth",block:"start"}));
+ document.getElementById("scrollCards").addEventListener("click",()=>{setFilter("all");document.getElementById("cards").scrollIntoView({behavior:"smooth",block:"start"});});
+ setFilter("all");
+})();
+</script>
+</body>
+</html>
