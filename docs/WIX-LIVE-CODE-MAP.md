@@ -62,8 +62,8 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 
 | Endpoint | Backend file | Purpose |
 | --- | --- | --- |
-| `/_functions/mortgageRates` | `src/backend/http-functions.js` | Fetches a published Google Sheets CSV and returns it as text/csv with permissive CORS and one-hour browser caching |
-| `OPTIONS /_functions/mortgageRates` | `src/backend/http-functions.js` | CORS preflight response |
+| `/_functions/mortgageRates` | `src/backend/http-functions.js`; archived at `backend/http-functions.js` | Reads Freddie Mac PMMS records from the `MortgageRateHistory` CMS collection and returns compatible text/csv with permissive CORS and one-hour browser caching |
+| `OPTIONS /_functions/mortgageRates` | `src/backend/http-functions.js`; archived at `backend/http-functions.js` | CORS preflight response |
 
 ## Public Modules
 
