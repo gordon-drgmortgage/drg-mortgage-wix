@@ -90,10 +90,10 @@ function buildMortgageRatesCsv(items) {
 
   const rows = sortedItems.map((item) => [
     formatDateForCsv(readField(item, ["weekEnding", "date", "week_ending", "Week Ending"])),
-    readNumberField(item, ["thirtyYearFrm", "thirtyYearFRM", "x30YearFrm", "_30YearFrm", "30YearFrm", "30-Year FRM"]),
-    readNumberField(item, ["thirtyYearPointsAndFees", "thirtyYearPoints", "x30YearPointsAndFees", "_30YearPointsAndFees", "30YearPointsAndFees", "30-Year Points and Fees"]),
-    readNumberField(item, ["fifteenYearFrm", "fifteenYearFRM", "x15YearFrm", "_15YearFrm", "15YearFrm", "15-Year FRM"]),
-    readNumberField(item, ["fifteenYearPointsAndFees", "fifteenYearPoints", "x15YearPointsAndFees", "_15YearPointsAndFees", "15YearPointsAndFees", "15-Year Points and Fees"])
+    readNumberField(item, ["rate30Year", "thirtyYearFrm", "thirtyYearFRM", "x30YearFrm", "_30YearFrm", "30YearFrm", "30-Year FRM"]),
+    readNumberField(item, ["points30Year", "thirtyYearPointsAndFees", "thirtyYearPoints", "x30YearPointsAndFees", "_30YearPointsAndFees", "30YearPointsAndFees", "30-Year Points and Fees"]),
+    readNumberField(item, ["rate15Year", "fifteenYearFrm", "fifteenYearFRM", "x15YearFrm", "_15YearFrm", "15YearFrm", "15-Year FRM"]),
+    readNumberField(item, ["points15Year", "fifteenYearPointsAndFees", "fifteenYearPoints", "x15YearPointsAndFees", "_15YearPointsAndFees", "15YearPointsAndFees", "15-Year Points and Fees"])
   ]).filter((row) => row[0] && row[1] !== "");
 
   return [header].concat(rows).map(toCsvRow).join("\n");

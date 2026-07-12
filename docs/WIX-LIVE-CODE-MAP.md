@@ -10,13 +10,13 @@ Site URL: https://www.drgmortgagellc.com/
 
 Wix site ID: `2ee833a3-8715-4ead-a97a-2e05c63baf23`
 
-Live repo commit inspected: `762c577`
+Live repo commit inspected: `449a2ff`
 
 ## What This Map Covers
 
 This map documents the code currently visible through Wix Git Integration: page-level Velo files, public Velo modules, backend Velo modules, CMS collection references, and the HTML/Velo `postMessage()` contracts.
 
-Important limitation: Wix Git Integration exposes the Velo side of HTML embeds, including component IDs and message contracts, but it does not export the actual inline HTML embed source as separate `.html` files. Those HTML snippets still need to be copied from the Wix editor or exported separately before they can be archived as standalone files.
+The inline HTML sources have now been copied from Wix and archived as standalone files. Wix Git Integration still does not expose page-setting slugs, element placement, menu visibility, CMS permissions, or automation configuration.
 
 ## Repository Layout
 
@@ -56,7 +56,7 @@ These URLs are inferred from page names, hard-coded navigation calls, and the pu
 | `/knowledge-center/social-media-library` | `src/pages/Social Media Library.z20o0.js` | `#knowledgeCategoryHtml`; archived at `html-embeds/knowledge-center/knowledge-category.html` |
 | Blog index / post pages | `src/pages/Blog.bfjwi.js`, `src/pages/Post.vwm2s.js` | Minimal/empty page Velo |
 | Member auth/profile pages | signup, login, reset, profile, account settings, notifications files | Mostly minimal/empty page Velo |
-| Page not documented | Unknown page code | `#helpfulLinksHtml`; archived at `html-embeds/helpful-links/helpful-links.html`; self-contained navigation link hub; page placement needs confirmation |
+| `/loan-products` | `src/pages/Loan Products.sz5ox.js` | `#loanProductsHtml` and `#helpfulLinksHtml`; archived at `html-embeds/loan-products/loan-products.html` and `html-embeds/helpful-links/helpful-links.html` |
 
 ## Backend HTTP Endpoints
 
@@ -343,7 +343,7 @@ Current known HTML embeds:
 - `#quickToolsHtml`; archived at `html-embeds/realtor-tools/realtor-tools-quick-tools.html`
 - `#sellerNetSheetHtml`; archived at `html-embeds/seller-net-sheet/realtor-tools-seller-net-sheet.html`
 
-Earlier notes referenced native Wix seller-net-sheet elements on this page. The public scrape shows the live page also contains HTML embeds, so keep both possibilities in mind until the page Velo and seller net sheet source are fully archived.
+The page contains both native Wix seller-net calculation elements and a self-contained `#sellerNetSheetHtml` embed. The page Velo does not exchange `postMessage()` events with that embed.
 - `#netResult`
 
 No `postMessage()` bridge was found in this page code.
@@ -377,6 +377,6 @@ No `postMessage()` bridge was found in this page code.
 
 ## Current Backup Notes
 
-The present state captured here is the Wix Git Integration repository, not a full Wix site export. It includes Velo source and backend/public modules, but not CMS records, uploaded media, form submissions, member data, or the raw source text inside HTML embeds.
+The present archive contains all Wix Git Integration Velo source plus the copied inline HTML embed sources. It does not contain CMS records, uploaded media, form submissions, member data, exact page settings, or Wix automation configuration.
 
-Recommended next archival step: copy each live HTML embed from the Wix editor into the archive repo and backup folders under `html-embeds/`, matching the component IDs listed above.
+See `ARCHITECTURE-AUDIT-2026-07-11.md` for remaining documentation gaps and verification limits.
